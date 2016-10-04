@@ -16,18 +16,20 @@
         android:id="@+id/Calorie"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="moveCalorie"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Record Excersise"
+        android:text="Record Exercise"
         android:id="@+id/Excersise"
         android:layout_below="@+id/Calorie"
         android:layout_alignRight="@+id/Calorie"
         android:layout_alignEnd="@+id/Calorie"
         android:layout_alignLeft="@+id/Calorie"
-        android:layout_alignStart="@+id/Calorie" />
+        android:layout_alignStart="@+id/Calorie"
+        android:onClick="moveExercise"/>/>
 
     <Button
         android:layout_width="wrap_content"
@@ -103,7 +105,8 @@
         android:layout_below="@+id/Goal"
         android:layout_toEndOf="@+id/chronometer"
         android:layout_alignLeft="@+id/Goal"
-        android:layout_alignStart="@+id/Goal" />
+        android:layout_alignStart="@+id/Goal"
+        android:onClick="moveAdvice"/>
 
     <RatingBar
         android:layout_width="wrap_content"

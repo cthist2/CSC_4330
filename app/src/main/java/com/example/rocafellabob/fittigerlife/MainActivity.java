@@ -17,5 +17,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,MoveGoalsActivity.class);
         startActivity(intent);
     }
+    public void moveCalorie(View view) {
+        Intent intent = new Intent(this,moveCalorieActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveExercise(View view) {
+        Intent intent = new Intent(this,moveExerciseActivity.class);
+        startActivity(intent);
+    }
+    public void moveAdvice(View view) {
+        Intent intent = new Intent(this,moveAdviceActivity.class);
+        startActivity(intent);
+    }
+
+
 
 }

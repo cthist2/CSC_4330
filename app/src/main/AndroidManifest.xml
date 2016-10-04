@@ -16,6 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MoveGoalsActivity"></activity>
+        <activity android:name=".moveCalorieActivity"></activity>
+        <activity android:name=".moveAdviceActivity"></activity>
     </application>
 
 </manifest>
