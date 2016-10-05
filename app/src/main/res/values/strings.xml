@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FitTigerLife</string>
+    <string name="title_activity_move_calorie">moveCalorieActivity</string>
 </resources>

@@ -1,16 +1,13 @@
 package com.example.rocafellabob.fittigerlife;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-/**
- * Created by rocafella bob on 10/3/2016.
- */
+import android.os.Bundle;
 
 public class moveAdviceActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_move_advice);
     }
 }

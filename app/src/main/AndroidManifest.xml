@@ -15,8 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MoveGoalsActivity"></activity>
-        <activity android:name=".moveCalorieActivity"></activity>
+        <activity android:name=".MoveGoalsActivity" />
+        <activity
+            android:name=".moveCalorieActivity"
+            android:label="@string/title_activity_move_calorie"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".moveExerciseActivity" />
         <activity android:name=".moveAdviceActivity"></activity>
     </application>
 
