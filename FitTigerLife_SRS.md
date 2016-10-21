@@ -56,7 +56,7 @@ at 11:55 pm.
 ## Revision History
 
 | Name | Date | Reason for Change | Version |
-| :- | :- | :- | :- |
+| :--- | :--- | :--- | :--- |
 | someone | 10/20/2016 | because reasons | 0.0 |
 
 ---
