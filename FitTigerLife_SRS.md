@@ -8,10 +8,10 @@
 ---
 
 ## Table of Contents
- Table of Contents
 
-Revision History
-
+ * Table of Contents
+ * Revision History
+ 
 1. [Introduction](#Introduction)
   * 1.1 [Purpose](#purpose)
   * 1.2 [Document Conventions](#document-conventions)
