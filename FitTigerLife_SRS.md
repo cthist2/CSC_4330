@@ -9,8 +9,8 @@ at 11:55 pm.
 ## for FitTigerLife
 ### Version 1.0 approved
 ### Prepared by *Robin Tallitsch, Triston Lamonte, Thomas Chang, Spencer Janin, Charlie Thistlethwaite, and Cort Fitzpatrick*
-### *organization*
-### *date created*
+### *CSC 4330*
+### *10/20/2016*
 
 ---
 
@@ -64,7 +64,7 @@ at 11:55 pm.
 
 | Name | Date | Reason for Change | Version |
 | :--- | :--- | :--- | :--- |
-| Robin Tallitsch, Triston Lamonte, Thomas Chang | 10/20/2016 | Initial | 0.1 |
+| Robin Tallitsch, Triston Lamonte, Thomas Chang | 10/20/2016 | Initial | 1.0 |
 
 ---
 
@@ -163,7 +163,7 @@ To prevent the application from having slow down issues, all functions on the ap
 | **Item (Priority)** | **Cardio Tracker (7)** |
 | :------- | :------------------------|
 | **Description** | Records total time of cardio session, style of activity, distance, then sends information to Calorie calculator to get calories burned. |
-| **Stimulus/Response** | User inputs new values into fields -> this data is sent to Calorie Calculator (FR.1.2) as well as Entry Tracker (FR.1.6)|
+| **Stimulus/Response** | User inputs new values into fields -> This data is sent to Calorie Calculator (FR.1.2) as well as Entry Tracker (FR.1.6)|
 | **Requirement 1** | A function to start and stop the timer feature to record how long a cardio exercise took and store that time for later reference. |
 | **Requirement 2** | Two fields allows the user to input the distance they traveled and the time the exercise took. The time field is automatically filled by the timer once the timer has been stopped, the field is still editable. |
 | **Requirement 3** | Once the fields are submitted Calories burned will be calculated from distance, time, and weight. |
@@ -173,7 +173,7 @@ To prevent the application from having slow down issues, all functions on the ap
 | **Item (Priority)** | **Weights Tracker (7)** |
 | :------- | :------------------------|
 | **Description** | User records type of weights exercise, as well as reps and sets for said exercise. |
-| **Stimulus/Response** | User inputs new values into fields -> this data is sent to Entry Tracker (FR.1.6) |
+| **Stimulus/Response** | User inputs new values into fields -> This data is sent to Entry Tracker (FR.1.6) |
 | **Requirement 1** |  A dropdown menu that lists weight training exercises. Selecting any of the exercises shall bring up instructions on how to properly execute that exercise and a timer. |
 | **Requirement 2** | Three fields allow the user to input the number of reps, weight and number of sets. These fields are to initiate at 0 and remain at zero unless changed by the user.  |
 | **Requirement 3** | Once the timer has been started it shall count down until it reaches zero. Weights tracker shall make an auditory alert letting the user know when to change to the next section of the exercise and reset the timer where it will be set up for the next set of instructions. |
@@ -192,7 +192,7 @@ To prevent the application from having slow down issues, all functions on the ap
 | :------- | :------------------------|
 | **Description** | Receives data from Calorie Calculator, Cardio Tracker, Weights Tracker, and Profile and stores it as a session with information of the date and time. |
 | **Stimulus/Response** | User submits information into Cardio Tracker (FR.1.3) and Calorie Calculator (FR.1.2) -> Locally save values from each in a session noted by date and time |
-| **Stimulus/Response** | user submits information into Weights Tracker (FR.1.4) -> Weights Tracker (FR.1.4) submits values and initializes Timer (FR.1.8) to submit a value. Locally saves values from each into a session noted by date and time |
+| **Stimulus/Response** | User submits information into Weights Tracker (FR.1.4) -> Weights Tracker (FR.1.4) submits values and initializes Timer (FR.1.8) to submit a value. Locally saves values from each into a session noted by date and time |
 | **Requirement 1** |  Entry tracking stores the changes to profile, calories consumed from calorie calculator, calories burned from cardio tracker, and exercises completed from weights tracker and organizes that data by date and time.  |
 | **Requirement 2** | Will store up to 100 sessions based on date and time. If system attempts to save another session, the oldest date and timed session will be deleted to allocate a place for the newest submission of a session. |
 
