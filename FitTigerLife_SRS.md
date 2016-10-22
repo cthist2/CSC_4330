@@ -1,10 +1,3 @@
-ASSIGNMENT 2: SRS DOCUMENT
-* Use the standard IEEE template format
-* All team members should participate in
-preparing the document
-* Assignment 2 is due Friday, October 21st, 2016
-at 11:55 pm.
-
 # Software Requirements Specification
 ## for FitTigerLife
 ### Version 1.0 approved
@@ -14,10 +7,9 @@ at 11:55 pm.
 
 ---
 
-## 1. Table of Contents
+## Table of Contents
  Table of Contents
-
- Revision History
+  Revision History
 1. [Introduction](#Introduction)
   * 1.1 [Purpose](#purpose)
   * 1.2 [Document Conventions](#document-conventions)
