@@ -10,8 +10,8 @@
 ## Table of Contents
 
  * Table of Contents
- * Revision History
- 
+ * [Revision History](#Revision)
+
 1. [Introduction](#Introduction)
   * 1.1 [Purpose](#purpose)
   * 1.2 [Document Conventions](#document-conventions)
@@ -54,7 +54,7 @@
 
 ---
 
-## Revision History
+## Revision History <a name="Revision"></a>
 
 | Name | Date | Reason for Change | Version |
 | :--- | :--- | :--- | :--- |
