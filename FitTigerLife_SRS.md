@@ -118,7 +118,7 @@ The first time the user opens the application, the user will be brought to the h
 The main Page will have access to all parts of the application, and all parts of the application will have access to a Home button to where they can easily traverse all parts. The pathways between activities will be done primarily through the use of buttons for the user to tap and be brought to their destination. As of now there are no animations for any button presses.
 For Users to insert their data, most spaces for them to do so are going to be empty fields to either input a number or a string of characters. When selecting from a certain set of answers, as in type of workout, there shall be primarily drop down boxes.
 
-<img src="./doc/pics/profile.png" width="200" height="200" /> <img src="./doc/pics/homepagessss.png" width="200" height="200" />
+<img src="./doc/pics/Profile.png" width="200" height="200" /> <img src="./doc/pics/homepagessss.png" width="200" height="200" />
 
 #### 3.2 Hardware Interfaces<a name="hardware-interfaces"></a>
 The main hardware interface the app has to deal with is the screen size of the device. The minimum screen size the app will be developed for is 2.8 inches diagonal with an aspect ratio between 1.333 (4:3) and 1.779 (16:9). The application has one main interaction with the local storage of data on the device. Other hardware connections that happens within the application will be primarily taken care of by the underlying Operating System of the mobile phone.
