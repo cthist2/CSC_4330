@@ -21,15 +21,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:text="How Many Curls"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ratingBar2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="55dp"
-        android:id="@+id/textView3" />
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -42,8 +34,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="17dp"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignRight="@+id/ratingBar2"
+        android:layout_alignEnd="@+id/ratingBar2" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -71,18 +63,6 @@
         android:layout_alignRight="@+id/editText2"
         android:layout_alignEnd="@+id/editText2" />
 
-    <TextView
-        android:text="Bench Press"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView_BenchPress"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3"
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,9 +70,8 @@
         android:ems="10"
         android:id="@+id/editText5"
         android:layout_below="@+id/ratingBar2"
-        android:layout_alignLeft="@+id/textView_BenchPress"
-        android:layout_alignStart="@+id/textView_BenchPress"
         android:layout_marginTop="18dp" />
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -129,6 +108,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewRateWorkout"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <!---
+       Spinner is used to make a list element of suggested workouts
+        Makes it easy for people to choose
+        -->
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spin"
+        android:entries="@array/WorkoutArray"
+        android:prompt="@string/exercisePrompt"
+        android:layout_below="@+id/ratingBar2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">FitTigerLife</string>
     <string name="title_activity_move_calorie">moveCalorieActivity</string>
+   <!---
+   Stores the list elements for picking your exercise
+    You can easily add items if you need to add the the default list
+    -->
+    <string name="exercisePrompt">Choose an exercise</string>
+    <string-array name="WorkoutArray">
+        <item>Bench</item>
+        <item>Squats</item>
+        <item>Curls</item>
+        <item>Leg Press</item>
+        <item>Tricep Press</item>
+        </string-array>
+
 </resources>
