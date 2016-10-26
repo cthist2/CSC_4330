@@ -70,4 +70,24 @@
         android:layout_alignEnd="@+id/waistMeasurement"
         android:id="@+id/neckMeasurement" />
 
+    <Button
+        android:text="Load Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_alignTop="@+id/button2"
+        android:layout_toRightOf="@+id/goalText"
+        android:layout_toEndOf="@+id/goalText"
+        android:id="@+id/Edi1" />
+
 </RelativeLayout>
