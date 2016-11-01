@@ -118,4 +118,17 @@
         android:layout_alignRight="@+id/textView"
         android:layout_alignEnd="@+id/textView" />
 
+    <Button
+        android:text="Edit Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Buddy"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/button3"
+        android:layout_alignLeft="@+id/Buddy"
+        android:layout_alignStart="@+id/Buddy"
+        android:onClick="setProfile"
+        />
+
 </RelativeLayout>

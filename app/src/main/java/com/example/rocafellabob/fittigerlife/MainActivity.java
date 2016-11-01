@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,moveAdviceActivity.class);
         startActivity(intent);
     }
+    public void setProfile(View view) {
+        Intent intent = new Intent(this,setProfileActivity.class);
+        startActivity(intent);
+    }
 
 
 
