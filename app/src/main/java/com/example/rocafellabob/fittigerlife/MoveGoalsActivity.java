@@ -41,12 +41,24 @@ public class MoveGoalsActivity extends AppCompatActivity {
     Button button2;
     EditText Edi1;
     @Override
+    /**
+     * Creates the Activity/view
+     *
+     * @return sorted module
+     * @param See onCreate in MainActivity.java
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_move_goals);
         button2 = (Button) findViewById(R.id.button2);
         Edi1 = (EditText) findViewById(R.id.Edi1);}
-
+    /**
+     * Writes the message to the text file when its called by the onClick in the XML file.
+     *
+     *
+     * @param View view: it recieves the view from the XML file, more exact, content_move_calorie.xml
+     * @throws errors is data writing messes up
+     */
             public void writeMessage(View view) {
                 String Message1 = Edi1.getText().toString();
                 String file_name = "data_Storage.txt";

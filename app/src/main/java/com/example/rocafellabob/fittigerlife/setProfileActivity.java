@@ -29,11 +29,11 @@ public class setProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_profile);
-        //textView = (TextView)findViewById(R.id.textview);
+
         BMI = (TextView)findViewById(R.id.BMI);
         Weight = (EditText) findViewById(R.id.editWeight);
         Height = (EditText) findViewById(R.id.editHeight);}
-       // textView.setVisability(view.GONE);
+
     public void writeMessage(View view) {
         double WeightFinal = Double.parseDouble(Weight.getText().toString());
         double HeightFinal = Double.parseDouble(Height.getText().toString());
