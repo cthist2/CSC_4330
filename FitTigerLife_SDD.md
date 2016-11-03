@@ -19,7 +19,7 @@
 2.	[System Architecture](#System-Arch)
   * 2.1	[Main Architecture](#Main)
   * 2.2	[Sub-System Architecture](#Sub)
-        - 2.2.1 [Profile](#profile)
+        - 2.2.1 [Profile](#Profile)
         - 2.2.2 [Cardio Tracker](#Cardio)
         - 2.2.3 [Weights Tracker](#Weights)
         - 2.2.4 [Entry Tracker](#Entry)
