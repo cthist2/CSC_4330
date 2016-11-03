@@ -66,42 +66,42 @@ Fit Tiger Life is a small and efficient exercise and diet application intended f
 
 ### 2.2 Sub-System Architecture<a name="Sub"></a>
 
-###### 2.2.1 Profile<a name="Profile"></a>
+#### 2.2.1 Profile<a name="Profile"></a>
 The system accepts a positive integer for the user’s age, a boolean to represent the user’s gender, and two positive doubles for the user’s height and weight. If there is missing information, the submission process will pull the previously stored values in the profile database file as input.  If the user inputs invalid data, then the system will alert the user to use only positive numbers. When valid data in submitted to the system, the system will write to the profile database file and store the age, height, weight, and gender the user submitted, this will override the previous information stored in the profile.
 * Rationale: The information stored by this system is necessary for several other systems in the application to function, but all the information is subject to change so we need to provide the user with the ability to override the previous information. We also do not want to burden our users by inputting all their information every time they want to update select items, so fields left blank by the user should retain the previously stored information.
 
-###### 2.2.2 Cardio Tracker<a name="Cardio"></a>
+#### 2.2.2 Cardio Tracker<a name="Cardio"></a>
 The cardio tracker accepts time in the form hh:mm:ss as input along with distance in the form of a double, it also pulls the user’s weight from the profile. It is expected that time will be inputted from the timer, but the user may also manually input the time. Those three inputs are used to run the calories burned formula, and the calories calculated from that formula are subtracted from the net calories.
 * Rationale: The application requires a method to subtract the calories the user has burned in addition to adding the calories consumed. To this end the cardio Tracker allows the user to easily calculate the calories they have burned with just the time they have jogged and the distance they have traveled.
 
 
-###### 2.2.3 Weights Tracker<a name="Weights"></a>
+#### 2.2.3 Weights Tracker<a name="Weights"></a>
 This system presents the user with a list of exercises to choose from, each of these exercises are linked to an entry in the exercises file in the database. When the user selects an exercise, the system will lookup the entry linked with that exercise and displays the relevant information to the user. The system will then wait for the user to input sets reps, weights, and sets. If the user inputs invalid information the system will alert the user to only use positive numbers. When the user submits valid input, the system will set the timer to the appropriate time for the selected exercise. If the amount the user has run this system reaches a point that could be health concern the system will alert the user to rest and make sure to workout different muscles and not to over exert the same muscle through too much exercise.
 * Rationale: The system is needed to instruct the user on weights training, this endeavor mostly need the information to be presented to the user, so accessing a database is an effective and scaleable solution for this requirement.
 
-###### 2.2.4 Entry Tracker<a name="Entry"></a>
+#### 2.2.4 Entry Tracker<a name="Entry"></a>
 This system accepts values from Profile, Calorie Calculator, Cardio Tracker, and Weights Tracker. Profile will send any its values any time it is updated. Calorie Calculator will send a positive integer for calories inputted, and a negative or positive integer for net calories. Cardio Tracker will send a positive value for time, a positive value for distance, and the updated net calories. Weights Tracker will send positive values for time, sets, weights, and reps.
 The maximum amount of Entry Tracker dates shown to the user will be 100. 100 will also be the total number of saved Entries. These should be formatted to show the user’s information when the specific date is requested by the user in the Log section of History.
 * Rationale: The application requires the user’s history to be stored, as such this system requires a lot of interaction from other systems, specifically when it comes to input. However, this can be used to differentiate which entry to make based on the input. It also means that this system will be easily scaled if addition systems need to be implemented.
 
 
 
-###### 2.2.5 Calorie Calculator<a name="Calorie"></a>
+#### 2.2.5 Calorie Calculator<a name="Calorie"></a>
 This system accepts a positive integer as input from the user. Should the user input invalid data the system will alert them to use only positive whole numbers. When the system receives valid data, it will add the input to the net calories value stored in the calories file. After that the system will update the net calories displayed to the user.
 * Rationale: In order for the user to track their calories, the application required a method for the user to store the calories they have consumed and that value has to be stored so that it can be called even after the application has been closed. For that reason adding the imputed value to a value stored in a file appeared to be the most efficient way to achieve that goal.
 
-###### 2.2.6 Data Graphing<a name="Graphing"></a>
+#### 2.2.6 Data Graphing<a name="Graphing"></a>
 This system will search the log file for the net calories stored each day, then uses android studio’s onboard graph generation tools to plot net calories against time. This graph is generated when the user enters the history page.
 * Rationale:  The application requires a method to visually display their history, this means this system is highly dependent of Entry Tracker. However because entry tracker writes to a file, Data graphing can be worked on before entry tracker is completed, by reading from a test file.
 
 
-###### 2.2.7 Timer<a name="Timer"></a>
+#### 2.2.7 Timer<a name="Timer"></a>
 Will be used in pair with the Cardio Tracker and Weights Tracker where the time will be shown in seconds, minutes, and hours. The Weights Tracker will utilize the timer as a countdown timer. When a countdown timer has been initialized, the inputted time will be converted into number of seconds and a loop will decrement the value by 1 until it reaches 0 seconds where this should also trigger a function to cue an auditory noise from the device. The Timer will not be allowed to receive a new initialization value until the exercise option has changed.
 The Cardio tracker will utilize the timer as a count-up timer. When a count-up timer has been initialized it will start a loop at 0 and increment the value by 1 every second until stopped by the user. The original time will be converted into seconds saved as an integer value, then it will be sent to Entry Tracker.
 * Rationale: This system is designed to be modular and can be implemented for various systems.
 
 
-###### 2.2.8 BMI Calculator<a name="BMI"></a>
+#### 2.2.8 BMI Calculator<a name="BMI"></a>
 Pulls the double values for weight and height, runs the BMI equation of [703(weight/(height*height))] and outputs the result to the screen.
 Rationale: Body Mass Index (BMI) was deemed necessary because users would deem it necessary from a fitness application. It was also made to be as unobtrusive as possible in the application since it is a simple formula. To make it more unobtrusive, the calculator does not store any data, rather just reads and outputs.
 
