@@ -90,16 +90,16 @@ The maximum amount of Entry Tracker dates shown to the user will be 100. 100 wil
 
 
 #### 2.2.5 Calorie Calculator<a name="Calorie"></a>
-This system accepts a positive integer as input from the user. Should the user input invalid data the system will alert them to use only positive whole numbers. When the system receives valid data, it will add the input to the net calories value stored in the calories file. After that the system will update the net calories displayed to the user.
-* Rationale: In order for the user to track their calories, the application required a method for the user to store the calories they have consumed and that value has to be stored so that it can be called even after the application has been closed. For that reason adding the imputed value to a value stored in a file appeared to be the most efficient way to achieve that goal.
+This system accepts a positive number as input from the user. Should the user input invalid data the system will alert them to use only positive whole numbers. When the system receives valid data, it will add the input to the net calories value stored in the calories file. After that the system will update the net calories displayed to the user.
+* Rationale: In order for the user to track their calories, the application required a method for the user to store the calories they have consumed and that value has to be stored so that it can be called even after the application has been closed. For that reason adding the input to a value stored in a file appeared to be the most efficient way to achieve that goal.
 
 #### 2.2.6 Data Graphing<a name="Graphing"></a>
 This system will search the log file for the net calories stored each day, then uses android studio’s onboard graph generation tools to plot net calories against time. This graph is generated when the user enters the history page.
-* Rationale:  The application requires a method to visually display their history, this means this system is highly dependent of Entry Tracker. However because entry tracker writes to a file, Data graphing can be worked on before entry tracker is completed, by reading from a test file.
+* Rationale:  The application requires a method to visually display their history, this means this system is highly dependent on Entry Tracker. However because entry tracker writes to a file, data graphing can be worked on before entry tracker is completed, by reading from a test file.
 
 
 #### 2.2.7 Timer<a name="Timer"></a>
-Will be used in pair with the Cardio Tracker and Weights Tracker where the time will be shown in seconds, minutes, and hours. The Weights Tracker will utilize the timer as a countdown timer. When a countdown timer has been initialized, the inputted time will be converted into number of seconds and a loop will decrement the value by 1 until it reaches 0 seconds where this should also trigger a function to cue an auditory noise from the device. The Timer will not be allowed to receive a new initialization value until the exercise option has changed.
+This System will be used in pair with the Cardio Tracker and Weights Tracker where the time will be shown in seconds, minutes, and hours. The Weights Tracker will utilize the timer as a countdown timer. When a countdown timer has been initialized, the inputted time will be converted into number of seconds and a loop will decrement the value by 1 until it reaches 0 seconds where this should also trigger a function to cue an auditory noise from the device. The Timer will not be allowed to receive a new initialization value until the exercise option has changed.
 The Cardio tracker will utilize the timer as a count-up timer. When a count-up timer has been initialized it will start a loop at 0 and increment the value by 1 every second until stopped by the user. The original time will be converted into seconds saved as an integer value, then it will be sent to Entry Tracker.
 * Rationale: This system is designed to be modular and can be implemented for various systems.
 
@@ -114,12 +114,12 @@ This system pulls the double values for weight and height from the profile, runs
 # 3. External Interface Requirements<a name="external-interface-requirements"></a>
 
 ### 3.1 Development View<a name="Development"></a>
-Fit Tiger Life will be developed using Android Studio 2.0, and coded in java. Android studio generates many files and directories in order to build an android studio project, but will not be touched by the developers. Aside from those files, the java file being developed will all be located in the same directory and the database is contained in the save directory as the java directory.
+Fit Tiger Life will be developed using Android Studio 2.0, and coded in java. Android studio generates many files and directories in order to build an android studio project, but they will not be touched by the developers. Aside from those files, the java files being developed will all be located in the same directory and the database is contained in the same directory as the java directory.
 
 <img src="./doc/pics/DevelopmentDiagram.png" width="750" height="400" />
 
 ### 3.2 Physical View<a name="Physical"></a>
-The only hardware the Fit Tiger Life shall interact with is the user’s android phone. Besides running off the hardware the application will read and write to the phone’s local memory which may or may not be a separate storage item.
+The only hardware the Fit Tiger Life shall interact with is the user’s android phone. Besides running off the hardware the application will read and write to the phone’s local memory which may or may not be a separate storage device.
 
 ### 3.3 Database View<a name="Database"></a>
 Fit Tiger Life does not rely on a server side database, all required information is stored locally to the user’s phone. The database directory contains the following files: a file to store information written by the profile system, a file to store the current calorie total for a day, a file that stores a list of exercise and the relevant information pertaining to each exercise to be read by exercise tracker, and a log of all the changes to the previously mentioned files.
