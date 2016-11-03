@@ -64,6 +64,9 @@ Fit Tiger Life is a small and efficient exercise and diet application intended f
 
 ### 2.1 Main Architecture<a name="Main"></a>
 
+
+<img src="./doc/pics/MainSystemArch.png" width="650" height="300" />
+
 ### 2.2 Sub-System Architecture<a name="Sub"></a>
 
 #### 2.2.1 Profile<a name="Profile"></a>
