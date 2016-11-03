@@ -76,8 +76,8 @@ The cardio tracker accepts time in the form hh:mm:ss as input along with a posit
 
 
 #### 2.2.3 Weights Tracker<a name="Weights"></a>
-This system presents the user with a list of exercises to choose from, each of these exercises are linked to an entry in the exercises file in the database. When the user selects an exercise, the system will lookup the entry linked with that exercise and displays the relevant information to the user. The system will then wait for the user to input reps, weights, and sets. If the user inputs invalid information the system will alert the user to only use positive numbers. When the user submits valid input, the system will set the timer to the appropriate time for the selected exercise. If the amount the user has run this system reaches a point that could be health concern the system will alert the user to rest and make sure to workout different muscles and not to over exert the same muscle through too much exercise.
-* Rationale: The system is needed to instruct the user on weights training, this endeavor mostly need the information to be presented to the user, so accessing a database is an effective and scaleable solution for this requirement.
+This system presents the user with a list of exercises to choose from, each of these exercises are linked to an entry in the exercises file in the database. When the user selects an exercise, the system will lookup the entry linked with that exercise and displays the relevant information to the user. The system will then wait for the user to input reps, weights, and sets. If the user inputs invalid information the system will alert the user to only use positive numbers. When the user submits valid input, the system will set the timer to the appropriate time for the selected exercise. If the amount the user has run this system reaches a point that could be a health concern the system will alert the user to rest and make sure to workout different muscles and not to over exert the same muscles through too much exercise.
+* Rationale: The system is needed to instruct the user on weights training, this endeavor requires the information to be presented to the user, so accessing a database is an effective and scaleable solution for this requirement.
 
 #### 2.2.4 Entry Tracker<a name="Entry"></a>
 This system accepts values from Profile, Calorie Calculator, Cardio Tracker, and Weights Tracker. Profile will send any its values any time it is updated. Calorie Calculator will send a positive integer for calories inputted, and a negative or positive integer for net calories. Cardio Tracker will send a positive value for time, a positive value for distance, and the updated net calories. Weights Tracker will send positive values for time, sets, weights, and reps.
@@ -102,8 +102,8 @@ The Cardio tracker will utilize the timer as a count-up timer. When a count-up t
 
 
 #### 2.2.8 BMI Calculator<a name="BMI"></a>
-Pulls the double values for weight and height, runs the BMI equation of [703(weight/(height*height))] and outputs the result to the screen.
-Rationale: Body Mass Index (BMI) was deemed necessary because users would deem it necessary from a fitness application. It was also made to be as unobtrusive as possible in the application since it is a simple formula. To make it more unobtrusive, the calculator does not store any data, rather just reads and outputs.
+This system pulls the double values for weight and height from the profile, runs the BMI equation of [703(weight/(height*height))] and outputs the result to the screen.
+Rationale: Body Mass Index (BMI) was deemed necessary because users would deem it necessary from a fitness application. It was also made to be as unobtrusive as possible in the application since it is a simple formula. To make it more unobtrusive, the calculator does not store any data, rather just reads, calculates, and outputs.
 
 
 ---
