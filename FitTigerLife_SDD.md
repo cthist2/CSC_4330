@@ -153,7 +153,7 @@ Robin: Co-Head Technical Writer, Tertiary Tester, Secondary User Interface Desig
 # 5. User Interfaces<a name="UI"></a>
 
 ### 5.1 User Interface Description<a name="UI-Description"></a>
-* Home page: The main directory for the user to navigate the application. It contains six buttons labeled Profile, Calorie Calculator, Cardio Tracker, Weights Training, BMI  Calculator, and History each of which links to their respective functions.
+* Home page: The main directory for the user to navigate the application. It contains six buttons labeled Profile, Calorie Calculator, Cardio Tracker, Weights Training, BMI  Calculator, and History; each of which links to their respective pages.
 * Profile: Contains data fields for the user to record their weight in pounds, height in inches, and age in years and labeled appropriately, along with two buttons, one labeled male and the other label female, and a submit button to record the input.
 * Calorie Calculator: This page contains a single data field labeled “Add Calories”, a button under that field that adds the inputted number to calories total, and a box containing the net calorie gain for the day labeled “Today’s Net Calories”.
 * Cardio Tracker: This page contains a timer with a stop/start button, a field labeled time and another field labeled distance, and a button labeled submit that subtracts calories from the calorie file after running the appropriate calculations.
