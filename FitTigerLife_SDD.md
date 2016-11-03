@@ -106,7 +106,7 @@ The Cardio tracker will utilize the timer as a count-up timer. When a count-up t
 
 #### 2.2.8 BMI Calculator<a name="BMI"></a>
 This system pulls the double values for weight and height from the profile, runs the BMI equation of [703(weight/(height*height))] and outputs the result to the screen.
-Rationale: Body Mass Index (BMI) was deemed necessary because users would deem it necessary from a fitness application. It was also made to be as unobtrusive as possible in the application since it is a simple formula. To make it more unobtrusive, the calculator does not store any data, rather just reads, calculates, and outputs.
+* Rationale: Body Mass Index (BMI) was deemed necessary because users would deem it necessary from a fitness application. It was also made to be as unobtrusive as possible in the application since it is a simple formula. To make it more unobtrusive, the calculator does not store any data, rather just reads, calculates, and outputs.
 
 
 ---
