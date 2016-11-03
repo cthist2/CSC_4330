@@ -20,11 +20,12 @@ import java.io.InputStreamReader;
  * changed:
  * Date:        Person:     Reason:
  * 11/1/16    Spencer     put data inputting and calculations in. Calculating BMI is now working.
+ * 11/3/16      Spencer     Added the age parameter aand the gender buttons
  */
 public class setProfileActivity extends AppCompatActivity {
-    EditText Weight, Height;
+    EditText Weight, Height,Age;
     TextView BMI;
-
+    String Gender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +33,17 @@ public class setProfileActivity extends AppCompatActivity {
 
         BMI = (TextView)findViewById(R.id.BMI);
         Weight = (EditText) findViewById(R.id.editWeight);
-        Height = (EditText) findViewById(R.id.editHeight);}
+        Height = (EditText) findViewById(R.id.editHeight);
+        Age    = (EditText) findViewById(R.id.editAge);
+    }
 
     public void writeMessage(View view) {
         double WeightFinal = Double.parseDouble(Weight.getText().toString());
+        double AgeFinal = Double.parseDouble(Age.getText().toString());
         double HeightFinal = Double.parseDouble(Height.getText().toString());
         String WeightFinalString = Weight.getText().toString();
         String HeightFinalString = Height.getText().toString();
+        String AgeFinalString = Age.getText().toString();
         HeightFinal = HeightFinal /12;
         String Comma = ",";
         String Period = ".";
@@ -50,6 +55,10 @@ public class setProfileActivity extends AppCompatActivity {
             fileOutputStream.write(WeightFinalString.getBytes());
             fileOutputStream.write(Comma.getBytes());
             fileOutputStream.write(HeightFinalString.getBytes());
+            fileOutputStream.write(Comma.getBytes());
+            fileOutputStream.write(AgeFinalString.getBytes());
+            fileOutputStream.write(Comma.getBytes());
+            fileOutputStream.write(Gender.getBytes());
             fileOutputStream.write(Period.getBytes());
             fileOutputStream.close();
             Toast.makeText(getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
@@ -80,6 +89,14 @@ public class setProfileActivity extends AppCompatActivity {
         }
     }
     */
+    public void Male(View view)
+    {
+        Gender = "Male";
+    }
+    public void Female(View view)
+    {
+        Gender = "Female";
+    }
 }
 
 

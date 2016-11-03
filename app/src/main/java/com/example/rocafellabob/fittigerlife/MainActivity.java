@@ -78,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,setProfileActivity.class);
         startActivity(intent);
     }
+    public void Cardio(View view) {
+        Intent intent = new Intent(this,CardioActivity.class);
+        startActivity(intent);
+    }
 
 
 

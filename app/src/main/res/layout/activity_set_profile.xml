@@ -61,24 +61,71 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Your BMI Is: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editWeight"
-        android:layout_toLeftOf="@+id/button4"
-        android:layout_marginRight="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="12dp"
-        android:id="@+id/textView8" />
-
-    <TextView
-        android:text="TextView"
+        android:text="Null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView8"
         android:layout_toRightOf="@+id/textView8"
         android:layout_toEndOf="@+id/textView8"
         android:id="@+id/BMI" />
+
+    <TextView
+        android:text="Your BMI Is: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="39dp"
+        android:layout_marginEnd="39dp"
+        android:id="@+id/textView8"
+        android:layout_marginBottom="54dp"
+        android:layout_above="@+id/button4"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6" />
+
+    <Button
+        android:text="Male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editWeight"
+        android:layout_toLeftOf="@+id/editWeight"
+        android:layout_toStartOf="@+id/editWeight"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="87dp"
+        android:id="@+id/Male"
+        android:onClick="Male"/>
+
+    <Button
+        android:text="Female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Male"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:id="@+id/Female"
+        android:onClick="Female"/>
+
+    <TextView
+        android:text="Enter Age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Female"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/textAge"
+        android:layout_toLeftOf="@+id/editWeight"
+        android:layout_toStartOf="@+id/editWeight" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:ems="10"
+        android:layout_alignTop="@+id/textAge"
+        android:layout_toRightOf="@+id/textAge"
+        android:layout_toEndOf="@+id/textAge"
+        android:id="@+id/editAge" />
 
 
 </RelativeLayout>
