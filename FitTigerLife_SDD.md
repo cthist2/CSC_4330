@@ -63,7 +63,7 @@ Fit Tiger Life is a small and efficient exercise and diet application intended f
 # 2. System Architecture<a name="System-Arch"></a>
 
 ### 2.1 Main Architecture<a name="Main"></a>
-
+Fit Tiger Life is split into three major components. The top layer consists of the Application Layer. The Application layer is the most user oriented where it responds to user input, and shows the view of any widgets like a graph or timer. This layer handles every major function of the application including Cardio Tracker, Weights Tracker, Calorie Calculator, Entry Tracker, Data Grapher, BMI Calculator, Profile, and Timer. The Second layer is comprised of all the major systems of the application. This layer is responsible for initiating calculations and ordering and saving information to the Database. All major systems except the Timer rely on the third layer comprised of the Database. This layer relies on the read/write function to the Android Operating System to relay information back and forth with the Operating System and the major systems.
 
 <img src="./doc/pics/MainSystemArch.png" width="650" height="300" />
 
