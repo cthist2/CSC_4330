@@ -13,5 +13,11 @@
         <item>Leg Press</item>
         <item>Tricep Press</item>
     </string-array>
+    <string name="cardioPrompt">Choose a cardio exercise</string>
+    <string-array name="cardioArray">
+        <item>Run</item>
+        <item>Walk</item>
+        <item>Bike</item>
+    </string-array>
 
 </resources>

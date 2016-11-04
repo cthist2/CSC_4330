@@ -10,12 +10,77 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.rocafellabob.fittigerlife.CardioActivity">
 
+    <TextView
+        android:text="Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/chronometer4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView2" />
+
     <Chronometer
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="22dp"
+        android:id="@+id/chronometer4"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:id="@+id/chronometer3"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <Button
+        android:text="Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="32dp"
+        android:id="@+id/StartTimer" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/StartTimer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/spinner"
+        android:entries="@array/cardioArray"
+        android:prompt="@string/cardioPrompt"
+        />
+
+    <TextView
+        android:text="Input Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="92dp"
+        android:id="@+id/timeInput" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:layout_alignTop="@+id/timeInput"
+        android:layout_alignLeft="@+id/chronometer4"
+        android:layout_alignStart="@+id/chronometer4"
+        android:id="@+id/timeEntry" />
+
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/submitButton" />
+
 </RelativeLayout>
