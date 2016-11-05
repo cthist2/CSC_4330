@@ -14,7 +14,7 @@
         android:text="Timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/chronometer4"
+        android:layout_alignBottom="@+id/chronometerFinal"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/textView2" />
@@ -25,7 +25,7 @@
         android:layout_marginLeft="28dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="22dp"
-        android:id="@+id/chronometer4"
+        android:id="@+id/chronometerFinal"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/textView2"
         android:layout_toEndOf="@+id/textView2" />
@@ -40,7 +40,9 @@
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="32dp"
-        android:id="@+id/StartTimer" />
+        android:id="@+id/StartTimer"
+        android:onClick="startChronometer"
+        />
 
     <Spinner
         android:layout_width="match_parent"
@@ -70,8 +72,8 @@
         android:inputType="time"
         android:ems="10"
         android:layout_alignTop="@+id/timeInput"
-        android:layout_alignLeft="@+id/chronometer4"
-        android:layout_alignStart="@+id/chronometer4"
+        android:layout_alignLeft="@+id/chronometerFinal"
+        android:layout_alignStart="@+id/chronometerFinal"
         android:id="@+id/timeEntry" />
 
     <Button
@@ -81,6 +83,30 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/submitButton" />
+        android:id="@+id/submitButton"
+        android:onClick="submitToFile"
+        />
+
+    <Button
+        android:text="Stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/StartTimer"
+        android:layout_toRightOf="@+id/StartTimer"
+        android:layout_toEndOf="@+id/StartTimer"
+        android:id="@+id/stopButton"
+        android:onClick="stopChronometer"
+        />
+
+    <Button
+        android:text="Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinner"
+        android:layout_alignRight="@+id/timeEntry"
+        android:layout_alignEnd="@+id/timeEntry"
+        android:id="@+id/resetButton"
+        android:onClick="resetChronometer"
+        />
 
 </RelativeLayout>
