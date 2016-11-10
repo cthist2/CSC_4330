@@ -71,8 +71,12 @@ public class MoveGoalsActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-
+    public void EditGoal(View view) {
+        Intent intent = new Intent(this,editGoal.class);
+        startActivity(intent);
+    }
             }
+
 
 
 

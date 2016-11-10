@@ -41,7 +41,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="52dp"
-        android:id="@+id/buttonToChangeGoal" />
+        android:id="@+id/buttonToChangeGoal"
+        android:onClick="EditGoal"
+        />
 
     <TextView
         android:text="Wrist Measurement:"

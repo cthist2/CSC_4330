@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit_goal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rocafellabob.fittigerlife.editGoal">
+
+    <TextView
+        android:text="Enter Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textViewWeight"
+        android:layout_alignRight="@+id/textViewWaist"
+        android:layout_alignEnd="@+id/textViewWaist" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_alignTop="@+id/textViewMeasurement"
+        android:layout_toRightOf="@+id/textViewWaist"
+        android:layout_toEndOf="@+id/textViewWaist"
+        android:id="@+id/editWrist" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_alignTop="@+id/textViewNeck"
+        android:layout_toRightOf="@+id/textViewWaist"
+        android:layout_toEndOf="@+id/textViewWaist"
+        android:id="@+id/EditNeck" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editWeight"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textViewMeasurement"
+        android:layout_toEndOf="@+id/textViewMeasurement" />
+
+    <TextView
+        android:text="Enter Wrist Measurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMeasurement"
+        android:layout_below="@+id/EditNeck"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:text="Enter Neck Measurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewNeck"
+        android:layout_below="@+id/editWaist"
+        android:layout_toLeftOf="@+id/EditNeck"
+        android:layout_toStartOf="@+id/EditNeck"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:text="Enter Waist Measurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewWaist"
+        android:layout_alignBaseline="@+id/editWaist"
+        android:layout_alignBottom="@+id/editWaist"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editWaist"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/editWeight"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/editWeight"
+        android:layout_alignStart="@+id/editWeight" />
+
+    <Button
+        android:text="Store Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="49dp"
+        android:id="@+id/buttonStoreData" />
+</RelativeLayout>
