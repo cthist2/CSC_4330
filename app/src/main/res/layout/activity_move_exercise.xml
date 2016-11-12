@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText5"
+        android:id="@+id/editTextWeight"
         android:layout_below="@+id/ratingBar2"
         android:layout_marginTop="18dp" />
 
@@ -78,20 +78,20 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:layout_below="@+id/editText5"
-        android:layout_alignRight="@+id/editText5"
-        android:layout_alignEnd="@+id/editText5"
-        android:id="@+id/editText6" />
+        android:layout_below="@+id/editTextWeight"
+        android:layout_alignRight="@+id/editTextWeight"
+        android:layout_alignEnd="@+id/editTextWeight"
+        android:id="@+id/editTextReps" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:layout_below="@+id/editText6"
-        android:layout_alignRight="@+id/editText6"
-        android:layout_alignEnd="@+id/editText6"
-        android:id="@+id/editText7" />
+        android:layout_below="@+id/editTextReps"
+        android:layout_alignRight="@+id/editTextReps"
+        android:layout_alignEnd="@+id/editTextReps"
+        android:id="@+id/editTextSets" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -123,6 +123,27 @@
         android:layout_below="@+id/ratingBar2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Save Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/dataButton"
+        android:onClick ="SaveData"
+        />
+
+    <Button
+        android:text="Pull past 5 records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dataButton"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonForRecords"
+        android:onClick="ShowRecords"
+        />
 
 
 </RelativeLayout>

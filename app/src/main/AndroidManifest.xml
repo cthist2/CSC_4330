@@ -34,7 +34,8 @@
 
         <activity android:name=".setProfileActivity" />
         <activity android:name=".CardioActivity" />
-        <activity android:name=".editGoal"></activity>
+        <activity android:name=".editGoal" />
+        <activity android:name=".ShowWeightLifting"></activity>
     </application>
 
 </manifest>
