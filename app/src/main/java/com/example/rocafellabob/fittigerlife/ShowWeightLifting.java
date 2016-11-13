@@ -10,10 +10,23 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * ShowWeightLifting.java
+ * interface people will record their goal data in
+ * changed:
+ * Date:        Person:     Reason:
+ * 11/11/16     Spencer     Built the recoding information and data storage
+ */
 public class ShowWeightLifting extends AppCompatActivity {
     TextView DataStore1,DataStore2,DataStore3,DataStore4,DataStore5,DataStore6,DataStore7,DataStore8,DataStore9,DataStore10,DataStore11,DataStore12,DataStore13;
     @Override
+    /**
+     * When activities called, create new activity
+     *
+     * @return Nothing
+     * @param Bundle savedInstanceState, collects info from the last activity
+     *
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         int count=0;

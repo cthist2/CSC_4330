@@ -78,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,setProfileActivity.class);
         startActivity(intent);
     }
+    /**
+     * When activities called, aka when the button is pressed, it goes to the Cardio Activity
+     *
+     * @return Nothing
+     * @param View view: basic building blocks of the interface is passed, needed for all new views/activities
+     *
+     */
     public void Cardio(View view) {
         Intent intent = new Intent(this,CardioActivity.class);
         startActivity(intent);

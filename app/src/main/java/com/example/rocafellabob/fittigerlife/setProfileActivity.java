@@ -21,12 +21,21 @@ import java.io.InputStreamReader;
  * Date:        Person:     Reason:
  * 11/1/16    Spencer     put data inputting and calculations in. Calculating BMI is now working.
  * 11/3/16      Spencer     Added the age parameter aand the gender buttons
+ * 11/6/16      Spencer     Back end recording changes to how data will display
  */
+
 public class setProfileActivity extends AppCompatActivity {
     EditText Weight, Height,Age;
     TextView BMI;
     String Gender;
     @Override
+    /**
+     * When activities called, aka when the button is pressed, starts the timer
+     *
+     * @return Nothing
+     * @param Bundle savedInstanceState
+     *  Creates the activity, and loads the base things into it
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_profile);
@@ -36,7 +45,13 @@ public class setProfileActivity extends AppCompatActivity {
         Height = (EditText) findViewById(R.id.editHeight);
         Age    = (EditText) findViewById(R.id.editAge);
     }
-
+    /**
+     * Loads information into the csv file
+     *
+     * @return Nothing
+     * @param View view
+     *  Loads info into file
+     */
     public void writeMessage(View view) {
         double WeightFinal = Double.parseDouble(Weight.getText().toString());
         double AgeFinal = Double.parseDouble(Age.getText().toString());
@@ -67,32 +82,24 @@ public class setProfileActivity extends AppCompatActivity {
         }
         BMI.setText(BMIFinalString);
     }
-    /*public void readMessage(View view)
-    {
-        try{
-            String Message;
-            FileInputStream fileInputStream = openFileInput("Profile.csv");
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            StringBuffer stringBuffer = new StringBuffer();
-            while((Message = bufferedReader.readLine())!=null)
-            {
-                stringBuffer.append(Message +"\n");
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-
-
-    } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    */
+    /**
+     * Loads information into the csv file
+     *
+     * @return Nothing
+     * @param View view
+     *  Sets gender to male if button click
+     */
     public void Male(View view)
     {
         Gender = "Male";
     }
+    /**
+     * Loads information into the csv file
+     *
+     * @return Nothing
+     * @param View view
+     *  Sets gender to female if button is click.
+     */
     public void Female(View view)
     {
         Gender = "Female";
