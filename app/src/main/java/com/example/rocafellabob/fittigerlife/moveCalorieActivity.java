@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * moveCalorieActivity.java\
  * For recording calories and adding them up
@@ -26,6 +28,7 @@ import java.text.SimpleDateFormat;
  * Date:        Person:     Reason:
  * 11/1/16    Spencer     Added UI to Xml, put data inputting to file and worked on date function.
  * 11/13/16     Spencer     Worked on the storing of the calories
+ * 11/14/16     Spencer     fixed calories counter
  */
 public class moveCalorieActivity extends AppCompatActivity {
 EditText caloriesEntered;
@@ -55,9 +58,9 @@ TextView Test;
         String Message1 = caloriesEntered.getText().toString();
         int calories = Integer.parseInt(Message1);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM MM dd, yyyy");
-        long date = System.currentTimeMillis();
-        String dates = String.valueOf(date);
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM MM dd yyyy");
+        String dates = sdf.format(new Date());
+       // String dates = String.valueOf(date);
         String Comma = ",";
         String Period = ".";
         String file_name = "Calorie_Storage.csv";
@@ -91,16 +94,17 @@ TextView Test;
 
                   String[] DataRead = C.split(cvsSplitBy);
                   date2 = DataRead[0];
-               /* if (date2!=dates)
+
+                if (date2==dates)
                 {
                     calorieTotal = calories;
                 }
                 else
-                {*/
+                {
                     calorieTotal = calorieTotal + calories;
                 }
 
-            // }
+            }
 
 
 
