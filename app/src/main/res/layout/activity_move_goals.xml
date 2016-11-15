@@ -41,7 +41,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="52dp"
-        android:id="@+id/buttonToChangeGoal" />
+        android:id="@+id/buttonToChangeGoal"
+        android:onClick="EditGoal"
+        />
 
     <TextView
         android:text="Wrist Measurement:"
@@ -92,5 +94,41 @@
         android:layout_alignBottom="@+id/button2"
         android:layout_toRightOf="@+id/button2"
         android:layout_toEndOf="@+id/button2" />
+
+    <TextView
+        android:text="NULL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wristMeasurement"
+        android:layout_toRightOf="@+id/wristMeasurement"
+        android:layout_toEndOf="@+id/wristMeasurement"
+        android:id="@+id/textWeight" />
+
+    <TextView
+        android:text="NULL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/waistMeasurement"
+        android:layout_alignRight="@+id/textWeight"
+        android:layout_alignEnd="@+id/textWeight"
+        android:id="@+id/textWrist" />
+
+    <TextView
+        android:text="NULL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/neckMeasurement"
+        android:layout_toRightOf="@+id/wristMeasurement"
+        android:layout_toEndOf="@+id/wristMeasurement"
+        android:id="@+id/textWaiste" />
+
+    <TextView
+        android:text="NULL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textWaiste"
+        android:layout_toRightOf="@+id/waistMeasurement"
+        android:layout_toEndOf="@+id/waistMeasurement"
+        android:id="@+id/textNeck" />
 
 </RelativeLayout>

@@ -23,6 +23,7 @@ import java.io.IOException;
  * Date:        Person:     Reason:
  *  11/4/16     Spencer     Put basic Ui
  *  11/5/16     Spencer     Did more Ui work and fixed chronometer to time correctly.
+ *  11/8/16     Spencer     Did back end changes to data storing
  */
 public class CardioActivity extends AppCompatActivity {
     private Spinner spinner2;
@@ -35,6 +36,14 @@ public class CardioActivity extends AppCompatActivity {
 
 
     @Override
+    /**
+     * When activities called, aka when the button is pressed, it creates the activity
+     *
+     * @return Nothing
+     * @param Bundle savedInstanceState, basically meaning passing the state from the other activity
+     *               that called it
+     *
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardio);
@@ -45,21 +54,57 @@ public class CardioActivity extends AppCompatActivity {
         inputTime = (EditText)findViewById(R.id.timeEntry);
         spinner2 = (Spinner)findViewById(R.id.spinner);
     }
+<<<<<<< HEAD
     
     public void startChronometer(View view) {
         Chrono.start();
     }
     
+=======
+    /**
+     * When activities called, aka when the button is pressed, starts the timer
+     *
+     * @return Nothing
+     * @param View view
+     *  Starts the chronometer timer
+     */
+    public void startChronometer(View view) {
+        Chrono.start();
+    }
+    /**
+     * When activities called, aka when the button is pressed, starts the timer
+     *
+     * @return Nothing
+     * @param View view
+     *  Stops the chronometer timer
+     */
+>>>>>>> refs/remotes/origin/master
     public void stopChronometer(View view)
     {
         Chrono.stop();
     }
+<<<<<<< HEAD
     
+=======
+    /**
+     * When activities called, aka when the button is pressed, starts the timer
+     *
+     * @return Nothing
+     * @param View view
+     *  Reset the chronometer timer
+     */
+>>>>>>> refs/remotes/origin/master
     public void resetChronometer(View view)
     {
         Chrono.setBase(SystemClock.elapsedRealtime());
     }
-
+    /**
+     * When activities called, aka when the button is pressed, starts the timer
+     *
+     * @return Nothing
+     * @param View view
+     *  Records the data to a csv file.
+     */
     public void submitToFile(View view)
     {
 

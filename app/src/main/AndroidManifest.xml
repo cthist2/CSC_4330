@@ -33,7 +33,9 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".setProfileActivity" />
-        <activity android:name=".CardioActivity"></activity>
+        <activity android:name=".CardioActivity" />
+        <activity android:name=".editGoal" />
+        <activity android:name=".ShowWeightLifting"></activity>
     </application>
 
 </manifest>
