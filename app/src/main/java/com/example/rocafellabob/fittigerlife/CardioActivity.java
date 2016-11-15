@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.rocafellabob.fittigerlife.data.Data;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,7 +27,7 @@ import java.io.IOException;
 public class CardioActivity extends AppCompatActivity {
     private Spinner spinner2;
     Chronometer Chrono;
-    Button StartTimer, pauseTimer,resetTimer,recordToFile;
+    Button StartTimer, pauseTimer, resetTimer, recordToFile;
     EditText inputTime;
 
 
@@ -43,15 +44,17 @@ public class CardioActivity extends AppCompatActivity {
         Chrono = (Chronometer)findViewById(R.id.chronometerFinal);
         inputTime = (EditText)findViewById(R.id.timeEntry);
         spinner2 = (Spinner)findViewById(R.id.spinner);
-
     }
+    
     public void startChronometer(View view) {
         Chrono.start();
     }
+    
     public void stopChronometer(View view)
     {
         Chrono.stop();
     }
+    
     public void resetChronometer(View view)
     {
         Chrono.setBase(SystemClock.elapsedRealtime());
@@ -63,7 +66,8 @@ public class CardioActivity extends AppCompatActivity {
 
         String activityFinal = spinner2.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();
-
+        Data.recordCardioData(this, activityFinal, inputTimeFinal, "somedate");
+        /*
         String Comma = ",";
         String Period = ".";
         String file_name = "Cardio.csv";
@@ -78,6 +82,7 @@ public class CardioActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
 
 
     }

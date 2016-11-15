@@ -21,8 +21,9 @@ import java.text.SimpleDateFormat;
  * 11/1/16    Spencer     Added UI to Xml, put data inputting to file and worked on date function.
  */
 public class moveCalorieActivity extends AppCompatActivity {
-EditText caloriesEntered;
-TextView Test;
+    EditText caloriesEntered;
+    TextView Test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ TextView Test;
     }
 
     public void recordCalories(View view) {
-       Test= (TextView)findViewById(R.id.Test);
+        Test = (TextView)findViewById(R.id.Test);
         String Message1 = caloriesEntered.getText().toString();
         String file_name = "Calorie_Storage.txt";
         try {
@@ -47,9 +48,8 @@ TextView Test;
         long date = System.currentTimeMillis();
         String dateString = sdf.format(date);
         Test.setText(dateString);
-
     }
 
-    }
+}
 
 

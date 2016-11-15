@@ -14,18 +14,22 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.example.rocafellabob.fittigerlife.data.Data;
+
 /**
  * setProfileActivity.java\
  * interface people will record their goal data in
  * changed:
  * Date:        Person:     Reason:
  * 11/1/16    Spencer     put data inputting and calculations in. Calculating BMI is now working.
- * 11/3/16      Spencer     Added the age parameter aand the gender buttons
+ * 11/3/16      Spencer     Added the age parameter and the gender buttons
  */
 public class setProfileActivity extends AppCompatActivity {
+    
     EditText Weight, Height,Age;
     TextView BMI;
     String Gender;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,13 +42,16 @@ public class setProfileActivity extends AppCompatActivity {
     }
 
     public void writeMessage(View view) {
+        /*
         double WeightFinal = Double.parseDouble(Weight.getText().toString());
         double AgeFinal = Double.parseDouble(Age.getText().toString());
         double HeightFinal = Double.parseDouble(Height.getText().toString());
+        */
         String WeightFinalString = Weight.getText().toString();
         String HeightFinalString = Height.getText().toString();
         String AgeFinalString = Age.getText().toString();
-        HeightFinal = HeightFinal /12;
+        double BMIval = Data.recordProfileData(this, WeightFinalString, AgeFinalString, HeightFinalString, Gender);
+        /*
         String Comma = ",";
         String Period = ".";
         String file_name = "Profile.csv";
@@ -65,7 +72,8 @@ public class setProfileActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        BMI.setText(BMIFinalString);
+        */
+        BMI.setText(Double.toString(BMIval));
     }
     /*public void readMessage(View view)
     {
@@ -93,10 +101,12 @@ public class setProfileActivity extends AppCompatActivity {
     {
         Gender = "Male";
     }
+    
     public void Female(View view)
     {
         Gender = "Female";
     }
+    
 }
 
 

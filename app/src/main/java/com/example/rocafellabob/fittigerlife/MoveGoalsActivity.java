@@ -59,20 +59,20 @@ public class MoveGoalsActivity extends AppCompatActivity {
      * @param View view: it recieves the view from the XML file, more exact, content_move_calorie.xml
      * @throws errors is data writing messes up
      */
-            public void writeMessage(View view) {
-                String Message1 = Edi1.getText().toString();
-                String file_name = "data_Storage.txt";
-                try {
-                    FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_PRIVATE);
-                    fileOutputStream.write(Message1.getBytes());
-                    fileOutputStream.close();
-                    Toast.makeText(getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+    public void writeMessage(View view) {
+        String Message1 = Edi1.getText().toString();
+        String file_name = "data_Storage.txt";
+        try {
+            FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_PRIVATE);
+            fileOutputStream.write(Message1.getBytes());
+            fileOutputStream.close();
+            Toast.makeText(getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-            }
+}
 
 
 
