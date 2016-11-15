@@ -54,13 +54,6 @@ public class CardioActivity extends AppCompatActivity {
         inputTime = (EditText)findViewById(R.id.timeEntry);
         spinner2 = (Spinner)findViewById(R.id.spinner);
     }
-<<<<<<< HEAD
-    
-    public void startChronometer(View view) {
-        Chrono.start();
-    }
-    
-=======
     /**
      * When activities called, aka when the button is pressed, starts the timer
      *
@@ -78,14 +71,10 @@ public class CardioActivity extends AppCompatActivity {
      * @param View view
      *  Stops the chronometer timer
      */
->>>>>>> refs/remotes/origin/master
     public void stopChronometer(View view)
     {
         Chrono.stop();
     }
-<<<<<<< HEAD
-    
-=======
     /**
      * When activities called, aka when the button is pressed, starts the timer
      *
@@ -93,7 +82,6 @@ public class CardioActivity extends AppCompatActivity {
      * @param View view
      *  Reset the chronometer timer
      */
->>>>>>> refs/remotes/origin/master
     public void resetChronometer(View view)
     {
         Chrono.setBase(SystemClock.elapsedRealtime());

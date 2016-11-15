@@ -64,18 +64,12 @@ public class moveExerciseActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-<<<<<<< HEAD
-}
-=======
-
     }
     public void ShowRecords(View view) {
         Intent intent = new Intent(this,ShowWeightLifting.class);
         startActivity(intent);
     }
     }
->>>>>>> refs/remotes/origin/master
 
 
 

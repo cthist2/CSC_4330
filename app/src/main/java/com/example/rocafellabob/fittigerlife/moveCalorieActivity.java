@@ -31,16 +31,10 @@ import java.util.Date;
  * 11/14/16     Spencer     fixed calories counter
  */
 public class moveCalorieActivity extends AppCompatActivity {
-<<<<<<< HEAD
-    EditText caloriesEntered;
-    TextView Test;
-
-=======
 EditText caloriesEntered;
 TextView caloriesReturned;
 TextView Test;
     int calorieTotal;
->>>>>>> refs/remotes/origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,14 +51,10 @@ TextView Test;
      *  View data and displays it.
      */
     public void recordCalories(View view) {
-<<<<<<< HEAD
-        Test = (TextView)findViewById(R.id.Test);
-=======
        Test= (TextView)findViewById(R.id.Test);
 
 
 
->>>>>>> refs/remotes/origin/master
         String Message1 = caloriesEntered.getText().toString();
         int calories = Integer.parseInt(Message1);
 
@@ -86,15 +76,6 @@ TextView Test;
         } catch (IOException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM MM dd, yyyy");
-        long date = System.currentTimeMillis();
-        String dateString = sdf.format(date);
-        Test.setText(dateString);
-    }
-
-}
-=======
 
         try {
             StringBuilder sb = new StringBuilder();
@@ -144,6 +125,5 @@ TextView Test;
         }
 
     }}
->>>>>>> refs/remotes/origin/master
 
 

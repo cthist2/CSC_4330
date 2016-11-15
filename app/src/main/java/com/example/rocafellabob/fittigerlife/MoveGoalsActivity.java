@@ -57,30 +57,7 @@ public class MoveGoalsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_move_goals);
         button2 = (Button) findViewById(R.id.button2);
-<<<<<<< HEAD
-        Edi1 = (EditText) findViewById(R.id.Edi1);}
-    /**
-     * Writes the message to the text file when its called by the onClick in the XML file.
-     *
-     *
-     * @param View view: it recieves the view from the XML file, more exact, content_move_calorie.xml
-     * @throws errors is data writing messes up
-     */
-    public void writeMessage(View view) {
-        String Message1 = Edi1.getText().toString();
-        String file_name = "data_Storage.txt";
-        try {
-            FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_PRIVATE);
-            fileOutputStream.write(Message1.getBytes());
-            fileOutputStream.close();
-            Toast.makeText(getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-}
-=======
         Edi1 = (EditText) findViewById(R.id.Edi1);
         Wrist = (TextView) findViewById(R.id.textWrist);
         Waiste = (TextView) findViewById(R.id.textWaiste);
@@ -130,7 +107,6 @@ public class MoveGoalsActivity extends AppCompatActivity {
         startActivity(intent);
     }
             }
->>>>>>> refs/remotes/origin/master
 
 
 
