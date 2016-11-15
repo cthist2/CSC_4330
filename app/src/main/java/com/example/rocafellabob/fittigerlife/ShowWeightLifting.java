@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
  * changed:
  * Date:        Person:     Reason:
  * 11/11/16     Spencer     Built the recoding information and data storage
+ * 11/16/16     Spencer     More bug fixes to value showing NULL
  */
 public class ShowWeightLifting extends AppCompatActivity {
     TextView DataStore1,DataStore2,DataStore3,DataStore4,DataStore5,DataStore6,DataStore7,DataStore8,DataStore9,DataStore10,DataStore11,DataStore12,DataStore13;
@@ -47,26 +48,33 @@ public class ShowWeightLifting extends AppCompatActivity {
             String line = null;
             String C;
             int i=0;
+            String[] DataRead =new String[5];
+            DataRead[0] ="NULL";
+            DataRead[1] ="NULL";
+            DataRead[2] ="NULL";
+            DataRead[3] ="NULL";
+            DataRead[4] ="NULL";
 
             String cvsSplitBy = ",";
-            String[] DataRead =new String[5];
+
             while ((C = reader.readLine()) != null) {
                  DataRead = C.split(cvsSplitBy);
-                fullString1 += "\n" + DataRead[0];
-                fullString2 += "\n" +DataRead[1];
-                fullString3 += "\n" +DataRead[2];
-                fullString4 += "\n" +DataRead[3];
-                fullString5 += "\n" +DataRead[4];
-                DataStore1.setText( fullString1);
-                DataStore2.setText( fullString2);
-                DataStore3.setText( fullString3);
-                DataStore4.setText( fullString4);
-                DataStore5.setText( fullString5);
+                fullString1 =  DataRead[0];
+            //    fullString2 += "\n" +DataRead[1];
+             //   fullString3 += "\n" +DataRead[2];
+             //   fullString4 += "\n" +DataRead[3];
+            //    fullString5 += "\n" +DataRead[4];
+               DataStore1.setText( fullString1);
+          //      DataStore2.setText( fullString2);
+           //     DataStore3.setText( fullString3);
+           //     DataStore4.setText( fullString4);
+          //      DataStore5.setText( fullString5);
                 fullString1 = DataStore1.getText().toString();
-                fullString2 = DataStore2.getText().toString();
-                fullString3 = DataStore3.getText().toString();
-                fullString4 = DataStore4.getText().toString();
-                fullString5 = DataStore5.getText().toString();
+           //     fullString2 = DataStore2.getText().toString();
+            //    fullString3 = DataStore3.getText().toString();
+          //      fullString4 = DataStore4.getText().toString();
+           //     fullString5 = DataStore5.getText().toString();
+                fullString1 += "\n";
 
            }
 
