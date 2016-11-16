@@ -2,14 +2,19 @@ package com.example.rocafellabob.fittigerlife;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import com.example.rocafellabob.fittigerlife.data.Data;
+import java.util.List;
 /**
  * ShowWeightLifting.java
  * interface people will record their goal data in
@@ -40,51 +45,59 @@ public class ShowWeightLifting extends AppCompatActivity {
         DataStore5 = (TextView) findViewById(R.id.textViewInsertData5);
 
 
-        StringBuilder sb = new StringBuilder();
-        String fileIn = "weightLiftingStorage.csv";
-        try {
-            FileInputStream fin = openFileInput(fileIn);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(fin, "UTF-8"));
-            String line = null;
-            String C;
-            int i=0;
-            String[] DataRead =new String[5];
-            DataRead[0] ="NULL";
-            DataRead[1] ="NULL";
-            DataRead[2] ="NULL";
-            DataRead[3] ="NULL";
-            DataRead[4] ="NULL";
-
-            String cvsSplitBy = ",";
-
-            while ((C = reader.readLine()) != null) {
-                 DataRead = C.split(cvsSplitBy);
-                fullString1 =  DataRead[0];
-            //    fullString2 += "\n" +DataRead[1];
-             //   fullString3 += "\n" +DataRead[2];
-             //   fullString4 += "\n" +DataRead[3];
-            //    fullString5 += "\n" +DataRead[4];
-               DataStore1.setText( fullString1);
-          //      DataStore2.setText( fullString2);
-           //     DataStore3.setText( fullString3);
-           //     DataStore4.setText( fullString4);
-          //      DataStore5.setText( fullString5);
-                fullString1 = DataStore1.getText().toString();
-           //     fullString2 = DataStore2.getText().toString();
-            //    fullString3 = DataStore3.getText().toString();
-          //      fullString4 = DataStore4.getText().toString();
-           //     fullString5 = DataStore5.getText().toString();
-                fullString1 += "\n";
-
-           }
-
-            fin.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        List<String[]> fc = Data.readData(this, "weightLiftingStorage.csv");
+        
+        // date weight set rep
+        for(String[] s: fc) {
+            //Toast.makeText(getApplicationContext(), s[0], Toast.LENGTH_LONG).show();
+            fullString1 = s[1] + " " + s[2] + " " + s[3] + "\n";
         }
-
-
+        DataStore1.setText(fullString1);
+//        }
+//        StringBuilder sb = new StringBuilder();
+//        String fileIn = "weightLiftingStorage.csv";
+//        try {
+//            FileInputStream fin = openFileInput(fileIn);
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(fin, "UTF-8"));
+//            String line = null;
+//            String C;
+//            int i=0;
+//            String[] DataRead =new String[5];
+//            DataRead[0] ="NULL";
+//            DataRead[1] ="NULL";
+//            DataRead[2] ="NULL";
+//            DataRead[3] ="NULL";
+//            DataRead[4] ="NULL";
+//
+//            String cvsSplitBy = ",";
+//
+//            while ((C = reader.readLine()) != null) {
+//                 DataRead = C.split(cvsSplitBy);
+//                fullString1 =  DataRead[0];
+//            //    fullString2 += "\n" +DataRead[1];
+//             //   fullString3 += "\n" +DataRead[2];
+//             //   fullString4 += "\n" +DataRead[3];
+//            //    fullString5 += "\n" +DataRead[4];
+//               DataStore1.setText( fullString1);
+//          //      DataStore2.setText( fullString2);
+//           //     DataStore3.setText( fullString3);
+//           //     DataStore4.setText( fullString4);
+//          //      DataStore5.setText( fullString5);
+//                fullString1 = DataStore1.getText().toString();
+//           //     fullString2 = DataStore2.getText().toString();
+//            //    fullString3 = DataStore3.getText().toString();
+//          //      fullString4 = DataStore4.getText().toString();
+//           //     fullString5 = DataStore5.getText().toString();
+//                fullString1 += "\n";
+//
+//           }
+//
+//            fin.close();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
+
 }

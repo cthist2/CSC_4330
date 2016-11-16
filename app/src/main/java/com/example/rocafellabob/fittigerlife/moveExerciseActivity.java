@@ -60,7 +60,7 @@ public class moveExerciseActivity extends AppCompatActivity {
         String WeightFinalString = Weights.getText().toString();
         String SetsFinalString = Sets.getText().toString();
         String RepsFinalString = Reps.getText().toString();
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM MM dd yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy mm dd");
         String date = sdf.format(new Date());
         String Comma = ",";
         String Period = "\n";

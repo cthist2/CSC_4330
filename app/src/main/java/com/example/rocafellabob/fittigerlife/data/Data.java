@@ -7,9 +7,15 @@ package com.example.rocafellabob.fittigerlife.data;
 
 import static android.content.Context.MODE_PRIVATE;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,10 +26,104 @@ import java.util.logging.Logger;
 public class Data {
     final static String comma = ",";
     final static String period = ".";
+    final static String newline = "\n";
     final static String profile_csv = "Profile.csv";
-    final static String calorie_csv = "Calorie_Storage.txt";
-    final static String cardio_csv = "Cardio.csv";
     
+    /**
+     * record data to a file
+     * @param act the activity being called from
+     * @param filename the name of the file to write to
+     * @param data the data to be written
+     */
+    public static void recordData(AppCompatActivity act, String filename, String[] data) {
+        FileOutputStream fileoutput = null;
+        try {
+            fileoutput = act.openFileOutput(filename, MODE_PRIVATE); // attempt to open file
+            if(data.length > 0) { // if there is some kind of data thats being written also to avoid indexoutofbounds errors
+                fileoutput.write(data[0].getBytes()); //write the first thing
+                for(int i = 1; i < data.length; i++) {  // write everything else with commas before them
+                    fileoutput.write(comma.getBytes()); 
+                    fileoutput.write(data[i].getBytes());
+                }
+                fileoutput.write(newline.getBytes()); // write a newline at the end
+                Toast.makeText(act.getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
+            }
+            Toast.makeText(act.getApplicationContext(), "No Data Provided?", Toast.LENGTH_LONG).show();
+        }
+        catch(Exception e) {
+            Log.d("ERROR", e.getMessage());
+            Toast.makeText(act.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
+        }
+    }
+    
+    /**
+     * read data from a file 
+     * @param act the activity being called from
+     * @param filename the filename to read
+     * @return a list of string arrays that represent the entries
+     */
+    public static List<String[]> readData(AppCompatActivity act, String filename) {
+        FileInputStream fileinput = null;
+        List<String[]> entries = new ArrayList<String[]>();
+        String entry;
+        try {
+            fileinput = act.openFileInput(filename);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(fileinput, "UTF-8"));
+            while ((entry = reader.readLine()) != null) {
+                entries.add(entry.split(comma));
+            }
+            Toast.makeText(act.getApplicationContext(), "Got the data", Toast.LENGTH_LONG).show();
+        }
+        catch(Exception e) {
+            Log.d("ERROR", e.getMessage());
+            Toast.makeText(act.getApplicationContext(), "Failed Data Read", Toast.LENGTH_LONG).show();
+        }
+        return entries;
+    }
+         
+    /**
+     * specifically for updating the profile
+     * @param a
+     * @param weight
+     * @param age
+     * @param height
+     * @param gender
+     * @return 
+     */
+    public static double recordProfileData(AppCompatActivity a, String weight, String age, String height, String gender) {
+        FileOutputStream fileOutputStream = null;
+        // (weight * 4.88) / (height in feet squared)
+        double BMIfinal = (Double.parseDouble(weight) * 4.88) / ((Double.parseDouble(height) / 12) * (Double.parseDouble(height) / 12));
+        try {
+            fileOutputStream = a.openFileOutput(profile_csv, MODE_PRIVATE);
+            // weight,height,age,gender.
+            fileOutputStream.write(weight.getBytes());
+            fileOutputStream.write(comma.getBytes());
+            fileOutputStream.write(height.getBytes());
+            fileOutputStream.write(comma.getBytes());
+            fileOutputStream.write(age.getBytes());
+            fileOutputStream.write(gender.getBytes());
+            fileOutputStream.write(period.getBytes());
+            // success
+            Toast.makeText(a.getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
+        }
+        catch(Exception e) {
+            // failure
+            e.printStackTrace();
+            Toast.makeText(a.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
+        }
+        finally {
+            // make sure to close f o s
+            try {
+                fileOutputStream.close();
+            } 
+            catch (Exception e) {
+            }
+        }
+        return BMIfinal;
+    }
+        
+    // not neccessary functions?
     public static void recordCalorieData(String calories, String data) {
         
     }
@@ -56,39 +156,6 @@ public class Data {
             } catch (Exception e) {
             }
         }
-    }
-    
-    public static double recordProfileData(AppCompatActivity a, String weight, String age, String height, String gender) {
-        FileOutputStream fileOutputStream = null;
-        // (weight * 4.88) / (height in feet squared)
-        double BMIfinal = (Double.parseDouble(weight) * 4.88) / ((Double.parseDouble(height) / 12) * (Double.parseDouble(height) / 12));
-        try {
-            fileOutputStream = a.openFileOutput(profile_csv, MODE_PRIVATE);
-            // weight,height,age,gender.
-            fileOutputStream.write(weight.getBytes());
-            fileOutputStream.write(comma.getBytes());
-            fileOutputStream.write(height.getBytes());
-            fileOutputStream.write(comma.getBytes());
-            fileOutputStream.write(age.getBytes());
-            fileOutputStream.write(gender.getBytes());
-            fileOutputStream.write(period.getBytes());
-            // success
-            Toast.makeText(a.getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
-        }
-        catch(Exception e) {
-            // failure
-            e.printStackTrace();
-            Toast.makeText(a.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
-        }
-        finally {
-            // make sure to close f o s
-            try {
-                fileOutputStream.close();
-            } 
-            catch (Exception e) {
-            }
-        }
-        return BMIfinal;
     }
     
 }

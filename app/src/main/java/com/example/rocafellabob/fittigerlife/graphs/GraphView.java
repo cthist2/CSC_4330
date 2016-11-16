@@ -12,6 +12,11 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.util.Log;
 import android.view.View;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -48,12 +53,38 @@ public class GraphView extends View {
         paint = new Paint();
         paint.set(pnt);
     }
+    
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         this.w = w;
         this.h = h;
         Log.d("TEST", w + " " + h);
         super.onSizeChanged(w, h, oldw, oldh);
+    }
+    
+    protected static float floatDateToDays(float date) {
+        // assume that the x points (actually y points) are date format yyyymmdd
+        // convert them to days from 1970
+        /*
+                try {
+            Date startDate2 = df.parse(startDate);
+            System.out.println(startDate2.getTime() / 86400000); // days from 1970 or whatever
+            Date startDate4 = df.parse(startDate3);
+            System.out.println(startDate4.getTime() / 86400000); // days from 1970 or whatever
+            System.out.println(startDate4.getTime() / 86400000 - startDate2.getTime() / 86400000); // 1 day apart
+            // milliseconds in a day = 86400000
+        */
+        String sDate = Float.toString(date);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyymmdd");
+        float dayDate = 0;
+        try {
+            Date dDate = sdf.parse(sDate); // get date object from the string
+            float msDate = dDate.getTime(); // turn into milliseconds from 1970
+            dayDate = msDate / 86400000; // turn into number of days bc 86400000 ms in a day
+        } catch (Exception e) {
+            Log.d("ERR", e.getMessage());
+        }
+        return dayDate;
     }
     
     @Override
@@ -83,10 +114,13 @@ public class GraphView extends View {
         */
         float max_x = 0; // assume max is 0, better to use min value for float aka negative max but oh well
         float max_y = 0;
+        // these are the numbers associated with whatever you're graphing
         for(int i = 0; i < datapoints.length; i = i+2) {
             max_y = Math.max(max_y, datapoints[i]); // find max for scaling
         }
+        // these are the dates (over time)
         for(int i = 1; i < datapoints.length; i = i+2) {
+            datapoints[i] = floatDateToDays(datapoints[i]);
             max_x = Math.max(max_x, datapoints[i]); // find max for scaling
         }
         Log.d("max", max_x + " " + max_y);
