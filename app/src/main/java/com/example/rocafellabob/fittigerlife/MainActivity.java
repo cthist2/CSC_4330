@@ -1,4 +1,5 @@
 package com.example.rocafellabob.fittigerlife;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,7 +7,6 @@ import android.view.View;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import android.widget.EditText;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,73 +23,89 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     /**
-     * When activities called, aka when the button is pressed, it goes to the moveGoals Activity
+     * When activities called, aka when the button is pressed, it goes to the
+     * moveGoals Activity
      *
      * @return Nothing
-     * @param View view: basic building blocks of the interface is passed, needed for all new views/activities
+     * @param View view: basic building blocks of the interface is passed,
+     * needed for all new views/activities
      *
      */
     public void moveGoals(View view) {
-        Intent intent = new Intent(this,MoveGoalsActivity.class);
+        Intent intent = new Intent(this, MoveGoalsActivity.class);
         startActivity(intent);
     }
+
     /**
-     * When activities called, aka when the button is pressed, it goes to the moveCalorie Activity
+     * When activities called, aka when the button is pressed, it goes to the
+     * moveCalorie Activity
      *
      * @return Nothing
-     * @param View view: basic building blocks of the interface is passed, needed for all new views/activities
+     * @param View view: basic building blocks of the interface is passed,
+     * needed for all new views/activities
      *
      */
     public void moveCalorie(View view) {
-        Intent intent = new Intent(this,moveCalorieActivity.class);
+        Intent intent = new Intent(this, moveCalorieActivity.class);
         startActivity(intent);
     }
+
     /**
-     * When activities called, aka when the button is pressed, it goes to the moveExcercise Activity
+     * When activities called, aka when the button is pressed, it goes to the
+     * moveExcercise Activity
      *
      * @return Nothing
-     * @param View view: basic building blocks of the interface is passed, needed for all new views/activities
+     * @param View view: basic building blocks of the interface is passed,
+     * needed for all new views/activities
      *
      */
     public void moveExercise(View view) {
-        Intent intent = new Intent(this,moveExerciseActivity.class);
+        Intent intent = new Intent(this, moveExerciseActivity.class);
         startActivity(intent);
     }
+
     /**
-     * When activities called, aka when the button is pressed, it goes to the moveAdvice Activity
+     * When activities called, aka when the button is pressed, it goes to the
+     * moveAdvice Activity
      *
      * @return Nothing
-     * @param View view: basic building blocks of the interface is passed, needed for all new views/activities
+     * @param View view: basic building blocks of the interface is passed,
+     * needed for all new views/activities
      *
      */
     public void moveAdvice(View view) {
-        Intent intent = new Intent(this,moveAdviceActivity.class);
+        Intent intent = new Intent(this, moveAdviceActivity.class);
         startActivity(intent);
     }
+
     /**
-     * When activities called, aka when the button is pressed, it goes to the setProfile Activity
+     * When activities called, aka when the button is pressed, it goes to the
+     * setProfile Activity
      *
      * @return Nothing
-     * @param View view: basic building blocks of the interface is passed, needed for all new views/activities
+     * @param View view: basic building blocks of the interface is passed,
+     * needed for all new views/activities
      *
      */
     public void setProfile(View view) {
-        Intent intent = new Intent(this,setProfileActivity.class);
+        Intent intent = new Intent(this, setProfileActivity.class);
         startActivity(intent);
     }
+
     /**
-     * When activities called, aka when the button is pressed, it goes to the Cardio Activity
+     * When activities called, aka when the button is pressed, it goes to the
+     * Cardio Activity
      *
      * @return Nothing
-     * @param View view: basic building blocks of the interface is passed, needed for all new views/activities
+     * @param View view: basic building blocks of the interface is passed,
+     * needed for all new views/activities
      *
      */
     public void Cardio(View view) {
-        Intent intent = new Intent(this,CardioActivity.class);
+        Intent intent = new Intent(this, CardioActivity.class);
         startActivity(intent);
     }
-
-
 
 }

@@ -15,16 +15,17 @@ import java.io.InputStreamReader;
 
 import com.example.rocafellabob.fittigerlife.data.Data;
 import java.util.List;
+
 /**
- * ShowWeightLifting.java
- * interface people will record their goal data in
- * changed:
- * Date:        Person:     Reason:
- * 11/11/16     Spencer     Built the recoding information and data storage
- * 11/16/16     Spencer     More bug fixes to value showing NULL
+ * ShowWeightLifting.java interface people will record their goal data in
+ * changed: Date: Person: Reason: 11/11/16 Spencer Built the recoding
+ * information and data storage 11/16/16 Spencer More bug fixes to value showing
+ * NULL
  */
 public class ShowWeightLifting extends AppCompatActivity {
-    TextView DataStore1,DataStore2,DataStore3,DataStore4,DataStore5,DataStore6,DataStore7,DataStore8,DataStore9,DataStore10,DataStore11,DataStore12,DataStore13;
+
+    TextView DataStore1, DataStore2, DataStore3, DataStore4, DataStore5, DataStore6, DataStore7, DataStore8, DataStore9, DataStore10, DataStore11, DataStore12, DataStore13;
+
     @Override
     /**
      * When activities called, create new activity
@@ -35,8 +36,8 @@ public class ShowWeightLifting extends AppCompatActivity {
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int count=0;
-        String fullString1 = "NULL",fullString2= "NULL",fullString3= "NULL",fullString4= "NULL",fullString5= "NULL";
+        int count = 0;
+        String fullString;
         setContentView(R.layout.activity_show_weight_lifting);
         DataStore1 = (TextView) findViewById(R.id.textViewInsertData1);
         DataStore2 = (TextView) findViewById(R.id.textViewInsertData2);
@@ -44,15 +45,17 @@ public class ShowWeightLifting extends AppCompatActivity {
         DataStore4 = (TextView) findViewById(R.id.textViewInsertData4);
         DataStore5 = (TextView) findViewById(R.id.textViewInsertData5);
 
-
         List<String[]> fc = Data.readData(this, "weightLiftingStorage.csv");
-        
+        TextView[] tviews = new TextView[]{DataStore1, DataStore2, DataStore3, DataStore4, DataStore5};
+        int i = 0;
         // date weight set rep
-        for(String[] s: fc) {
-            //Toast.makeText(getApplicationContext(), s[0], Toast.LENGTH_LONG).show();
-            fullString1 = s[1] + " " + s[2] + " " + s[3] + "\n";
+        for (String[] s : fc) {
+            if (i > 5) {
+                break;
+            }
+            tviews[i].setText(s[0] + " " + s[1] + " " + s[2] + " " + s[3] + "\n");
+            i++;
         }
-        DataStore1.setText(fullString1);
 //        }
 //        StringBuilder sb = new StringBuilder();
 //        String fileIn = "weightLiftingStorage.csv";

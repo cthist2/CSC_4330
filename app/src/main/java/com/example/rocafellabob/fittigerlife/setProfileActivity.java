@@ -17,28 +17,26 @@ import java.io.InputStreamReader;
 import com.example.rocafellabob.fittigerlife.data.Data;
 
 /**
- * setProfileActivity.java\
- * interface people will record their goal data in
- * changed:
- * Date:        Person:     Reason:
- * 11/1/16    Spencer     put data inputting and calculations in. Calculating BMI is now working.
- * 11/3/16      Spencer     Added the age parameter and the gender buttons
+ * setProfileActivity.java\ interface people will record their goal data in
+ * changed: Date: Person: Reason: 11/1/16 Spencer put data inputting and
+ * calculations in. Calculating BMI is now working. 11/3/16 Spencer Added the
+ * age parameter and the gender buttons
  */
 public class setProfileActivity extends AppCompatActivity {
-    
-    EditText Weight, Height,Age;
+
+    EditText Weight, Height, Age;
     TextView BMI;
     String Gender;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_profile);
 
-        BMI = (TextView)findViewById(R.id.BMI);
+        BMI = (TextView) findViewById(R.id.BMI);
         Weight = (EditText) findViewById(R.id.editWeight);
         Height = (EditText) findViewById(R.id.editHeight);
-        Age    = (EditText) findViewById(R.id.editAge);
+        Age = (EditText) findViewById(R.id.editAge);
     }
 
     public void writeMessage(View view) {
@@ -46,7 +44,7 @@ public class setProfileActivity extends AppCompatActivity {
         double WeightFinal = Double.parseDouble(Weight.getText().toString());
         double AgeFinal = Double.parseDouble(Age.getText().toString());
         double HeightFinal = Double.parseDouble(Height.getText().toString());
-        */
+         */
         String WeightFinalString = Weight.getText().toString();
         String HeightFinalString = Height.getText().toString();
         String AgeFinalString = Age.getText().toString();
@@ -72,9 +70,10 @@ public class setProfileActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        */
+         */
         BMI.setText(Double.toString(BMIval));
     }
+
     /*public void readMessage(View view)
     {
         try{
@@ -96,17 +95,13 @@ public class setProfileActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-    */
-    public void Male(View view)
-    {
+     */
+    public void Male(View view) {
         Gender = "Male";
     }
-    
-    public void Female(View view)
-    {
+
+    public void Female(View view) {
         Gender = "Female";
     }
-    
+
 }
-
-
