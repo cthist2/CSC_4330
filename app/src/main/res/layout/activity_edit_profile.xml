@@ -18,7 +18,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/button4"
-        android:onClick="writeMessage"/>
+        android:onClick="update"/>
 
     <TextView
         android:text="Enter You Body Weight:"

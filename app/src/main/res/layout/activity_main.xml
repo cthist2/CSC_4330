@@ -10,80 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.rocafellabob.fittigerlife.MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calorie Counter"
-        android:id="@+id/Calorie"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="moveCalorie"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Record Exercise"
-        android:id="@+id/Excersise"
-        android:layout_below="@+id/Calorie"
-        android:layout_alignRight="@+id/Calorie"
-        android:layout_alignEnd="@+id/Calorie"
-        android:layout_alignLeft="@+id/Calorie"
-        android:layout_alignStart="@+id/Calorie"
-        android:onClick="moveExercise"/>/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Goal"
-        android:id="@+id/Goal"
-        android:layout_below="@+id/Excersise"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/Excersise"
-        android:layout_alignStart="@+id/Excersise"
-        android:onClick="moveGoals"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcome back! Your fitness journey starts here"
-        android:id="@+id/Welcome"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/Excersise"
-        android:layout_alignParentTop="true"
-        android:layout_alignBottom="@+id/Excersise"
-        android:layout_toLeftOf="@+id/Excersise" />
-
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get advice"
-        android:id="@+id/Advice"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/Goal"
-        android:layout_alignLeft="@+id/Goal"
-        android:layout_alignStart="@+id/Goal"
-        android:onClick="moveAdvice"/>
-
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find Workout Buddy"
-        android:id="@+id/Buddy"
-        android:layout_below="@+id/Advice"
-        android:layout_alignRight="@+id/Advice"
-        android:layout_alignEnd="@+id/Advice"
-        android:layout_toRightOf="@+id/Welcome"
-        android:layout_toEndOf="@+id/Welcome" />
-
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
@@ -92,32 +18,52 @@
         ads:adSize="BANNER"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_weight="1" />
 
-    <Button
-        android:text="Edit Profile"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Buddy"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/button3"
-        android:layout_alignLeft="@+id/Buddy"
-        android:layout_alignStart="@+id/Buddy"
-        android:onClick="setProfile"
-        />
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:text="Cardio Recorder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/button6"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_alignStart="@+id/button3"
-        android:onClick="Cardio"
-        />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal">
+
+            <Button
+                android:text="Profile"
+                android:layout_width="wrap_content"
+                android:id="@+id/button17"
+                android:layout_weight="0.12"
+                android:layout_height="wrap_content" 
+                android:onClick="openProfile" />
+
+            <Button
+                android:text="Record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button16"
+                android:layout_weight="0.04" 
+                android:onClick="openRecord" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button15"
+            android:layout_weight="1"
+            android:text="Goals" 
+            android:onClick="openGoals"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

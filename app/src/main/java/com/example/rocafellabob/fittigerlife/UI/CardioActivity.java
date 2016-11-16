@@ -1,4 +1,4 @@
-package com.example.rocafellabob.fittigerlife;
+package com.example.rocafellabob.fittigerlife.UI;
 
 import android.os.SystemClock;
 import android.support.annotation.IdRes;
@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.rocafellabob.fittigerlife.UI.interfaces.RecordActivity;
 import com.example.rocafellabob.fittigerlife.data.Data;
 
 import java.io.FileOutputStream;
@@ -24,9 +25,10 @@ import java.util.Date;
  * Did more Ui work and fixed chronometer to time correctly. 11/8/16 Spencer Did
  * back end changes to data storing
  */
-public class CardioActivity extends AppCompatActivity {
+public class CardioActivity extends AppCompatActivity implements RecordActivity{
 
-    private Spinner spinner2;
+    final static String file_name =  "Cardio.csv";
+    private Spinner spinner;
     Chronometer Chrono;
     Button StartTimer, pauseTimer, resetTimer, recordToFile;
     EditText inputTime;
@@ -49,7 +51,7 @@ public class CardioActivity extends AppCompatActivity {
         resetTimer = (Button) findViewById(R.id.resetButton);
         Chrono = (Chronometer) findViewById(R.id.chronometerFinal);
         inputTime = (EditText) findViewById(R.id.timeEntry);
-        spinner2 = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.spinner);
     }
 
     /**
@@ -88,29 +90,11 @@ public class CardioActivity extends AppCompatActivity {
      * @return Nothing
      * @param View view Records the data to a csv file.
      */
-    public void submitToFile(View view) {
-
-        String activityFinal = spinner2.getSelectedItem().toString();
+    public void record(View view) {
+        String activityFinal = spinner.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         String date = sdf.format(new Date());
-        Data.recordData(this, "Cardio.csv", new String[]{date, activityFinal, inputTimeFinal});
-        /*
-        String Comma = ",";
-        String Period = ".";
-        String file_name = "Cardio.csv";
-        try {
-            FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_PRIVATE);
-            fileOutputStream.write(activityFinal.getBytes());
-            fileOutputStream.write(Comma.getBytes());
-            fileOutputStream.write(inputTimeFinal.getBytes());
-            fileOutputStream.write(Period.getBytes());
-            fileOutputStream.close();
-            Toast.makeText(getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-         */
-
+        Data.recordData(this, file_name, new String[]{date, activityFinal, inputTimeFinal});
     }
 }

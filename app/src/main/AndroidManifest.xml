@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rocafellabob.fittigerlife">
+    package="com.example.rocafellabob.fittigerlife.UI">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -17,13 +17,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MoveGoalsActivity" />
+        <activity android:name=".GoalsActivity" />
         <activity
-            android:name=".moveCalorieActivity"
+            android:name=".CalorieActivity"
             android:label="@string/title_activity_move_calorie"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".moveExerciseActivity" />
-        <activity android:name=".moveAdviceActivity" />
+        <activity android:name=".ExerciseActivity" />
+        <activity android:name=".WeightsActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".CardioActivity" />
+        <activity android:name=".EditGoalsActivity" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".ShowWeightLifting" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -31,11 +36,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <activity android:name=".setProfileActivity" />
-        <activity android:name=".CardioActivity" />
-        <activity android:name=".editGoal" />
-        <activity android:name=".ShowWeightLifting"></activity>
     </application>
 
 </manifest>

@@ -7,18 +7,17 @@ package com.example.rocafellabob.fittigerlife.data;
 
 import static android.content.Context.MODE_APPEND;
 import static android.content.Context.MODE_PRIVATE;
+
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -67,11 +66,12 @@ public class Data {
      */
     public static List<String[]> readData(AppCompatActivity act, String filename) {
         FileInputStream fileinput = null;
-        List<String[]> entries = new ArrayList<String[]>();
+        List<String[]> entries = null;
         String entry;
         try {
             fileinput = act.openFileInput(filename);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fileinput, "UTF-8"));
+            entries = new ArrayList<String[]>();
             while ((entry = reader.readLine()) != null) {
                 entries.add(entry.split(comma));
             }

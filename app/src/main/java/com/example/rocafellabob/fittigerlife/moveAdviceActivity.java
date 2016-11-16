@@ -8,6 +8,6 @@ public class moveAdviceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_move_advice);
+//        setContentView(R.layout.activity_move_advice);
     }
 }

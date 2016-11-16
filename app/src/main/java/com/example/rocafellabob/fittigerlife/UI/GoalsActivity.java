@@ -1,4 +1,4 @@
-package com.example.rocafellabob.fittigerlife;
+package com.example.rocafellabob.fittigerlife.UI;
 
 import android.content.Context;
 import android.net.Uri;
@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.rocafellabob.fittigerlife.UI.interfaces.DisplayActivity;
+import com.example.rocafellabob.fittigerlife.UI.interfaces.EditActivity;
 import com.example.rocafellabob.fittigerlife.data.Data;
 
 import com.google.android.gms.appindexing.Action;
@@ -42,12 +44,13 @@ import java.util.List;
  * storing 10/29/16 Spencer Worked on adding permission to access to internal
  * storage\ 10/30/16 Spencer Fixed the saving internal storage, I believe?
  */
-public class MoveGoalsActivity extends AppCompatActivity {
+public class GoalsActivity extends AppCompatActivity implements DisplayActivity{
 
+    final static String file_name =  "Measurement.csv";
     Button button2;
     EditText Edi1;
     TextView Wrist, Waist, Weight, Neck;
-
+    
     @Override
     /**
      * Creates the Activity/view
@@ -57,7 +60,7 @@ public class MoveGoalsActivity extends AppCompatActivity {
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_move_goals);
+        setContentView(R.layout.activity_goals);
         button2 = (Button) findViewById(R.id.button2);
 
         Edi1 = (EditText) findViewById(R.id.Edi1);
@@ -66,46 +69,28 @@ public class MoveGoalsActivity extends AppCompatActivity {
         Weight = (TextView) findViewById(R.id.textWeight);
         Neck = (TextView) findViewById(R.id.textNeck);
         updateMeasurementsScreen();
-        
-//        StringBuilder sb = new StringBuilder();
-//        String fileIn = "Measurement.csv";
-//        try {
-//            FileInputStream fin = openFileInput(fileIn);
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(fin, "UTF-8"));
-//            String line = null;
-//            String C;
-//            String cvsSplitBy = ",";
-//            while ((C = reader.readLine()) != null) {
-//                String[] DataRead = C.split(cvsSplitBy);
-//                Wrist.setText(DataRead[0]);
-//                Waiste.setText(DataRead[1]);
-//                Weight.setText(DataRead[2]);
-//                Neck.setText(DataRead[3]);
-//            }
-//            fin.close();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 
     public void updateMeasurementsScreen() {
-        List<String[]> data = Data.readData(this, "Measurement.csv");
-        String[] measurements = data.get(0); // should only have 1 line
-        if (measurements.length == 4) { // fml workaround
-            Wrist.setText(measurements[0]);
-            Waist.setText(measurements[1]);
-            Weight.setText(measurements[2]);
-            Neck.setText(measurements[3]);
+        List<String[]> data = Data.readData(this, file_name);
+        if (data != null) {
+            String[] measurements = data.get(0); // should only have 1 line
+            if (measurements.length == 4) { // fml workaround
+                Wrist.setText(measurements[0]);
+                Waist.setText(measurements[1]);
+                Weight.setText(measurements[2]);
+                Neck.setText(measurements[3]);
+            }
         }
     }
-    public void writeMessage(View view) {
+
+    public void load(View view) {
         updateMeasurementsScreen();
     }
 
+    // creates the page to edit goals on
     public void EditGoal(View view) {
-        Intent intent = new Intent(this, editGoal.class);
+        Intent intent = new Intent(this, EditGoalsActivity.class);
         startActivity(intent);
     }
 }

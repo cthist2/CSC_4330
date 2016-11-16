@@ -8,13 +8,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.rocafellabob.fittigerlife.MoveGoalsActivity">
-    /**
-    * activity_move_goals.xml\
-    * Shows info about the person profile. Might transform into the profile method instead
-    * changed:
-    * Date:        Person:     Reason:
-    *  10/25/16    Spencer     Put some baseline UI parts
-    */
     <TextView
         android:text="Current Weight:"
         android:layout_width="wrap_content"

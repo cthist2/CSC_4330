@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.rocafellabob.fittigerlife.activities;
+package com.example.rocafellabob.fittigerlife.UI.interfaces;
+
+import android.view.View;
 
 /**
  *
  * @author thorn
  */
-public class ProfileActivity {
-    
+public interface EditActivity {
+    /**
+     * updates the file
+     * @param view 
+     */
+    public void update(View view);
 }

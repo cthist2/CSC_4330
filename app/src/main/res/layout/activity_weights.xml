@@ -35,7 +35,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/dataButton"
-        android:onClick ="SaveData"
+        android:onClick ="record"
         />
 
     <Button
@@ -113,7 +113,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:id="@+id/textView13"
-        android:layout_below="@+id/editText13"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
