@@ -60,12 +60,14 @@ TextView Test;
 
         SimpleDateFormat sdf = new SimpleDateFormat("MMM MM dd yyyy");
         String dates = sdf.format(new Date());
+
        // String dates = String.valueOf(date);
         String Comma = ",";
         String Period = ".";
         String file_name = "Calorie_Storage.csv";
         //record data
         try {
+            //write line method
             FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_PRIVATE);
             fileOutputStream.write(dates.getBytes());
             fileOutputStream.write(Comma.getBytes());
@@ -94,14 +96,15 @@ TextView Test;
 
                   String[] DataRead = C.split(cvsSplitBy);
                   date2 = DataRead[0];
-
-                if (date2==dates)
+                //checks if its the same day
+                if (date2.equals(dates))
                 {
-                    calorieTotal = calories;
+                    calorieTotal = calorieTotal + calories;
                 }
                 else
                 {
-                    calorieTotal = calorieTotal + calories;
+
+                    calorieTotal = calories;
                 }
 
             }

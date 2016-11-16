@@ -3,6 +3,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
@@ -25,6 +26,7 @@ import android.os.Bundle;
  * Date:        Person:     Reason:
  *  10/25/16    Spencer     Update the spinner class to show options
  *  11/11/16    Spencer     Update it to write to a file
+ *  11/15/16    Spencer     Interface bug fixing
  */
 public class moveExerciseActivity extends AppCompatActivity {
     private Spinner spinner1;
@@ -34,6 +36,23 @@ public class moveExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_move_exercise);
     }
+    /**
+     * Creates the recordCalories Method
+     *
+     * @return sorted module
+     * @param View view
+     *  View data and displays it.
+     *             this just clears the text fields when someone clicks on it
+     */
+   /* public void click(View view)
+    {
+        Weights= (EditText)findViewById(R.id.editTextWeight);
+        Sets= (EditText)findViewById(R.id.editTextSets);
+        Reps= (EditText)findViewById(R.id.editTextReps);
+        Weights.setText("");
+        Sets.setText("");
+        Reps.setText("");
+    }*/
     public void SaveData(View view) {
         Weights= (EditText)findViewById(R.id.editTextWeight);
         Sets= (EditText)findViewById(R.id.editTextSets);
@@ -41,15 +60,14 @@ public class moveExerciseActivity extends AppCompatActivity {
         String WeightFinalString = Weights.getText().toString();
         String SetsFinalString = Sets.getText().toString();
         String RepsFinalString = Reps.getText().toString();
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM MM dd, yyyy");
-        long date = System.currentTimeMillis();
-        String dateString = sdf.format(date);
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM MM dd yyyy");
+        String date = sdf.format(new Date());
         String Comma = ",";
-        String Period = ".";
+        String Period = "\n";
         String file_name = "weightLiftingStorage.csv";
         try {
             FileOutputStream fileOutputStream = openFileOutput(file_name, MODE_PRIVATE);
-            fileOutputStream.write(dateString.getBytes());
+            fileOutputStream.write(date.getBytes());
             fileOutputStream.write(Comma.getBytes());
             fileOutputStream.write(WeightFinalString.getBytes());
             fileOutputStream.write(Comma.getBytes());
