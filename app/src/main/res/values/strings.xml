@@ -19,5 +19,14 @@
         <item>Walk</item>
         <item>Bike</item>
     </string-array>
+    <string-array name="possibleGraphs">
+        <item>Daily Calories</item>
+        <item>Walking Time</item>
+        <item>Running Time</item>
+        <item>Biking Time</item>
+        <item>Daily Sets</item>
+        <item>Daily Reps</item>
+        <item>Weights</item>
+    </string-array>
 
 </resources>

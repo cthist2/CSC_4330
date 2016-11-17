@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NameDisplay"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:text="Stats:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView21"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Weight:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gWeightDisplay"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Height:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gWaistDisplay"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Age:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gWristDisplay"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Gender:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gNeckDisplay"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Total Reps:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView14"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Total Sets:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView15"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Total Weight:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView10"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Total Time Walking:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Total Time Biking:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:layout_weight="0.11" />
+
+            <TextView
+                android:text="Total Time Running:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:layout_weight="0.11" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView20"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/WeightDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/HeightDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/AgeDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/BMIDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/RepsDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/SetsDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/WeightDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/WalkingDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/BikingDisplay"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/RunningDisplay"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:text="Edit Stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button13"
+            android:onClick="editProfile" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="See Progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button12"
+        android:onClick="createGraph" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner2"
+        android:entries="@array/possibleGraphs" />
+
+</LinearLayout>
