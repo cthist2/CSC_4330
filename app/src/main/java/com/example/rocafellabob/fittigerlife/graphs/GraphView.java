@@ -75,7 +75,7 @@ public class GraphView extends View {
             // milliseconds in a day = 86400000
         */
         String sDate = Float.toString(date);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyymmdd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         float dayDate = 0;
         try {
             Date dDate = sdf.parse(sDate); // get date object from the string
@@ -90,6 +90,7 @@ public class GraphView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.drawColor(Color.BLACK);
         // axis assuming horizontal phone
         float[] axiss = {
             10, h,    // bottom left to
@@ -114,6 +115,7 @@ public class GraphView extends View {
         */
         float max_x = 0; // assume max is 0, better to use min value for float aka negative max but oh well
         float max_y = 0;
+        float min_x = Float.MAX_VALUE; // start at max so we can work our way down
         // these are the numbers associated with whatever you're graphing
         for(int i = 0; i < datapoints.length; i = i+2) {
             max_y = Math.max(max_y, datapoints[i]); // find max for scaling
@@ -121,8 +123,14 @@ public class GraphView extends View {
         // these are the dates (over time)
         for(int i = 1; i < datapoints.length; i = i+2) {
             datapoints[i] = floatDateToDays(datapoints[i]);
+            min_x = Math.min(min_x, datapoints[i]);
             max_x = Math.max(max_x, datapoints[i]); // find max for scaling
         }
+        // subtract min from everything so it starts from 0
+        for(int i = 1; i < datapoints.length; i = i+2) {
+            datapoints[i] = datapoints[i] - min_x;
+        }
+        max_x = max_x - min_x; // also subtract from the max
         Log.d("max", max_x + " " + max_y);
         for(int i = 0; i < datapoints.length; i = i+2) { // this fixes all the y values (index 0, 2, 4, 8 etc.) remember they are reversed
             datapoints[i] = datapoints[i] / max_y * (w - 10) + 10; // + 10 and - 10 for axis

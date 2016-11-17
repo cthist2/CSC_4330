@@ -35,7 +35,7 @@ public class Data {
      * @param filename the name of the file to write to
      * @param data the data to be written
      */
-    public static void recordData(AppCompatActivity act, String filename, String[] data) {
+    public static boolean recordData(AppCompatActivity act, String filename, String[] data) {
         FileOutputStream fileoutput = null;
         try {
             fileoutput = act.openFileOutput(filename, MODE_APPEND); // attempt to open file and make sure to append not overwrite
@@ -46,16 +46,22 @@ public class Data {
                     fileoutput.write(data[i].getBytes());
                 }
                 fileoutput.write(newline.getBytes()); // write a newline at the end
-                Toast.makeText(act.getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
-            }
-            else {
-                Toast.makeText(act.getApplicationContext(), "No Data Provided?", Toast.LENGTH_LONG).show();
+                return true;
             }
         }
         catch(Exception e) {
             Log.d("ERROR", e.getMessage());
-            Toast.makeText(act.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
+//            Toast.makeText(act.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
         }
+        finally {
+            // make sure to close f o s
+            try {
+                fileoutput.close();
+            } 
+            catch (Exception e) {
+            }
+        }
+        return false;
     }
     
     /**
@@ -80,6 +86,14 @@ public class Data {
         catch(Exception e) {
             Log.d("ERROR", e.getMessage());
             Toast.makeText(act.getApplicationContext(), "Failed Data Read", Toast.LENGTH_LONG).show();
+        }
+        finally {
+            // make sure to close f o s
+            try {
+                fileinput.close();
+            } 
+            catch (Exception e) {
+            }
         }
         return entries;
     }

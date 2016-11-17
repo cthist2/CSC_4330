@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,24 +7,113 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.rocafellabob.fittigerlife.MoveGoalsActivity">
-    <TextView
-        android:text="Current Weight:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/goalText" />
+    android:orientation="vertical">
 
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/WeightProgress" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Target Weight:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/goalText"
+            android:layout_weight="1.33" />
+
+        <TextView
+            android:text="None"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/wristMeasurement"
+            android:layout_toRightOf="@+id/wristMeasurement"
+            android:layout_toEndOf="@+id/wristMeasurement"
+            android:id="@+id/textWeight"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Wrist Measurement:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goalText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/wristMeasurement"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="None"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/waistMeasurement"
+            android:layout_alignRight="@+id/textWeight"
+            android:layout_alignEnd="@+id/textWeight"
+            android:id="@+id/textWrist"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="WaistMeasurement:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wristMeasurement"
+            android:layout_alignRight="@+id/wristMeasurement"
+            android:layout_alignEnd="@+id/wristMeasurement"
+            android:id="@+id/waistMeasurement"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="None"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/neckMeasurement"
+            android:layout_toRightOf="@+id/wristMeasurement"
+            android:layout_toEndOf="@+id/wristMeasurement"
+            android:id="@+id/textWaiste"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Neck Measurement:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waistMeasurement"
+            android:layout_alignRight="@+id/waistMeasurement"
+            android:layout_alignEnd="@+id/waistMeasurement"
+            android:id="@+id/neckMeasurement"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="None"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textWaiste"
+            android:layout_toRightOf="@+id/waistMeasurement"
+            android:layout_toEndOf="@+id/waistMeasurement"
+            android:id="@+id/textNeck"
+            android:layout_weight="1" />
+    </LinearLayout>
 
     <Button
         android:text="Change Goal Info"
@@ -33,95 +122,8 @@
         android:layout_below="@+id/goalText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="52dp"
         android:id="@+id/buttonToChangeGoal"
         android:onClick="EditGoal"
         />
 
-    <TextView
-        android:text="Wrist Measurement:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/goalText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/wristMeasurement" />
-
-    <TextView
-        android:text="WaistMeasurement:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/wristMeasurement"
-        android:layout_alignRight="@+id/wristMeasurement"
-        android:layout_alignEnd="@+id/wristMeasurement"
-        android:id="@+id/waistMeasurement" />
-
-    <TextView
-        android:text="Neck Measurement:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/waistMeasurement"
-        android:layout_alignRight="@+id/waistMeasurement"
-        android:layout_alignEnd="@+id/waistMeasurement"
-        android:id="@+id/neckMeasurement" />
-
-    <Button
-        android:text="Load Data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/button2"
-        android:onClick="writeMessage"
-        />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/Edi1"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
-        android:layout_toRightOf="@+id/button2"
-        android:layout_toEndOf="@+id/button2" />
-
-    <TextView
-        android:text="NULL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/wristMeasurement"
-        android:layout_toRightOf="@+id/wristMeasurement"
-        android:layout_toEndOf="@+id/wristMeasurement"
-        android:id="@+id/textWeight" />
-
-    <TextView
-        android:text="NULL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/waistMeasurement"
-        android:layout_alignRight="@+id/textWeight"
-        android:layout_alignEnd="@+id/textWeight"
-        android:id="@+id/textWrist" />
-
-    <TextView
-        android:text="NULL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/neckMeasurement"
-        android:layout_toRightOf="@+id/wristMeasurement"
-        android:layout_toEndOf="@+id/wristMeasurement"
-        android:id="@+id/textWaiste" />
-
-    <TextView
-        android:text="NULL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textWaiste"
-        android:layout_toRightOf="@+id/waistMeasurement"
-        android:layout_toEndOf="@+id/waistMeasurement"
-        android:id="@+id/textNeck" />
-
-</RelativeLayout>
+</LinearLayout>

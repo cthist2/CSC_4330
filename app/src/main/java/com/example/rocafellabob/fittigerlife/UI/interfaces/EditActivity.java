@@ -13,6 +13,7 @@ import android.view.View;
  */
 public interface EditActivity {
     /**
+     * any activity that updates things has to update (not append) to a file
      * updates the file
      * @param view 
      */

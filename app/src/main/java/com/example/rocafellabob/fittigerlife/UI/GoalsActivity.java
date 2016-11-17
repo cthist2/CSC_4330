@@ -47,7 +47,6 @@ import java.util.List;
 public class GoalsActivity extends AppCompatActivity implements DisplayActivity{
 
     final static String file_name =  "Measurement.csv";
-    Button button2;
     EditText Edi1;
     TextView Wrist, Waist, Weight, Neck;
     
@@ -61,17 +60,25 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
-        button2 = (Button) findViewById(R.id.button2);
-
-        Edi1 = (EditText) findViewById(R.id.Edi1);
         Wrist = (TextView) findViewById(R.id.textWrist);
         Waist = (TextView) findViewById(R.id.textWaiste);
         Weight = (TextView) findViewById(R.id.textWeight);
         Neck = (TextView) findViewById(R.id.textNeck);
-        updateMeasurementsScreen();
+        load();
     }
 
-    public void updateMeasurementsScreen() {
+    // reload the data when the screen comes back up
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Wrist = (TextView) findViewById(R.id.textWrist);
+        Waist = (TextView) findViewById(R.id.textWaiste);
+        Weight = (TextView) findViewById(R.id.textWeight);
+        Neck = (TextView) findViewById(R.id.textNeck);
+        load();
+    }
+    
+    public void load() {
         List<String[]> data = Data.readData(this, file_name);
         if (data != null) {
             String[] measurements = data.get(0); // should only have 1 line
@@ -85,7 +92,7 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity{
     }
 
     public void load(View view) {
-        updateMeasurementsScreen();
+        load();
     }
 
     // creates the page to edit goals on

@@ -13,6 +13,7 @@ import android.view.View;
  */
 public interface RecordActivity {
     /**
+     * any activity that records things appends to the file
      * record the activity to the file
      * @param view 
      */

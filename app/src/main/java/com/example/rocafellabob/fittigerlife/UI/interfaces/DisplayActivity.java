@@ -13,8 +13,13 @@ import android.view.View;
  */
 public interface DisplayActivity {
     /**
+     * any activity that displays things will have to load from a file
      * reads the file's contents and updates the screen accordingly
      * @param view 
      */
     public void load(View view);
+    /**
+     * the helper load function
+     */
+    public void load();
 }
