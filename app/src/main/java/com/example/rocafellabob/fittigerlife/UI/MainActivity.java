@@ -4,10 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import android.widget.EditText;
-import com.example.rocafellabob.fittigerlife.moveAdviceActivity;
 
 public class MainActivity extends AppCompatActivity {
 

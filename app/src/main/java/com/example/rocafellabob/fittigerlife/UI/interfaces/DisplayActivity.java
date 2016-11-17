@@ -18,6 +18,7 @@ public interface DisplayActivity {
      * @param view 
      */
     public void load(View view);
+    
     /**
      * the helper load function
      */

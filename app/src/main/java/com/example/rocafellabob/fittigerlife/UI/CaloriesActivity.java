@@ -5,22 +5,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import com.example.rocafellabob.fittigerlife.UI.interfaces.RecordActivity;
-import com.example.rocafellabob.fittigerlife.data.Data;
 
-import java.text.SimpleDateFormat;
+import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
+import com.example.rocafellabob.fittigerlife.data.Data;
+import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
+
 import java.util.Date;
 import java.util.List;
 
 /**
  * CaloriesActivity.java\ For recording calories and adding them up changed:
- Date: Person: Reason: 11/1/16 Spencer Added UI to Xml, put data inputting to
- file and worked on date function. 11/13/16 Spencer Worked on the storing of
+ * Date: Person: Reason: 11/1/16 Spencer Added UI to Xml, put data inputting to
+ * file and worked on date function. 11/13/16 Spencer Worked on the storing of
  * the calories 11/14/16 Spencer fixed calories counter
  */
-public class CaloriesActivity extends AppCompatActivity implements RecordActivity{
-    
-    final static String file_name =  "Calorie_Storage.csv";
+public class CaloriesActivity extends AppCompatActivity implements RecordActivity, UIInterface {
+
     EditText caloriesEntered;
     TextView caloriesReturned;
 
@@ -28,9 +28,13 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calories);
+        loadElements();
+    }
+
+    @Override
+    public void loadElements() {
         caloriesEntered = (EditText) findViewById(R.id.caloriesEntered);
         caloriesReturned = (TextView) findViewById(R.id.CaloriesOutput);
-
     }
 
     /**
@@ -43,11 +47,10 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
     public void record(View view) {
         String caloriesFinalString = caloriesEntered.getText().toString();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         String date = sdf.format(new Date());
 
-        Data.recordData(this, file_name, new String[]{date, caloriesFinalString});
-        List<String[]> data = Data.readData(this, file_name);
+        Data.recordData(this, calories_csv, new String[]{date, caloriesFinalString});
+        List<String[]> data = Data.readData(this, calories_csv);
         int calorieTotal = 0;
         for (String[] s : data) { // for every entry in data, find entries that match the date and add em up
             if (s[0].equals(date)) {

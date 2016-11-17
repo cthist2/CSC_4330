@@ -1,41 +1,15 @@
 package com.example.rocafellabob.fittigerlife.UI;
 
-import android.content.Context;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Intent;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.example.rocafellabob.fittigerlife.UI.interfaces.DisplayActivity;
-import com.example.rocafellabob.fittigerlife.UI.interfaces.EditActivity;
-import com.example.rocafellabob.fittigerlife.data.Data;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import com.example.rocafellabob.fittigerlife.data.Data;
+import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
+import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
+
 import java.util.List;
 
 /**
@@ -44,12 +18,10 @@ import java.util.List;
  * storing 10/29/16 Spencer Worked on adding permission to access to internal
  * storage\ 10/30/16 Spencer Fixed the saving internal storage, I believe?
  */
-public class GoalsActivity extends AppCompatActivity implements DisplayActivity{
+public class GoalsActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 
-    final static String file_name =  "Measurement.csv";
-    EditText Edi1;
     TextView Wrist, Waist, Weight, Neck;
-    
+
     @Override
     /**
      * Creates the Activity/view
@@ -60,26 +32,27 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
+        loadElements();
+        load();
+    }
+
+    @Override
+    public void loadElements() {
         Wrist = (TextView) findViewById(R.id.textWrist);
         Waist = (TextView) findViewById(R.id.textWaiste);
         Weight = (TextView) findViewById(R.id.textWeight);
         Neck = (TextView) findViewById(R.id.textNeck);
-        load();
     }
 
     // reload the data when the screen comes back up
     @Override
     protected void onStart() {
         super.onStart();
-        Wrist = (TextView) findViewById(R.id.textWrist);
-        Waist = (TextView) findViewById(R.id.textWaiste);
-        Weight = (TextView) findViewById(R.id.textWeight);
-        Neck = (TextView) findViewById(R.id.textNeck);
         load();
     }
-    
+
     public void load() {
-        List<String[]> data = Data.readData(this, file_name);
+        List<String[]> data = Data.readData(this, measurements_csv);
         if (data != null) {
             String[] measurements = data.get(0); // should only have 1 line
             if (measurements.length == 4) { // fml workaround
@@ -100,4 +73,5 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity{
         Intent intent = new Intent(this, EditGoalsActivity.class);
         startActivity(intent);
     }
+
 }

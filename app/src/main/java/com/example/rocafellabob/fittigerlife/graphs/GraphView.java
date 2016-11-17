@@ -12,11 +12,8 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.util.Log;
 import android.view.View;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -25,14 +22,14 @@ import java.util.logging.Logger;
 public class GraphView extends View {
 
     Paint paint;
-    float[] datapoints;
+    double[] datapoints;
     int w;
     int h;
 
     /*
         give it a context (this) and an array of points to draw a graph
     */
-    public GraphView(Context context, float[] points) {
+    public GraphView(Context context, double[] points) {
         super(context);
         //
         datapoints = points;
@@ -45,7 +42,7 @@ public class GraphView extends View {
     }
     
     // give it a paint to customize
-    public GraphView(Context context, float[] points, Paint pnt) {
+    public GraphView(Context context, double[] points, Paint pnt) {
         super(context);
         //
         datapoints = points;
@@ -62,7 +59,7 @@ public class GraphView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
     }
     
-    protected static float floatDateToDays(float date) {
+    protected static double floatDateToDays(double date) {
         // assume that the x points (actually y points) are date format yyyymmdd
         // convert them to days from 1970
         /*
@@ -74,7 +71,8 @@ public class GraphView extends View {
             System.out.println(startDate4.getTime() / 86400000 - startDate2.getTime() / 86400000); // 1 day apart
             // milliseconds in a day = 86400000
         */
-        String sDate = Float.toString(date);
+        String sDate = String.format("%.0f", date);
+        Log.d("inf", sDate);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         float dayDate = 0;
         try {
@@ -113,9 +111,9 @@ public class GraphView extends View {
                 h = height of the graph = x so all we do is take the largest value and divide
                 w = width = y so all we have to do is take the largest and divide
         */
-        float max_x = 0; // assume max is 0, better to use min value for float aka negative max but oh well
-        float max_y = 0;
-        float min_x = Float.MAX_VALUE; // start at max so we can work our way down
+        double max_x = 0; // assume max is 0, better to use min value for float aka negative max but oh well
+        double max_y = 0;
+        double min_x = Double.MAX_VALUE; // start at max so we can work our way down
         // these are the numbers associated with whatever you're graphing
         for(int i = 0; i < datapoints.length; i = i+2) {
             max_y = Math.max(max_y, datapoints[i]); // find max for scaling
@@ -138,7 +136,11 @@ public class GraphView extends View {
         for(int i = 1; i < datapoints.length; i = i+2) { // same for x values
             datapoints[i] = datapoints[i] / max_x * (h - 10) + 10; // + 10 and - 10 for axis
         }
-        canvas.drawLines(datapoints, paint);
+        float[] temp = new float[datapoints.length];
+        for(int i = 0; i < datapoints.length; i++) {
+            temp[i] = (float) datapoints[i];
+        }
+        canvas.drawLines(temp, paint);
 //        Path path = new Path();
 //        canvas.drawPath(path, paint);
 //        canvas.drawText(canvas.getWidth() + "", 200, 200, paint);

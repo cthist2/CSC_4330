@@ -12,11 +12,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,10 +27,6 @@ import java.util.List;
  * @author thorn
  */
 public class Data {
-    final static String comma = ",";
-    final static String newline = "\n";
-    final static String profile_csv = "Profile.csv";
-    final static String measurement_csv = "Measurement.csv";
     
     /**
      * record data to a file
@@ -46,21 +45,20 @@ public class Data {
                     fileoutput.write(data[i].getBytes());
                 }
                 fileoutput.write(newline.getBytes()); // write a newline at the end
+                Toast.makeText(act.getApplicationContext(), "Stored the data", Toast.LENGTH_LONG).show();
                 return true;
             }
         }
         catch(Exception e) {
-            Log.d("ERROR", e.getMessage());
-//            Toast.makeText(act.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
         }
         finally {
-            // make sure to close f o s
             try {
                 fileoutput.close();
             } 
             catch (Exception e) {
             }
         }
+        Toast.makeText(act.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
         return false;
     }
     
@@ -88,7 +86,6 @@ public class Data {
             Toast.makeText(act.getApplicationContext(), "Failed Data Read", Toast.LENGTH_LONG).show();
         }
         finally {
-            // make sure to close f o s
             try {
                 fileinput.close();
             } 
@@ -98,15 +95,6 @@ public class Data {
         return entries;
     }
          
-    /**
-     * specifically for updating the profile
-     * @param act
-     * @param weight
-     * @param age
-     * @param height
-     * @param gender
-     * @return 
-     */
     public static double recordProfileData(AppCompatActivity act, String weight, String age, String height, String gender) {
         FileOutputStream fileOutputStream = null;
         // (weight * 4.88) / (height in feet squared)
@@ -131,7 +119,6 @@ public class Data {
             Toast.makeText(act.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
         }
         finally {
-            // make sure to close f o s
             try {
                 fileOutputStream.close();
             } 
@@ -144,7 +131,7 @@ public class Data {
     public static void recordGoal(AppCompatActivity act, String wrist, String neck, String waist, String weight){
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = act.openFileOutput(measurement_csv, MODE_PRIVATE);
+            fileOutputStream = act.openFileOutput(measurements_csv, MODE_PRIVATE);
             // wrist,neck,waist,weight
             fileOutputStream.write(wrist.getBytes());
             fileOutputStream.write(comma.getBytes());
@@ -171,39 +158,59 @@ public class Data {
             }
         }
     }
-//    // not neccessary functions?
-//    public static void recordCalorieData(String calories, String data) {
-//        
-//    }
-//    
-//    public static void recordGoalsData() {
-//        
-//    }
-//    
-//    public static void recordCardioData(AppCompatActivity a, String activity, String time, String date) {
-//        FileOutputStream fileOutputStream = null;
-//        try {
-//            fileOutputStream = a.openFileOutput(cardio_csv, MODE_PRIVATE);
-//            // type,time,date.
-//            fileOutputStream.write(activity.getBytes());
-//            fileOutputStream.write(comma.getBytes());
-//            fileOutputStream.write(time.getBytes());
-//            fileOutputStream.write(comma.getBytes());
-//            fileOutputStream.write(date.getBytes());
-//            fileOutputStream.write(period.getBytes());
-//            // success
-//            Toast.makeText(a.getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
-//        } catch (Exception e) {
-//            // failure
-//            e.printStackTrace();
-//            Toast.makeText(a.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
-//        }
-//        finally {
-//            try {
-//                fileOutputStream.close();
-//            } catch (Exception e) {
-//            }
-//        }
-//    }
     
+    public static double[] getData(AppCompatActivity act, String graphtype) {
+        String filename;
+        int index = 0;
+        // date calories
+        if(graphtype.equals("Daily Calories")) {
+            filename = calories_csv;
+        // date activitytype time
+        }else if(graphtype.equals("Running Time") || graphtype.equals("Biking Time") || graphtype.equals("Walking Time")) {
+            filename = cardio_csv;
+        // date sets reps weights
+        }else if(graphtype.equals("Daily Sets") || graphtype.equals("Daily Reps") || graphtype.equals("Daily Weights")) {
+            filename = weights_csv;
+            if(graphtype.equals("Daily Sets"))
+                index = 2; // position of sets in the array
+            else if(graphtype.equals("Daily Weights"))
+                index = 1; // position of weights in the array
+            else
+                index = 3; // position of reps in the array
+        }else{
+            return null;
+        }
+        List<String[]> data = readData(act, filename);
+        List<Double> dp = new ArrayList<>();
+        if(data != null && data.size() > 0) {
+            int i = 0;
+            String date = data.get(i)[0];
+            double total = Double.parseDouble(data.get(i)[index]);
+            i++;
+            while(i < data.size() && date.equals(data.get(i)[0])) {
+                total += Double.parseDouble(data.get(i)[index]);
+                i++;
+            }
+            dp.add(total);
+            dp.add(Double.parseDouble(date));
+            for(; i < data.size(); i++) {
+                date = data.get(i)[0];
+                total = Double.parseDouble(data.get(i)[index]);
+                while(i < data.size() && date.equals(data.get(i)[0])) {
+                    total += Double.parseDouble(data.get(i)[index]);
+                    i++;
+                }
+                dp.add(total);
+                dp.add(Double.parseDouble(date));
+                dp.add(total);
+                dp.add(Double.parseDouble(date));
+            }
+        }
+        double[] returnarray = new double[dp.size()];
+        for(int i = 0; i < returnarray.length; i++) {
+            returnarray[i] = dp.get(i);
+            Log.d("msg", String.format("%.0f", returnarray[i]));
+        }
+        return returnarray;
+    }
 }

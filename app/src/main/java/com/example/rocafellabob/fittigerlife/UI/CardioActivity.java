@@ -1,7 +1,6 @@
 package com.example.rocafellabob.fittigerlife.UI;
 
 import android.os.SystemClock;
-import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +8,11 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import com.example.rocafellabob.fittigerlife.UI.interfaces.RecordActivity;
-import com.example.rocafellabob.fittigerlife.data.Data;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
+import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
+import com.example.rocafellabob.fittigerlife.data.Data;
+import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,9 +22,8 @@ import java.util.Date;
  * Did more Ui work and fixed chronometer to time correctly. 11/8/16 Spencer Did
  * back end changes to data storing
  */
-public class CardioActivity extends AppCompatActivity implements RecordActivity{
+public class CardioActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
-    final static String file_name =  "Cardio.csv";
     private Spinner spinner;
     Chronometer Chrono;
     Button StartTimer, pauseTimer, resetTimer, recordToFile;
@@ -46,6 +42,11 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardio);
+        loadElements();
+    }
+
+    @Override
+    public void loadElements() {
         StartTimer = (Button) findViewById(R.id.StartTimer);
         pauseTimer = (Button) findViewById(R.id.stopButton);
         resetTimer = (Button) findViewById(R.id.resetButton);
@@ -93,8 +94,7 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity{
     public void record(View view) {
         String activityFinal = spinner.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         String date = sdf.format(new Date());
-        Data.recordData(this, file_name, new String[]{date, activityFinal, inputTimeFinal});
+        Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
     }
 }
