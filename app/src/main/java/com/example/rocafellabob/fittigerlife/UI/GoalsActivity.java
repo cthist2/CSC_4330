@@ -13,22 +13,19 @@ import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
 import java.util.List;
 
 /**
- * moveExerciseActivity.java\ interface people will record their goal data in
- * changed: Date: Person: Reason: 10/26/16 Spencer Worked on data inputting and
- * storing 10/29/16 Spencer Worked on adding permission to access to internal
- * storage\ 10/30/16 Spencer Fixed the saving internal storage, I believe?
+ * GoalsActivity.java
+ * see what your fitness goals are
+ * Date:        Person:     Reason:
+ * 10/26/16     Spencer     Worked on data inputting and storing 
+ * 10/29/16     Spencer     Worked on adding permission to access to internal storage 
+ * 10/30/16     Spencer     Fixed the saving internal storage, I believe?
+ * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
  */
 public class GoalsActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 
     TextView Wrist, Waist, Weight, Neck;
 
     @Override
-    /**
-     * Creates the Activity/view
-     *
-     * @return sorted module
-     * @param See onCreate in MainActivity.java
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
@@ -51,6 +48,7 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
         load();
     }
 
+    @Override
     public void load() {
         List<String[]> data = Data.readData(this, measurements_csv);
         if (data != null) {
@@ -64,11 +62,16 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
         }
     }
 
+    @Override
     public void load(View view) {
         load();
     }
 
-    // creates the page to edit goals on
+    /**
+     * opens the editgoals activity
+     * 
+     * @param view the owner of the function call
+     */
     public void EditGoal(View view) {
         Intent intent = new Intent(this, EditGoalsActivity.class);
         startActivity(intent);

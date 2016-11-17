@@ -30,6 +30,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
+        <Button
+            android:text="Calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:onClick="openCalories" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -42,15 +50,15 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/button17"
                 android:layout_weight="0.12"
-                android:layout_height="wrap_content" 
+                android:layout_height="wrap_content"
                 android:onClick="openProfile" />
 
             <Button
-                android:text="Record"
+                android:text="Exercise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button16"
-                android:layout_weight="0.04" 
+                android:layout_weight="0.04"
                 android:onClick="openRecord" />
         </LinearLayout>
 
@@ -59,7 +67,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button15"
             android:layout_weight="1"
-            android:text="Goals" 
+            android:text="Goals"
             android:onClick="openGoals"/>
 
     </LinearLayout>

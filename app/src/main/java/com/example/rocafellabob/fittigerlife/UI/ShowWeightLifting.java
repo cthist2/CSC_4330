@@ -12,27 +12,21 @@ import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
 import java.util.List;
 
 /**
- * ShowWeightLifting.java interface people will record their goal data in
- * changed: Date: Person: Reason: 11/11/16 Spencer Built the recoding
- * information and data storage 11/16/16 Spencer More bug fixes to value showing
- * NULL
+ * ShowWeightLifting.java 
+ * activity that lets you see the past few weight lifting entries
+ * Date:        Person:     Reason:
+ * 11/11/16     Spencer     Built the recoding information and data storage 
+ * 11/16/16     Spencer     More bug fixes to value showing NULL
+ * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
+ * 
  */
-public class ShowWeightLifting extends AppCompatActivity implements DisplayActivity, UIInterface{
+public class ShowWeightLifting extends AppCompatActivity implements DisplayActivity, UIInterface {
 
     TextView DataStore1, DataStore2, DataStore3, DataStore4, DataStore5;
 
     @Override
-    /**
-     * When activities called, create new activity
-     *
-     * @return Nothing
-     * @param Bundle savedInstanceState, collects info from the last activity
-     *
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int count = 0;
-        String fullString;
         setContentView(R.layout.activity_show_weight_lifting);
         loadElements();
         load();
@@ -49,7 +43,7 @@ public class ShowWeightLifting extends AppCompatActivity implements DisplayActiv
         TextView[] tviews = new TextView[]{DataStore1, DataStore2, DataStore3, DataStore4, DataStore5};
         int i = 0;
         // date weight set rep
-        if(fc != null) {
+        if (fc != null) {
             for (String[] s : fc) {
                 if (i > 5) {
                     break;

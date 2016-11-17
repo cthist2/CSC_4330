@@ -13,14 +13,17 @@ import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
 import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * CardioActivity.java\ interface people will record their workout data in
- * changed: Date: Person: Reason: 11/4/16 Spencer Put basic Ui 11/5/16 Spencer
- * Did more Ui work and fixed chronometer to time correctly. 11/8/16 Spencer Did
- * back end changes to data storing
+ * CardioActivity.java
+ * interface people will record their workout data in
+ * changed:
+ * Date:        Person:     Reason:
+ *  11/4/16     Spencer     Put basic Ui
+ *  11/5/16     Spencer     Did more Ui work and fixed chronometer to time correctly
+ *  11/8/16     Spencer     Did back end changes to data storing
+ *  11/16/16     Thomas      move data processing to separate file (huge refactoring)
  */
 public class CardioActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
@@ -30,15 +33,6 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     EditText inputTime;
 
     @Override
-    /**
-     * When activities called, aka when the button is pressed, it creates the
-     * activity
-     *
-     * @return Nothing
-     * @param Bundle savedInstanceState, basically meaning passing the state
-     * from the other activity that called it
-     *
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardio);
@@ -58,39 +52,31 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     /**
      * When activities called, aka when the button is pressed, starts the timer
      *
-     * @return Nothing
-     * @param View view Starts the chronometer timer
+     * @param view the owner of the function call
      */
     public void startChronometer(View view) {
         Chrono.start();
     }
 
     /**
-     * When activities called, aka when the button is pressed, starts the timer
+     * When activities called, aka when the button is pressed, stops the timer
      *
-     * @return Nothing
-     * @param View view Stops the chronometer timer
+     * @param view the owner of the function call
      */
     public void stopChronometer(View view) {
         Chrono.stop();
     }
 
     /**
-     * When activities called, aka when the button is pressed, starts the timer
+     * When activities called, aka when the button is pressed, resets the timer
      *
      * @return Nothing
-     * @param View view Reset the chronometer timer
+     * @param view the owner of the function call
      */
     public void resetChronometer(View view) {
         Chrono.setBase(SystemClock.elapsedRealtime());
     }
 
-    /**
-     * When activities called, aka when the button is pressed, starts the timer
-     *
-     * @return Nothing
-     * @param View view Records the data to a csv file.
-     */
     public void record(View view) {
         String activityFinal = spinner.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();

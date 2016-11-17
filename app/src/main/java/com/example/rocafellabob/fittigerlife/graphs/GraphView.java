@@ -16,8 +16,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
- * @author thorn
+ * Graph.java
+ * graphing logic
+ * 11/16/16     Thomas      create file
  */
 public class GraphView extends View {
 
@@ -26,9 +27,12 @@ public class GraphView extends View {
     int w;
     int h;
 
-    /*
-        give it a context (this) and an array of points to draw a graph
-    */
+    /**
+     * parameterized constructor that creates a graph
+     * 
+     * @param context the screen to take over
+     * @param points the points to graph
+     */
     public GraphView(Context context, double[] points) {
         super(context);
         //
@@ -36,12 +40,18 @@ public class GraphView extends View {
         // default paint settings
         paint = new Paint();
         paint.setColor(Color.WHITE);
-        paint.setStrokeWidth(1);
+        paint.setStrokeWidth(3);
         paint.setStyle(Paint.Style.STROKE);
         paint.setTextAlign(Align.CENTER);
     }
-    
-    // give it a paint to customize
+
+    /**
+     * another parameterized constructor that allows custom paint
+     * 
+     * @param context the screen to take over
+     * @param points the points to graph
+     * @param pnt the paint to use
+     */
     public GraphView(Context context, double[] points, Paint pnt) {
         super(context);
         //
@@ -50,7 +60,7 @@ public class GraphView extends View {
         paint = new Paint();
         paint.set(pnt);
     }
-    
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         this.w = w;
@@ -58,8 +68,14 @@ public class GraphView extends View {
         Log.d("TEST", w + " " + h);
         super.onSizeChanged(w, h, oldw, oldh);
     }
-    
-    protected static double floatDateToDays(double date) {
+
+    /**
+     * convert a date to the number of days from 1970-1-1 (unix time)
+     * 
+     * @param date the date to convert
+     * @return the number of days from 1970-1-1
+     */
+    protected static double doubleDateToDays(double date) {
         // assume that the x points (actually y points) are date format yyyymmdd
         // convert them to days from 1970
         /*
@@ -70,7 +86,7 @@ public class GraphView extends View {
             System.out.println(startDate4.getTime() / 86400000); // days from 1970 or whatever
             System.out.println(startDate4.getTime() / 86400000 - startDate2.getTime() / 86400000); // 1 day apart
             // milliseconds in a day = 86400000
-        */
+         */
         String sDate = String.format("%.0f", date);
         Log.d("inf", sDate);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
@@ -84,20 +100,20 @@ public class GraphView extends View {
         }
         return dayDate;
     }
-    
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLACK);
         // axis assuming horizontal phone
         float[] axiss = {
-            10, h,    // bottom left to
-            10, 10,                    // top left
-            10, 10,                    // top left to
-            w, 10      // top right
+            10, h, // bottom left to
+            10, 10, // top left
+            10, 10, // top left to
+            w, 10 // top right
         };
         canvas.drawLines(axiss, paint);
-        
+
         // scaling logic
         /*
             first thing to consider - because its horizontal
@@ -110,49 +126,36 @@ public class GraphView extends View {
                 we have to scale the points to fit the graph
                 h = height of the graph = x so all we do is take the largest value and divide
                 w = width = y so all we have to do is take the largest and divide
-        */
+         */
         double max_x = 0; // assume max is 0, better to use min value for float aka negative max but oh well
         double max_y = 0;
         double min_x = Double.MAX_VALUE; // start at max so we can work our way down
         // these are the numbers associated with whatever you're graphing
-        for(int i = 0; i < datapoints.length; i = i+2) {
+        for (int i = 0; i < datapoints.length; i = i + 2) {
             max_y = Math.max(max_y, datapoints[i]); // find max for scaling
         }
         // these are the dates (over time)
-        for(int i = 1; i < datapoints.length; i = i+2) {
-            datapoints[i] = floatDateToDays(datapoints[i]);
-            min_x = Math.min(min_x, datapoints[i]);
+        for (int i = 1; i < datapoints.length; i = i + 2) {
+            datapoints[i] = doubleDateToDays(datapoints[i]);
+            min_x = Math.min(min_x, datapoints[i]); // find min for scaling
             max_x = Math.max(max_x, datapoints[i]); // find max for scaling
         }
         // subtract min from everything so it starts from 0
-        for(int i = 1; i < datapoints.length; i = i+2) {
+        for (int i = 1; i < datapoints.length; i = i + 2) {
             datapoints[i] = datapoints[i] - min_x;
         }
         max_x = max_x - min_x; // also subtract from the max
         Log.d("max", max_x + " " + max_y);
-        for(int i = 0; i < datapoints.length; i = i+2) { // this fixes all the y values (index 0, 2, 4, 8 etc.) remember they are reversed
+        for (int i = 0; i < datapoints.length; i = i + 2) { // this fixes all the y values (index 0, 2, 4, 8 etc.) remember they are reversed
             datapoints[i] = datapoints[i] / max_y * (w - 10) + 10; // + 10 and - 10 for axis
         }
-        for(int i = 1; i < datapoints.length; i = i+2) { // same for x values
+        for (int i = 1; i < datapoints.length; i = i + 2) { // same for x values
             datapoints[i] = datapoints[i] / max_x * (h - 10) + 10; // + 10 and - 10 for axis
         }
         float[] temp = new float[datapoints.length];
-        for(int i = 0; i < datapoints.length; i++) {
+        for (int i = 0; i < datapoints.length; i++) {
             temp[i] = (float) datapoints[i];
         }
-        canvas.drawLines(temp, paint);
-//        Path path = new Path();
-//        canvas.drawPath(path, paint);
-//        canvas.drawText(canvas.getWidth() + "", 200, 200, paint);
-//        
-//        path.moveTo(datapoints[0].x, datapoints[0].y);
-//        for (int i = 1; i < datapoints.length; i++) {
-//            // writing the numbers for reference
-//            canvas.drawText(datapoints[i].x + "," + datapoints[i].y, datapoints[i].x, datapoints[i].y, paint);
-//            // actual line
-//            path.lineTo(datapoints[i].x, datapoints[i].y);
-//        }
-//        canvas.drawPath(path, paint);
-//    }
+        canvas.drawLines(temp, paint); // and finally draw
     }
 }

@@ -8,14 +8,17 @@ package com.example.rocafellabob.fittigerlife.UI.interfaces;
 import android.view.View;
 
 /**
- *
- * @author thorn
+ * RecordActivity.java
+ * interface that any activity that records data will implement
+ * 11/16/16     Thomas      create file (huge refactoring)
  */
 public interface RecordActivity {
+
     /**
-     * any activity that records things appends to the file
-     * record the activity to the file
-     * @param view 
+     * any activity that records things appends to the file record the activity
+     * to the file
+     *
+     * @param view the owner of the function call
      */
     public void record(View view);
 }

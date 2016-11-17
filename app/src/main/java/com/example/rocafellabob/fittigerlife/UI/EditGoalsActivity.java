@@ -9,9 +9,12 @@ import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
 
 /**
- * EditGoalsActivity.java\ back end used to store and edit data changed: Date:
- * Person: Reason: 11/8/16 Spencer First edition changes to Storage 11/11/16
- * Spencer Fixed storage and insure correct recording
+ * EditGoalsActivity.java
+ * edit fitness goals activity
+ * Date:        Person:     Reason:
+ * 11/8/16      Spencer     First edition changes to Storage 
+ * 11/11/16     Spencer     Fixed storage and insure correct recording
+ * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
  */
 public class EditGoalsActivity extends AppCompatActivity implements EditActivity, UIInterface {
 
@@ -32,12 +35,6 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
         waiste = (EditText) findViewById(R.id.editWaist);
     }
 
-    /**
-     * Creates the storeData method
-     *
-     * @return sorted module
-     * @param Stores the data into a csv
-     */
     public void update(View view) {
         String wristFinalString = wrist.getText().toString();
         String neckFinalString = neck.getText().toString();

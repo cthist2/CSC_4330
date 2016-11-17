@@ -10,10 +10,12 @@ import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
 
 /**
- * ProfileActivity.java\ interface people will record their goal data in
- * changed: Date: Person: Reason: 11/1/16 Spencer put data inputting and
- * calculations in. Calculating BMI is now working. 11/3/16 Spencer Added the
- * age parameter and the gender buttons
+ * EditProfileActivity.java
+ * edit profile activity
+ * Date:        Person:     Reason:
+ * 11/1/16      Spencer     put data inputting and calculations in. Calculating BMI is now working
+ * 11/3/16      Spencer     Added the age parameter and the gender buttons
+ * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
  */
 public class EditProfileActivity extends AppCompatActivity implements EditActivity, UIInterface {
 
@@ -36,6 +38,7 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
         Age = (EditText) findViewById(R.id.editAge);
     }
 
+    @Override
     public void update(View view) {
         String WeightFinalString = Weight.getText().toString();
         String HeightFinalString = Height.getText().toString();
@@ -44,10 +47,20 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
         BMI.setText(Double.toString(BMIval));
     }
 
+    /**
+     * changes the saved string to male
+     * 
+     * @param view the owner of the function call
+     */
     public void Male(View view) {
         Gender = "Male";
     }
 
+    /**
+     * changes the saved string to female
+     * 
+     * @param view the owner of the function call
+     */
     public void Female(View view) {
         Gender = "Female";
     }

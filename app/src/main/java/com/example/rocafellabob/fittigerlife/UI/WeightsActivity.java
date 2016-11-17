@@ -13,12 +13,15 @@ import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
 import java.util.Date;
 
 /**
- * WeightsActivity.java\ interface people will record their workout data in
- changed: Date: Person: Reason: 10/25/16 Spencer Update the spinner class to
- show options 11/11/16 Spencer Update it to write to a file 11/15/16 Spencer
- Interface bug fixing
+ * WeightsActivity.java
+ * interface people will record their workout data in
+ * Date:        Person:     Reason:
+ * 10/25/16     Spencer     Update the spinner class to show options 
+ * 11/11/16     Spencer     Update it to write to a file 
+ * 11/15/16     Spencer     Interface bug fixing
+ * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
  */
-public class WeightsActivity extends AppCompatActivity implements RecordActivity, UIInterface{
+public class WeightsActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
     EditText Weights, Reps, Sets;
 
@@ -29,7 +32,7 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
         loadElements();
     }
 
-    
+    @Override
     public void record(View view) {
         String WeightFinalString = Weights.getText().toString();
         String SetsFinalString = Sets.getText().toString();
@@ -43,7 +46,11 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
 
     }
 
-    // opens another activity that displays things
+    /**
+     * opens the showweightlifting activity
+     * 
+     * @param view the owner of the function call
+     */
     public void ShowRecords(View view) {
         Intent intent = new Intent(this, ShowWeightLifting.class);
         startActivity(intent);

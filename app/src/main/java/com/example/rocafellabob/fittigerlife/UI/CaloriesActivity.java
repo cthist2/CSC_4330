@@ -14,10 +14,13 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * CaloriesActivity.java\ For recording calories and adding them up changed:
- * Date: Person: Reason: 11/1/16 Spencer Added UI to Xml, put data inputting to
- * file and worked on date function. 11/13/16 Spencer Worked on the storing of
- * the calories 11/14/16 Spencer fixed calories counter
+ * CaloriesActivity.java
+ * For recording calories and adding them up changed:
+ * Date:        Person:     Reason:
+ * 11/1/16      Spencer     Added UI to Xml, put data inputting to file and worked on date function
+ * 11/13/16     Spencer     Worked on the storing of the calories 
+ * 11/14/16     Spencer     fixed calories counter
+ * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
  */
 public class CaloriesActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
@@ -37,12 +40,6 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
         caloriesReturned = (TextView) findViewById(R.id.CaloriesOutput);
     }
 
-    /**
-     * Creates the recordCalories Method
-     *
-     * @return sorted module
-     * @param View view View data and displays it.
-     */
     @Override
     public void record(View view) {
         String caloriesFinalString = caloriesEntered.getText().toString();
