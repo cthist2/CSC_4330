@@ -10,8 +10,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
+import android.graphics.Rect;
 import android.util.Log;
 import android.view.View;
+
+import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -43,6 +47,7 @@ public class GraphView extends View {
         paint.setStrokeWidth(3);
         paint.setStyle(Paint.Style.STROKE);
         paint.setTextAlign(Align.CENTER);
+        paint.setTextSize(30);
     }
 
     /**
@@ -89,7 +94,6 @@ public class GraphView extends View {
          */
         String sDate = String.format("%.0f", date);
         Log.d("inf", sDate);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         float dayDate = 0;
         try {
             Date dDate = sdf.parse(sDate); // get date object from the string
@@ -100,7 +104,7 @@ public class GraphView extends View {
         }
         return dayDate;
     }
-
+        
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -112,7 +116,6 @@ public class GraphView extends View {
             10, 10, // top left to
             w, 10 // top right
         };
-        canvas.drawLines(axiss, paint);
 
         // scaling logic
         /*
@@ -144,6 +147,14 @@ public class GraphView extends View {
         for (int i = 1; i < datapoints.length; i = i + 2) {
             datapoints[i] = datapoints[i] - min_x;
         }
+            canvas.drawLines(axiss, paint);
+        paint.setColor(Color.DKGRAY);
+        canvas.drawLine(w/2, 0, w/2, h, paint); // draw middle line
+        paint.setColor(Color.WHITE);
+        canvas.save();
+        canvas.rotate(90);
+        canvas.drawText(String.format("%.0f", max_y / 2), 40, -w/2 + 10, paint); // draw the middle value
+        canvas.restore();
         max_x = max_x - min_x; // also subtract from the max
         Log.d("max", max_x + " " + max_y);
         for (int i = 0; i < datapoints.length; i = i + 2) { // this fixes all the y values (index 0, 2, 4, 8 etc.) remember they are reversed

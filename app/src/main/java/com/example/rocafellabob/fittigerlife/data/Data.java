@@ -192,14 +192,19 @@ public class Data {
         } else {
             return null;
         }
-        List<String[]> data = readData(act, filename);
+//        List<String[]> data = readData(act, filename);
         // dummy calorie data
-//        List<String[]> data = new ArrayList<>();
-//        data.add(new String[]{"20161120", "120"});
-//        data.add(new String[]{"20161120", "320"});
-//        data.add(new String[]{"20161121", "220"});
-//        data.add(new String[]{"20161122", "420"});
-//        data.add(new String[]{"20161123", "520"});
+        List<String[]> data = new ArrayList<>();
+        data.add(new String[]{"20161120", "120"});
+        data.add(new String[]{"20161120", "320"});
+        data.add(new String[]{"20161121", "220"});
+        data.add(new String[]{"20161122", "420"});
+        data.add(new String[]{"20161123", "520"});
+        data.add(new String[]{"20161124", "820"});
+        data.add(new String[]{"20161125", "220"});
+        data.add(new String[]{"20161126", "320"});
+        data.add(new String[]{"20161127", "920"});
+        data.add(new String[]{"20161128", "520"});
         List<Double> dp = new ArrayList<>();
         if (data != null && data.size() > 0) { // make sure there's some stuff recorded
             // only put in the first set of data once
@@ -217,7 +222,7 @@ public class Data {
 //            Log.d("msg1", date);
             // everything else should be added twice
             // same logic as before
-            for (; i < data.size();) {
+            while(i < data.size()) {
                 date = data.get(i)[0];
                 total = Double.parseDouble(data.get(i)[index]);
                 i++;
