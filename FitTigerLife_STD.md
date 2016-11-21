@@ -553,5 +553,4 @@ Post-conditions
 ~ The data has been properly saved
 ~ Shows data from the 5 most recent entries
 
-
 ---
