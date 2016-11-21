@@ -13,29 +13,25 @@
  * [Revision History](#Revision)
 
 1. [Introduction](#Introduction)
-  * 1.1 [Purpose](#purpose)
-  * 1.2 [Intended Audience](#intended-audience)
-  * 1.3 [Scope](#scope)
-2.	[System Architecture](#System-Arch)
-  * 2.1	[Main Architecture](#Main)
-  * 2.2	[Sub-System Architecture](#Sub)
-        - 2.2.1 [Profile](#Profile)
-        - 2.2.2 [Cardio Tracker](#Cardio)
-        - 2.2.3 [Weights Tracker](#Weights)
-        - 2.2.4 [Entry Tracker](#Entry)
-        - 2.2.5 [Calorie Calculator](#Calorie)
-        - 2.2.6 [Data Graphing](#Graphing)
-        - 2.2.7 [Timer](#Timer)
-        - 2.2.8 [BMI Calculator](#BMI)
-3. [Application Views](#Views)
-  * 3.1	[Development View](#Development)
-  * 3.2	[Physical View](#Physical)
-  * 3.3	[Database View](#Database)
-  * 3.4	[Work-Assignment View](#Work-assignment)
-4. [Element Catalog](#Element-Catalog)
-5. [User Interfaces](#UI)
-  * 5.1	[User Interface Description](#UI-Description)
-  * 5.2	[User Interfaces Diagram](#UI-Diagram)
+  * 1.1 [](#)
+2.	[Test Cases](#TestCases)
+  *   [1.1	Calorie Counter 1](#CalorieCounter1)
+  *   [1.2	Calorie Counter 2](#CalorieCounter2)
+  * 	[2.1 Weights Tracker 1](#WeightsTracker1)
+  * 	[2.2 Weights Tracker 2](#WeightsTracker2)
+  * 	[3.1 Edit Goal 1](#EditGoal1)
+  * 	[3.2 Edit Goal 2](#EditGoal2)
+  * 	[4.1 Profile 1](#Profile1)
+  * 	[4.2 Profile 2](#Profile2)
+  * 	[4.3 Profile 3](#Profile3)
+  * 	[5.1 BMI Calculator 1](#BMICalculator1)
+  * 	[5.2 BMI Calculator 2](#BMICalculator2)
+  * 	[5.3 BMI Calculator 3](#BMICalculator3)
+  * 	[6.1 Cardio Tracker 1](#CardioTracker1)
+  * 	[6.2 Cardio Tracker 2](#CardioTracker2)
+  * 	[6.3 Cardio Tracker 3](#CardioTracker3)
+  * 	[7.1 Timer 1](#Timer1)
+  * 	[8.1 Entry Tracker 1](#EntryTracker1)
 
 ---
 
@@ -43,13 +39,13 @@
 
 | Name | Date | Reason for Change | Version |
 | :--- | :--- | :--- | :--- |
-| Robin Tallitsch, Triston Lamonte | 10/31/2016 | Initial | 1.0 |
+| Robin Tallitsch, Triston Lamonte | 11/21/2016 | Initial | 1.0 |
 
 ---
 
 # 1. Introduction <a name="Introduction"></a>
 
-### 1.1 Name<a name="purpose"></a>
+### 1.1 Calorie Counter 1<a name="CalorieCounter1"></a>
 
 Test Case #: 1.1  
 System:  FitTigerLife Application  
@@ -66,12 +62,12 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter in total calories | P
-| 2 | Enter ‘2000’ | The system waits for the user to submit this entry | P |
-| 3 | Hit Submit | The system adds the value submitted to the daily total value | P |
-| 4 | Enter ‘3000’ | The system waits for the user to submit this entry | P |
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter in total calories | P | |
+| 2 | Enter ‘2000’ | The system waits for the user to submit this entry | P | |
+| 3 | Hit Submit | The system adds the value submitted to the daily total value | P | |
+| 4 | Enter ‘3000’ | The system waits for the user to submit this entry | P | |
 | 5 | Hit Submit | The system adds the value submitted to the daily total value | P | system correctly adds the numbers to each other|
-| 6 | Check Post-condition 1, 2 |
+| 6 | Check Post-condition 1, 2 | | | | |
 
 Post-conditions  
 ~The daily value stored is updated   
@@ -79,14 +75,14 @@ Post-conditions
 
 ---
 
-### 1.2 Name<a name="purpose"></a>
+### 1.2 Calorie Counter 2<a name="CalorieCounter2"></a>
 
 Test Case #:  1.2  
 System:  FitTigerLife Application  
 Designed by: Spencer Janin   
 Executed by: Spencer Janin   
 Short Description: Validating empty submission to the Calorie Calculato   
-Test Case Name: Calorie Counter Submission 2   
+Test Case Name: Calorie Counter 2   
 Subsystem:  Calorie Counter    
 Design Date: 11/6/16   
 Execution Date: 11/16/16
@@ -97,7 +93,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter in total calories | P |
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter in total calories | P | |
 | 2 | Hit Submit | The system adds the value submitted to the daily total value | F | Crash |
 
 Post-conditions  
@@ -108,7 +104,7 @@ Post-conditions
 
 
 
-### 2.1 Name<a name="purpose"></a>
+### 2.1 Weights Tracker 1<a name="WeightsTracker1"></a>
 
 Test Case #:  2.1  
 System:  FitTigerLife Application  
@@ -126,11 +122,11 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
-| 3 | Hit Submit | The system adds the values submitted to the daily totals | P|
+| 3 | Hit Submit | The system adds the values submitted to the daily totals | P| |
 | 4 | Click Pull Past Records | The system attempts to pull latest 5 entries | P | Issue with Entry Tracker (8.1)|
-| 5 | Check Post-condition 1|
+| 5 | Check Post-condition 1| | | | |
 
 
 Post-conditions  
@@ -138,14 +134,14 @@ Post-conditions
 
 ---
 
-### 2.2. Name<a name="purpose"></a>
+### 2.2. Weights Tracker 2<a name="WeightsTracker2"></a>
 
 Test Case #:  2.2  
 System:  FitTigerLife Application  
 Designed by:  Thomas Chang   
 Executed by:  Charlie Thistlewaite   
 Short Description:  Validating submission to Weights Tracker fields  
-Test Case Name:  Weights Tracker Submission 2  
+Test Case Name:  Weights Tracker 2  
 Subsystem:  Weights Tracker   
 Design Date:  10/30/16   
 Execution Date:  11/16/16   
@@ -157,7 +153,7 @@ Pre-conditions
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P | Unnecessary for this test as the entry spaces start as ‘null’|
 | 2 | Enter ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 &  2 for each of the three spaces|
-| 3 | Hit Submit | The system adds the values submitted to the daily totals | P|
+| 3 | Hit Submit | The system adds the values submitted to the daily totals | P| |
 | 4 | Click Pull Past Records | The system attempts to pull latest 5 entries | F | Crash|
 
 
@@ -167,7 +163,7 @@ Post-conditions
 
 ---
 
-### 3.1 Name<a name="purpose"></a>
+### 3.1 Edit Goal 1<a name="EditGoal1"></a>
 
 Test Case #:  3.1  
 System:  FitTigerLife Application  
@@ -185,13 +181,13 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click ‘Change Goal Info’ | Brings user to a screen to change their goal information | P |
-| 2 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
+| 1 | Click ‘Change Goal Info’ | Brings user to a screen to change their goal information | P | |
+| 2 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
 | 3 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 2 & 3 for each of the four spaces|
-| 4 | Hit Store Data | The system replaces the initial values with ones submitted by user| P|
-| 5 | Go to Home Screen |
-| 6 | Go back to Edit Goal|
-| 7 | Check Post-condition 1|
+| 4 | Hit Store Data | The system replaces the initial values with ones submitted by user| P| |
+| 5 | Go to Home Screen | | | |
+| 6 | Go back to Edit Goal| | | |
+| 7 | Check Post-condition 1| | | | |
 
 
 Post-conditions  
@@ -199,7 +195,7 @@ Post-conditions
 
 ---
 
-### 3.2 Name<a name="purpose"></a>
+### 3.2 Edit Goal 2<a name="EditGoal2"></a>
 
 Test Case #:  3.2  
 System:  FitTigerLife Application  
@@ -217,12 +213,12 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click ‘Change Goal Info’ | Brings user to a screen to change their goal information | P |
-| 2 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
+| 1 | Click ‘Change Goal Info’ | Brings user to a screen to change their goal information | P | |
+| 2 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
 | 3 | Enter ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 2 & 3 for each of the four spaces|
-| 4 | Hit Store Data | The system replaces the initial values with ones submitted by user| P |
-| 5 | Go to Home Screen |
-| 6 | Go back to Edit Goal|
+| 4 | Hit Store Data | The system replaces the initial values with ones submitted by user| P | |
+| 5 | Go to Home Screen | | | |
+| 6 | Go back to Edit Goal| | | |
 | 7 | Check Post-condition 1 | | | System saves the empty data successfully |
 
 
@@ -231,7 +227,7 @@ Post-conditions
 
 ---
 
-### 4.1 Name<a name="purpose"></a>
+### 4.1 Profile 1<a name="Profile1"></a>
 
 Test Case #:  4.1   
 System:  FitTigerLife Application  
@@ -248,11 +244,11 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
 | 3 | Select Female | Stores female value | P | System defaults to Male |
-| 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| P|
-| 5 | Check Post-condition 1, 2|
+| 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| P| |
+| 5 | Check Post-condition 1, 2| | | | |
 
 
 Post-conditions  
@@ -261,7 +257,7 @@ Post-conditions
 
 ---
 
-### 4.2 Name<a name="purpose"></a>
+### 4.2 Profile 2<a name="Profile2"></a>
 
 Test Case #:  4.2   
 System:  FitTigerLife Application  
@@ -278,11 +274,11 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
 | 3 | Select Male | Stores male value | P | unnecessary since System defaults to Male |
-| 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| P|
-| 5 | Check Post-condition 1, 2|
+| 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| P| |
+| 5 | Check Post-condition 1, 2| | | | |
 
 
 Post-conditions  
@@ -291,7 +287,7 @@ Post-conditions
 
 ---
 
-### 4.3 Name<a name="purpose"></a>
+### 4.3 Profile 3<a name="Profile3"></a>
 
 Test Case #:  4.3   
 System:  FitTigerLife Application  
@@ -309,7 +305,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
 | 2 | Enter ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
 | 3 | Select Male or Female | Stores male or female value | P | System defaults to Male |
 | 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| F | Crash |
@@ -321,7 +317,7 @@ Post-conditions
 
 ---
 
-### 5.1 Name<a name="purpose"></a>
+### 5.1 BMI Calculator 1<a name="BMICalculator1"></a>
 
 Test Case #:  5.1   
 System:  FitTigerLife Application  
@@ -340,9 +336,9 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Numbers submitted are not ‘null’ | The system takes in information| P |
-| 2 | System Calculation | System runs the algorithm | P |
-| 3 | Check Post|condition 1|
+| 1 | Numbers submitted are not ‘null’ | The system takes in information| P | |
+| 2 | System Calculation | System runs the algorithm | P | |
+| 3 | Check Post|condition 1| | | |
 
 
 Post-conditions  
@@ -351,7 +347,7 @@ Post-conditions
 
 ---
 
-### 5.2 Name<a name="purpose"></a>
+### 5.2 BMI Calculator 2<a name="BMICalculator2"></a>
 
 Test Case #:  5.2  
 System:  FitTigerLife Application  
@@ -369,8 +365,8 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Numbers submitted are ‘null’ | The system takes in information| P |
-| 2 | System Calculation | System runs the algorithm | P |
+| 1 | Numbers submitted are ‘null’ | The system takes in information| P | |
+| 2 | System Calculation | System runs the algorithm | P | |
 | 3 | Check Post-condition 1 | | F | Crash|
 
 Post-conditions  
@@ -378,7 +374,7 @@ Post-conditions
 
 ---
 
-### 5.3 Name<a name="purpose"></a>
+### 5.3 BMI Calculator 3<a name="BMICalculator3"></a>
 
 Test Case #:  5.3  
 System:  FitTigerLife Application  
@@ -399,7 +395,7 @@ Pre-conditions
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Numbers submitted are not ‘null’ and the height is set to ‘0’ | The system takes in information| P  | the algorithm divides by height which is 0 in this case|
 | 2 | System Calculation | System runs the algorithm | P | Outputs 0 as an exception to dividing by 0|
-| 3 | Check Post-condition 1|
+| 3 | Check Post-condition 1| | | | |
 
 
 Post-conditions  
@@ -407,7 +403,7 @@ Post-conditions
 
 ---
 
-### 6.1 Name<a name="purpose"></a>
+### 6.1 Cardio Tracker 1<a name="CardioTracker1"></a>
 
 Test Case #:  6.1  
 System:  FitTigerLife Application  
@@ -424,10 +420,10 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
-| 2 | Enter any number not ‘null’ and not a decimal| The system waits for the user to submit this entry | P |
-| 3 | Click Submit | The system stores the values submitted by user| P |
-| 4 | Check Post-condition 1|
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 2 | Enter any number not ‘null’ and not a decimal| The system waits for the user to submit this entry | P | |
+| 3 | Click Submit | The system stores the values submitted by user| P | |
+| 4 | Check Post-condition 1| | | | |
 
 
 Post-conditions  
@@ -435,7 +431,7 @@ Post-conditions
 
 ---
 
-### 6.2 Name<a name="purpose"></a>
+### 6.2 Cardio Tracker 2<a name="CardioTracker2"></a>
 
 Test Case #:  6.2  
 System:  FitTigerLife Application  
@@ -452,9 +448,9 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
-| 2 | Enter ‘null’| The system waits for the user to submit this entry | P |
-| 3 | Click Submit | The system stores the values submitted by user| P |
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 2 | Enter ‘null’| The system waits for the user to submit this entry | P | |
+| 3 | Click Submit | The system stores the values submitted by user| P | |
 | 4 | Check Post-condition 1 | | | System saves the empty data successfully
 
 
@@ -463,7 +459,7 @@ Post-conditions
 
 ---
 
-### 6.3 Name<a name="purpose"></a>
+### 6.3 Cardio Tracker 3<a name="CardioTracker3"></a>
 
 Test Case #:  6.3  
 System:  FitTigerLife Application  
@@ -480,10 +476,10 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P|
-| 2 | Enter any number not ‘null’ and is a decimal| The system waits for the user to submit this entry | P |
-| 3 | Click Submit | The system stores the values submitted by user| P |
-| 4 | Check Post-condition 1 |
+| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 2 | Enter any number not ‘null’ and is a decimal| The system waits for the user to submit this entry | P | |
+| 3 | Click Submit | The system stores the values submitted by user| P | |
+| 4 | Check Post-condition 1 | | | | |
 
 
 Post-conditions  
@@ -491,7 +487,7 @@ Post-conditions
 
 ---
 
-### 7.1 Name<a name="purpose"></a>
+### 7.1 Timer 1<a name="Timer1"></a>
 
 Test Case #:  7.1  
 System:  FitTigerLife Application  
@@ -510,14 +506,14 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click Start | The timer starts counting shown by Minutes : Seconds | P |
-| 2 | Wait for 3 seconds |
-| 3 | Click Stop | The timer stops at 00:03 | P  |
-| 4 | Click Reset | The timer resets back to 00:00 | P|
+| 1 | Click Start | The timer starts counting shown by Minutes : Seconds | P | |
+| 2 | Wait for 3 seconds | | | |
+| 3 | Click Stop | The timer stops at 00:03 | P  | |
+| 4 | Click Reset | The timer resets back to 00:00 | P| |
 | 5 | Click Reset | The timer stays at 00:00 | P | check to see if resetting at zero works|
 | 6 | Click Stop | The timer stays at 00:00 | P | check to see if stop at zero works|
-| 7 | Click Start | The timer starts counting shown by Minutes : Seconds | P |
-| 8 | Wait for 3 seconds |
+| 7 | Click Start | The timer starts counting shown by Minutes : Seconds | P | |
+| 8 | Wait for 3 seconds | | | |
 | 9 | Click Reset | The timer is at 00:03 and continues to count up | P | Check to see if resetting during count-up does not affect it|
 | 10 | Check Post-condition 1 | | | Weights Tracker does not save the timer’s value
 
@@ -527,7 +523,7 @@ Post-conditions
 
 ---
 
-### 8.1 Name<a name="purpose"></a>
+### 8.1  Entry Tracker 1<a name="EntryTracker1"></a>
 
 Test Case #:  8.1  
 System:  FitTigerLife Application  
@@ -545,9 +541,9 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 2 | Click Pull Past Records in Weights Tracker | System pulls latest 5 entries | P  |
-| 1 | Check Post-condition 1  |
-| 2 | Check Post-condition 2 | F | Entries shown are first 5, not most recent 5 |
+| 2 | Click Pull Past Records in Weights Tracker | System pulls latest 5 entries | P  | |
+| 1 | Check Post-condition 1  | | | |
+| 2 | Check Post-condition 2 | F | Entries shown are first 5, not most recent 5 | | |
 
 Post-conditions  
 ~ The data has been properly saved
