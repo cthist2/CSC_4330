@@ -142,7 +142,7 @@
                 android:text="0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/BMIDisplay"
+                android:id="@+id/GenderDisplay"
                 android:layout_weight="1" />
 
             <TextView

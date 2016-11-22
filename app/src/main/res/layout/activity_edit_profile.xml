@@ -121,6 +121,15 @@
             android:layout_weight="1" />
     </LinearLayout>
 
+    <TextView
+        android:text="Null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_toRightOf="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8"
+        android:id="@+id/BMI" />
+
     <Button
         android:text="Submit Changes"
         android:layout_width="wrap_content"
@@ -140,15 +149,6 @@
         android:layout_above="@+id/button4"
         android:layout_alignRight="@+id/textView6"
         android:layout_alignEnd="@+id/textView6" />
-
-    <TextView
-        android:text="Null"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8"
-        android:id="@+id/BMI" />
 
 
 </LinearLayout>

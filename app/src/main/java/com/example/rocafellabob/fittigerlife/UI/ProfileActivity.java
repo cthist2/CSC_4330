@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class ProfileActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 
-    TextView Weight, Height, Age, BMI;
+    TextView Weight, Height, Age, BMI,GenderText;
     String Gender;
     Spinner GraphTypes;
 
@@ -39,10 +39,11 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
     @Override
     public void loadElements() {
         GraphTypes = (Spinner) findViewById(R.id.spinner2);
-        BMI = (TextView) findViewById(R.id.BMIDisplay);
+        //BMI = (TextView) findViewById(R.id.BMIDisplay);
         Weight = (TextView) findViewById(R.id.WeightDisplay);
         Height = (TextView) findViewById(R.id.HeightDisplay);
         Age = (TextView) findViewById(R.id.AgeDisplay);
+        GenderText = (TextView) findViewById(R.id.GenderDisplay);
     }
 
     @Override
@@ -56,10 +57,10 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
         // weight age height gender
         List<String[]> fc = Data.readData(this, profile_csv);
         if (fc != null) {
-            TextView[] tviews = new TextView[]{Weight, Age, Height};
+            TextView[] tviews = new TextView[]{Weight, Age, Height,GenderText};
             String[] info = fc.get(0);
             // weight age height
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 4; i++) {
                 tviews[i].setText(info[i]);
             }
         }

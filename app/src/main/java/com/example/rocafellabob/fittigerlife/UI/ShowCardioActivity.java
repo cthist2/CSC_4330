@@ -13,13 +13,10 @@ import java.io.File;
 import java.util.List;
 
 /**
- * ShowWeightLifting.java
+ * ShowCardioActivity.java
  * activity that lets you see the past few weight lifting entries
  * Date:        Person:     Reason:
- * 11/11/16     Spencer     Built the recoding information and data storage
- * 11/16/16     Spencer     More bug fixes to value showing NULL
- * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
- * 11/21/16     Spencer     Attempting to make this function multi usable
+ * 11/21/16     Spencer     Used show weights as template and built this
  */
 public class ShowCardioActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 
