@@ -1,5 +1,6 @@
 package com.example.rocafellabob.fittigerlife.UI;
 
+import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -78,15 +79,14 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     }
 
     public void record(View view) {
+
         String activityFinal = spinner.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();
         String date = sdf.format(new Date());
         Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
     }
     public void load(View view) {
-        String activityFinal = spinner.getSelectedItem().toString();
-        String inputTimeFinal = inputTime.getText().toString();
-        String date = sdf.format(new Date());
-        Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
+        Intent intent = new Intent(this, ShowCardioActivity.class);
+        startActivity(intent);
     }
 }

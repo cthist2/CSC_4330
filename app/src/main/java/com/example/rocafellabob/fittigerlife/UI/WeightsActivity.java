@@ -53,7 +53,7 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
      * @param view the owner of the function call
      */
     public void ShowRecords(View view) {
-        String weight = "Weight";
+
         Intent intent = new Intent(this, ShowWeightLifting.class);
         startActivity(intent);
     }
