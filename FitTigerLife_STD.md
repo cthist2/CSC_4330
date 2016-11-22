@@ -70,7 +70,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter in total calories | P | |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter in total calories | P | |
 | 2 | Enter ‘2000’ | The system waits for the user to submit this entry | P | |
 | 3 | Hit Submit | The system adds the value submitted to the daily total value | P | |
 | 4 | Enter ‘3000’ | The system waits for the user to submit this entry | P | |
@@ -89,7 +89,7 @@ Test Case #:  1.2
 System:  FitTigerLife Application  
 Designed by: Spencer Janin   
 Executed by: Spencer Janin   
-Short Description: Validating empty submission to the Calorie Calculato   
+Short Description: Validating empty submission to the Calorie Calculator   
 Test Case Name: Calorie Counter 2   
 Subsystem:  Calorie Counter    
 Priority:  6     
@@ -102,7 +102,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter in total calories | P | |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter in total calories | P | |
 | 2 | Hit Submit | The system adds the value submitted to the daily total value | F | Crash |
 
 Post-conditions  
@@ -132,7 +132,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
 | 3 | Hit Submit | The system adds the values submitted to the daily totals | P| |
 | 4 | Click Pull Past Records | The system attempts to pull latest 5 entries | P | Issue with Entry Tracker (8.1)|
@@ -162,7 +162,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P | Unnecessary for this test as the entry spaces start as ‘null’|
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P | Unnecessary for this test as the entry spaces start as ‘null’|
 | 2 | Enter ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 &  2 for each of the three spaces|
 | 3 | Hit Submit | The system adds the values submitted to the daily totals | P| |
 | 4 | Click Pull Past Records | The system attempts to pull latest 5 entries | F | Crash|
@@ -194,7 +194,7 @@ Pre-conditions
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Click ‘Change Goal Info’ | Brings user to a screen to change their goal information | P | |
-| 2 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 2 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 3 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 2 & 3 for each of the four spaces|
 | 4 | Hit Store Data | The system replaces the initial values with ones submitted by user| P| |
 | 5 | Go to Home Screen | | | |
@@ -227,7 +227,7 @@ Pre-conditions
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Click ‘Change Goal Info’ | Brings user to a screen to change their goal information | P | |
-| 2 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 2 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 3 | Enter ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 2 & 3 for each of the four spaces|
 | 4 | Hit Store Data | The system replaces the initial values with ones submitted by user| P | |
 | 5 | Go to Home Screen | | | |
@@ -258,7 +258,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
 | 3 | Select Female | Stores female value | P | System defaults to Male |
 | 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| P| |
@@ -289,7 +289,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
 | 3 | Select Male | Stores male value | P | unnecessary since System defaults to Male |
 | 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| P| |
@@ -321,7 +321,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 2 | Enter ‘null’ | The system waits for the user to submit this entry | P | Repeat steps 1 & 2 for each of the three spaces|
 | 3 | Select Male or Female | Stores male or female value | P | System defaults to Male |
 | 4 | Click Submit Changes | The system replaces the initial values with ones submitted by user| F | Crash |
@@ -355,7 +355,7 @@ Pre-conditions
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Numbers submitted are not ‘null’ | The system takes in information| P | |
 | 2 | System Calculation | System runs the algorithm | P | |
-| 3 | Check Post|condition 1| | | |
+| 3 | Check Post-condition 1| | | | |
 
 
 Post-conditions  
@@ -412,7 +412,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Numbers submitted are not ‘null’ and the height is set to ‘0’ | The system takes in information| P  | the algorithm divides by height which is 0 in this case|
+| 1 | Numbers submitted are not ‘null’ and the height is set to ‘0’ | The system takes in information| P  | The algorithm divides by height which is 0 in this case|
 | 2 | System Calculation | System runs the algorithm | P | Outputs 0 as an exception to dividing by 0|
 | 3 | Check Post-condition 1| | | | |
 
@@ -440,7 +440,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ and not a decimal| The system waits for the user to submit this entry | P | |
 | 3 | Click Submit | The system stores the values submitted by user| P | |
 | 4 | Check Post-condition 1| | | | |
@@ -469,7 +469,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 2 | Enter ‘null’| The system waits for the user to submit this entry | P | |
 | 3 | Click Submit | The system stores the values submitted by user| P | |
 | 4 | Check Post-condition 1 | | | System saves the empty data successfully
@@ -498,7 +498,7 @@ Pre-conditions
 
 | Step | Action | Expected System Response | Pass/Fail | Comment |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Click in the designated entry space | a number pad will appear for the user to enter data | P| |
+| 1 | Click in the designated entry space | A number pad will appear for the user to enter data | P| |
 | 2 | Enter any number not ‘null’ and is a decimal| The system waits for the user to submit this entry | P | |
 | 3 | Click Submit | The system stores the values submitted by user| P | |
 | 4 | Check Post-condition 1 | | | | |
@@ -533,8 +533,8 @@ Pre-conditions
 | 2 | Wait for 3 seconds | | | |
 | 3 | Click Stop | The timer stops at 00:03 | P  | |
 | 4 | Click Reset | The timer resets back to 00:00 | P| |
-| 5 | Click Reset | The timer stays at 00:00 | P | check to see if resetting at zero works|
-| 6 | Click Stop | The timer stays at 00:00 | P | check to see if stop at zero works|
+| 5 | Click Reset | The timer stays at 00:00 | P | Check to see if resetting at zero works|
+| 6 | Click Stop | The timer stays at 00:00 | P | Check to see if stop at zero works|
 | 7 | Click Start | The timer starts counting shown by Minutes : Seconds | P | |
 | 8 | Wait for 3 seconds | | | |
 | 9 | Click Reset | The timer is at 00:03 and continues to count up | P | Check to see if resetting during count-up does not affect it|
@@ -570,7 +570,7 @@ Pre-conditions
 | 2 | Check Post-condition 2 | F | Entries shown are first 5, not most recent 5 | | |
 
 Post-conditions  
-~ The data has been properly saved
+~ The data has been properly saved  
 ~ Shows data from the 5 most recent entries
 
 ---
