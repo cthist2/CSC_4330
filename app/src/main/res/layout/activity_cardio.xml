@@ -112,4 +112,12 @@
         android:onClick="record"
         />
 
+    <Button
+        android:text="Load Records"
+        android:layout_width="87dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/load"
+        android:onClick="load"
+        />
+
 </LinearLayout>

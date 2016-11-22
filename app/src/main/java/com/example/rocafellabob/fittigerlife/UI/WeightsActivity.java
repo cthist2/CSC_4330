@@ -10,6 +10,7 @@ import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
 import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
 
+import java.io.File;
 import java.util.Date;
 
 /**
@@ -34,6 +35,7 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
 
     @Override
     public void record(View view) {
+       // deleteFile(weights_csv);
         String WeightFinalString = Weights.getText().toString();
         String SetsFinalString = Sets.getText().toString();
         String RepsFinalString = Reps.getText().toString();
@@ -41,10 +43,9 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
         // date, weight, sets, reps
         Data.recordData(this, weights_csv, new String[]{date, WeightFinalString, SetsFinalString, RepsFinalString});
         // why not show the stats after every record?
-        Intent intent = new Intent(this, ShowWeightLifting.class);
-        startActivity(intent);
-
-    }
+      //  Intent intent = new Intent(this, ShowWeightLifting.class);
+       // startActivity(intent);
+        }
 
     /**
      * opens the showweightlifting activity
@@ -52,6 +53,7 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
      * @param view the owner of the function call
      */
     public void ShowRecords(View view) {
+        String weight = "Weight";
         Intent intent = new Intent(this, ShowWeightLifting.class);
         startActivity(intent);
     }

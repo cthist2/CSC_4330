@@ -83,4 +83,10 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
         String date = sdf.format(new Date());
         Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
     }
+    public void load(View view) {
+        String activityFinal = spinner.getSelectedItem().toString();
+        String inputTimeFinal = inputTime.getText().toString();
+        String date = sdf.format(new Date());
+        Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
+    }
 }
