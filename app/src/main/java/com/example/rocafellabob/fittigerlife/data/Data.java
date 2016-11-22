@@ -162,6 +162,45 @@ public class Data {
             }
         }
     }
+    /**
+     * record data for measurements specifically because it is an overrwrite
+     *  Overloading this for another record
+     * @param act the activity that called it
+     * @param wrist the wrist size goal
+     * @param neck the neck size goal
+     * @param waist the waist size goal
+     *
+     *
+     */
+    public static void recordGoal(AppCompatActivity act, String wrist, String neck, String waist) {
+        FileOutputStream fileOutputStream = null;
+        try {
+
+            fileOutputStream = act.openFileOutput(Current_Measurements_csv, MODE_PRIVATE);
+
+            // wrist,neck,waist,weight
+            fileOutputStream.write(wrist.getBytes());
+            fileOutputStream.write(comma.getBytes());
+            fileOutputStream.write(neck.getBytes());
+            fileOutputStream.write(comma.getBytes());
+            fileOutputStream.write(waist.getBytes());
+
+
+            fileOutputStream.write(newline.getBytes());
+            // success
+            Toast.makeText(act.getApplicationContext(), "Data Stored", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            // failure
+            Log.d("ERROR", e.getMessage());
+            Toast.makeText(act.getApplicationContext(), "Failed Data Storage", Toast.LENGTH_LONG).show();
+        } finally {
+            // make sure to close f o s
+            try {
+                fileOutputStream.close();
+            } catch (Exception e) {
+            }
+        }
+    }
 
     /**
      * the function that returns an array of doubles used for the graph

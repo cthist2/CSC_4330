@@ -16,5 +16,6 @@ public final class DataConsts {
     public static final String cardio_csv = "Cardio_Storage.csv";
     public static final String calories_csv = "Calories_Storage.csv";
     public static final String weights_csv = "Weights_Storage.csv";
+    public static final String Current_Measurements_csv = "Current_Measurements.csv";
     public static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 }

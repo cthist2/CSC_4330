@@ -63,46 +63,27 @@
                 android:layout_weight="0.11" />
 
             <TextView
-                android:text="Total Reps:"
+                android:text="Wrist Measurement:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView14"
                 android:layout_weight="0.11" />
 
             <TextView
-                android:text="Total Sets:"
+                android:text="Neck Measurement:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView15"
                 android:layout_weight="0.11" />
 
             <TextView
-                android:text="Total Weight:"
+                android:text="Waist Measurement:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView10"
                 android:layout_weight="0.11" />
 
-            <TextView
-                android:text="Total Time Walking:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView9"
-                android:layout_weight="0.11" />
 
-            <TextView
-                android:text="Total Time Biking:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView4"
-                android:layout_weight="0.11" />
-
-            <TextView
-                android:text="Total Time Running:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView"
-                android:layout_weight="0.11" />
         </LinearLayout>
 
         <LinearLayout
@@ -144,48 +125,26 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/GenderDisplay"
                 android:layout_weight="1" />
-
             <TextView
                 android:text="0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/RepsDisplay"
+                android:id="@+id/WristDisplay"
                 android:layout_weight="1" />
-
             <TextView
                 android:text="0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/SetsDisplay"
+                android:id="@+id/NeckDisplay"
                 android:layout_weight="1" />
-
             <TextView
                 android:text="0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/WeightDisplay"
+                android:id="@+id/WaistDisplay"
                 android:layout_weight="1" />
 
-            <TextView
-                android:text="0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/WalkingDisplay"
-                android:layout_weight="1" />
 
-            <TextView
-                android:text="0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/BikingDisplay"
-                android:layout_weight="1" />
-
-            <TextView
-                android:text="0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/RunningDisplay"
-                android:layout_weight="1" />
 
         </LinearLayout>
 
@@ -198,7 +157,7 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:text="Edit Stats"
+            android:text="Edit Profile Stats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button13"
@@ -218,5 +177,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner2"
         android:entries="@array/possibleGraphs" />
+
+    <Button
+        android:text="Edit Measurements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+         android:onClick="editMeasurement"
+         />
 
 </LinearLayout>

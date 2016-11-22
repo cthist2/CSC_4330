@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class ProfileActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 
-    TextView Weight, Height, Age, BMI,GenderText;
+    TextView Weight, Height, Age, BMI,GenderText,Wrist,Waist,Neck;
     String Gender;
     Spinner GraphTypes;
 
@@ -44,6 +44,9 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
         Height = (TextView) findViewById(R.id.HeightDisplay);
         Age = (TextView) findViewById(R.id.AgeDisplay);
         GenderText = (TextView) findViewById(R.id.GenderDisplay);
+        Wrist = (TextView) findViewById(R.id.WristDisplay);
+        Waist = (TextView) findViewById(R.id.WaistDisplay);
+        Neck = (TextView) findViewById(R.id.NeckDisplay);
     }
 
     @Override
@@ -57,10 +60,19 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
         // weight age height gender
         List<String[]> fc = Data.readData(this, profile_csv);
         if (fc != null) {
-            TextView[] tviews = new TextView[]{Weight, Age, Height,GenderText};
+            TextView[] tviews = new TextView[]{Weight, Height, Age,GenderText};
             String[] info = fc.get(0);
             // weight age height
             for (int i = 0; i < 4; i++) {
+                tviews[i].setText(info[i]);
+            }
+        }
+        List<String[]> fe = Data.readData(this, Current_Measurements_csv);
+        if (fe != null) {
+            TextView[] tviews = new TextView[]{Wrist, Neck, Waist};
+            String[] info = fe.get(0);
+            // weight age height
+            for (int i = 0; i < 3; i++) {
                 tviews[i].setText(info[i]);
             }
         }
@@ -78,6 +90,10 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
      */
     public void editProfile(View view) {
         Intent intent = new Intent(this, EditProfileActivity.class);
+        startActivity(intent);
+    }
+    public void editMeasurement(View view) {
+        Intent intent = new Intent(this, EditMeasurementsActivity.class);
         startActivity(intent);
     }
 
