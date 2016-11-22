@@ -21,6 +21,7 @@ import java.util.List;
  * 11/1/16      Spencer     put data inputting and calculations in. Calculating BMI is now working
  * 11/3/16      Spencer     Added the age parameter and the gender buttons
  * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
+ * 11/17/16     Spencer     Did some UI changes to Profile to include measurements
  */
 public class ProfileActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 

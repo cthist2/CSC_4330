@@ -10,7 +10,12 @@ import android.widget.TextView;
 import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
 public class EditMeasurementsActivity extends AppCompatActivity implements EditActivity, UIInterface {
-
+    /**
+     * EditMeasurementsActivity.java
+     * edit fitness goals activity
+     * Date:        Person:     Reason:
+     * 11/21/16     Spencer     Used editgoalsActivity as a template to build this
+     */
     EditText weight, wrist, neck, waiste;
 
     @Override

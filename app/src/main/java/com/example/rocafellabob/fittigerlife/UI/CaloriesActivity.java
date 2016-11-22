@@ -21,6 +21,7 @@ import java.util.List;
  * 11/13/16     Spencer     Worked on the storing of the calories 
  * 11/14/16     Spencer     fixed calories counter
  * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
+ * 11/17/16     Spencer     Added a text view to be change for daily calories
  */
 public class CaloriesActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
