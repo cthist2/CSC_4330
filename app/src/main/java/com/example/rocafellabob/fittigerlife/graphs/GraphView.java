@@ -10,9 +10,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
-import android.util.Log;
 import android.view.View;
-import java.text.SimpleDateFormat;
+import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
 import java.util.Date;
 
 /**
@@ -39,7 +38,7 @@ public class GraphView extends View {
         datapoints = points;
         // default paint settings
         paint = new Paint();
-        paint.setColor(Color.WHITE);
+        paint.setColor(Color.MAGENTA);
         paint.setStrokeWidth(3);
         paint.setStyle(Paint.Style.STROKE);
         paint.setTextAlign(Align.CENTER);
@@ -65,7 +64,7 @@ public class GraphView extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         this.w = w;
         this.h = h;
-        Log.d("TEST", w + " " + h);
+//        Log.d("TEST", w + " " + h);
         super.onSizeChanged(w, h, oldw, oldh);
     }
 
@@ -88,15 +87,14 @@ public class GraphView extends View {
             // milliseconds in a day = 86400000
          */
         String sDate = String.format("%.0f", date);
-        Log.d("inf", sDate);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+//        Log.d("inf", sDate);
         float dayDate = 0;
         try {
             Date dDate = sdf.parse(sDate); // get date object from the string
             float msDate = dDate.getTime(); // turn into milliseconds from 1970
             dayDate = msDate / 86400000; // turn into number of days bc 86400000 ms in a day
         } catch (Exception e) {
-            Log.d("ERR", e.getMessage());
+//            Log.d("ERR", e.getMessage());
         }
         return dayDate;
     }
@@ -104,7 +102,7 @@ public class GraphView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(Color.BLACK);
+//        canvas.drawColor(Color.BLACK);
         // axis assuming horizontal phone
         float[] axiss = {
             10, h, // bottom left to
@@ -112,7 +110,10 @@ public class GraphView extends View {
             10, 10, // top left to
             w, 10 // top right
         };
-        canvas.drawLines(axiss, paint);
+        int tmp = paint.getColor();
+        paint.setColor(Color.BLACK);
+        canvas.drawLines(axiss, paint); // black axis then reassign
+        paint.setColor(tmp);
 
         // scaling logic
         /*
@@ -145,7 +146,7 @@ public class GraphView extends View {
             datapoints[i] = datapoints[i] - min_x;
         }
         max_x = max_x - min_x; // also subtract from the max
-        Log.d("max", max_x + " " + max_y);
+//        Log.d("max", max_x + " " + max_y);
         for (int i = 0; i < datapoints.length; i = i + 2) { // this fixes all the y values (index 0, 2, 4, 8 etc.) remember they are reversed
             datapoints[i] = datapoints[i] / max_y * (w - 10) + 10; // + 10 and - 10 for axis
         }

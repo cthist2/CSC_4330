@@ -6,6 +6,7 @@ import android.view.View;
  * EditActivity.java
  * interface that any activity that edits data will implement
  * 11/16/16     Thomas      create file (huge refactoring)
+ * 11/22/16     Thomas      added function to check format of input
  */
 public interface EditActivity {
 

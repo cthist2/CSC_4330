@@ -35,6 +35,7 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
         waiste = (EditText) findViewById(R.id.editWaist);
     }
 
+    @Override
     public void update(View view) {
         String wristFinalString = wrist.getText().toString();
         String neckFinalString = neck.getText().toString();

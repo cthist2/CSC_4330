@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
@@ -22,9 +21,7 @@ public class EditMeasurementsActivity extends AppCompatActivity implements EditA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_measurements);
-
         loadElements();
-
     }
 
     @Override
@@ -35,12 +32,12 @@ public class EditMeasurementsActivity extends AppCompatActivity implements EditA
         waiste = (EditText) findViewById(R.id.editWaist);
     }
 
+    @Override
     public void update(View view) {
-
         String wristFinalString = wrist.getText().toString();
         String neckFinalString = neck.getText().toString();
         String waistFinalString = waiste.getText().toString();
-       // String weightFinalString = weight.getText().toString();
+        // String weightFinalString = weight.getText().toString();
         Data.recordGoal(this, wristFinalString, neckFinalString, waistFinalString);
     }
 }

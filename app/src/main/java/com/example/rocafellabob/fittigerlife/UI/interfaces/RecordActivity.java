@@ -11,6 +11,7 @@ import android.view.View;
  * RecordActivity.java
  * interface that any activity that records data will implement
  * 11/16/16     Thomas      create file (huge refactoring)
+ * 11/22/16     Thomas      added function to check format of input
  */
 public interface RecordActivity {
 
@@ -21,4 +22,11 @@ public interface RecordActivity {
      * @param view the owner of the function call
      */
     public void record(View view);
+    
+    /**
+     * function that will verify the input is the correct format i.e. numbers only
+     * 
+     * @param st the string to check
+     */
+    public boolean checkFormat(String st);
 }

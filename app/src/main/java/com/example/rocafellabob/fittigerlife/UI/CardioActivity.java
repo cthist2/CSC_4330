@@ -9,6 +9,7 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
@@ -25,6 +26,7 @@ import java.util.Date;
  *  11/5/16     Spencer     Did more Ui work and fixed chronometer to time correctly
  *  11/8/16     Spencer     Did back end changes to data storing
  *  11/16/16     Thomas      move data processing to separate file (huge refactoring)
+ *  11/22/16     Thomas      added function to check format of input
  */
 public class CardioActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
@@ -78,15 +80,30 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
         Chrono.setBase(SystemClock.elapsedRealtime());
     }
 
+    @Override
     public void record(View view) {
-
         String activityFinal = spinner.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();
         String date = sdf.format(new Date());
-        Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
+        if (checkFormat(inputTimeFinal)) {
+            Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
+        } else {
+            Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999(", Toast.LENGTH_LONG).show();
+        }
     }
+
+    /**
+     * opens the cardio activity screen
+     *
+     * @param view the owner of the function call
+     */
     public void load(View view) {
         Intent intent = new Intent(this, ShowCardioActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean checkFormat(String st) {
+        return st.matches("^\\d{1,5}$"); // allow only numbers, up to 5 digits
     }
 }

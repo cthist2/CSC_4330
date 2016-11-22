@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class ProfileActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 
-    TextView Weight, Height, Age, BMI,GenderText,Wrist,Waist,Neck;
+    TextView Weight, Height, Age, BMI, GenderText, Wrist, Waist, Neck;
     String Gender;
     Spinner GraphTypes;
 
@@ -61,14 +61,14 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
         // weight age height gender
         List<String[]> fc = Data.readData(this, profile_csv);
         if (fc != null) {
-            TextView[] tviews = new TextView[]{Weight, Height, Age,GenderText};
+            TextView[] tviews = new TextView[]{Weight, Height, Age, GenderText};
             String[] info = fc.get(0);
             // weight age height
             for (int i = 0; i < 4; i++) {
                 tviews[i].setText(info[i]);
             }
         }
-        List<String[]> fe = Data.readData(this, Current_Measurements_csv);
+        List<String[]> fe = Data.readData(this, current_measurements_csv);
         if (fe != null) {
             TextView[] tviews = new TextView[]{Wrist, Neck, Waist};
             String[] info = fe.get(0);
@@ -86,13 +86,14 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
 
     /**
      * opens the editprofile activity
-     * 
+     *
      * @param view the owner of the function call
      */
     public void editProfile(View view) {
         Intent intent = new Intent(this, EditProfileActivity.class);
         startActivity(intent);
     }
+
     public void editMeasurement(View view) {
         Intent intent = new Intent(this, EditMeasurementsActivity.class);
         startActivity(intent);
@@ -100,7 +101,7 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
 
     /**
      * creates a graph object to replace the view of this activity
-     * 
+     *
      * @param view the owner of the function call
      */
     public void createGraph(View view) {

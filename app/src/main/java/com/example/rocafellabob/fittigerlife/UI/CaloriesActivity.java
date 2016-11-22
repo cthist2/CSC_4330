@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
@@ -22,6 +23,7 @@ import java.util.List;
  * 11/14/16     Spencer     fixed calories counter
  * 11/16/16     Thomas      move data processing to separate file (huge refactoring)
  * 11/17/16     Spencer     Added a text view to be change for daily calories
+ * 11/22/16     Thomas      added function to check format of input
  */
 public class CaloriesActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
@@ -47,14 +49,24 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
 
         String date = sdf.format(new Date());
 
-        Data.recordData(this, calories_csv, new String[]{date, caloriesFinalString});
-        List<String[]> data = Data.readData(this, calories_csv);
-        int calorieTotal = 0;
-        for (String[] s : data) { // for every entry in data, find entries that match the date and add em up
-            if (s[0].equals(date)) {
-                calorieTotal += Integer.parseInt(s[1]);
+        if (checkFormat(caloriesFinalString)) {
+            Data.recordData(this, calories_csv, new String[]{date, caloriesFinalString});
+            List<String[]> data = Data.readData(this, calories_csv);
+            int calorieTotal = 0;
+            for (String[] s : data) { // for every entry in data, find entries that match the date and add em up
+                if (s[0].equals(date)) {
+                    calorieTotal += Integer.parseInt(s[1]);
+                }
             }
+            caloriesReturned.setText(Integer.toString(calorieTotal));
+        } else {
+            Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999(", Toast.LENGTH_LONG).show();
         }
-        caloriesReturned.setText(Integer.toString(calorieTotal));
+
+    }
+
+    @Override
+    public boolean checkFormat(String st) {
+        return st.matches("^\\d{1,5}$"); // allow only numbers, up to 5 digits
     }
 }

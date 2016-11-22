@@ -29,6 +29,7 @@ public class Data {
      * @param act the activity being called from
      * @param filename the name of the file to write to
      * @param data the data to be written
+     * @return true if data properly recorded false otherwise
      */
     public static boolean recordData(AppCompatActivity act, String filename, String[] data) {
         FileOutputStream fileoutput = null;
@@ -73,10 +74,10 @@ public class Data {
             while ((entry = reader.readLine()) != null) {
                 entries.add(entry.split(comma));
             }
-            Toast.makeText(act.getApplicationContext(), "Got the data", Toast.LENGTH_LONG).show();
+//            Toast.makeText(act.getApplicationContext(), "Got the data", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             Log.d("ERROR", e.getMessage());
-            Toast.makeText(act.getApplicationContext(), "Failed Data Read", Toast.LENGTH_LONG).show();
+//            Toast.makeText(act.getApplicationContext(), "Failed Data Read", Toast.LENGTH_LONG).show();
         } finally {
             try {
                 fileinput.close();
@@ -165,18 +166,17 @@ public class Data {
     /**
      * record data for measurements specifically because it is an overrwrite
      *  Overloading this for another record
+     * 
      * @param act the activity that called it
      * @param wrist the wrist size goal
      * @param neck the neck size goal
      * @param waist the waist size goal
-     *
-     *
      */
     public static void recordGoal(AppCompatActivity act, String wrist, String neck, String waist) {
         FileOutputStream fileOutputStream = null;
         try {
 
-            fileOutputStream = act.openFileOutput(Current_Measurements_csv, MODE_PRIVATE);
+            fileOutputStream = act.openFileOutput(current_measurements_csv, MODE_PRIVATE);
 
             // wrist,neck,waist,weight
             fileOutputStream.write(wrist.getBytes());
@@ -231,14 +231,14 @@ public class Data {
         } else {
             return null;
         }
-        List<String[]> data = readData(act, filename);
+//        List<String[]> data = readData(act, filename);
         // dummy calorie data
-//        List<String[]> data = new ArrayList<>();
-//        data.add(new String[]{"20161120", "120"});
-//        data.add(new String[]{"20161120", "320"});
-//        data.add(new String[]{"20161121", "220"});
-//        data.add(new String[]{"20161122", "420"});
-//        data.add(new String[]{"20161123", "520"});
+        List<String[]> data = new ArrayList<>();
+        data.add(new String[]{"20161120", "120"});
+        data.add(new String[]{"20161120", "320"});
+        data.add(new String[]{"20161121", "220"});
+        data.add(new String[]{"20161122", "420"});
+        data.add(new String[]{"20161123", "520"});
         List<Double> dp = new ArrayList<>();
         if (data != null && data.size() > 0) { // make sure there's some stuff recorded
             // only put in the first set of data once
