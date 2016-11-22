@@ -256,7 +256,7 @@ public class Data {
 //            Log.d("msg1", date);
             // everything else should be added twice
             // same logic as before
-            for (; i < data.size();) {
+            while(i < data.size()) {
                 date = data.get(i)[0];
                 total = Double.parseDouble(data.get(i)[index]);
                 i++;

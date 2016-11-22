@@ -30,6 +30,7 @@ import java.util.Date;
  */
 public class CardioActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
+    private long lastPause;
     private Spinner spinner;
     Chronometer Chrono;
     Button StartTimer, pauseTimer, resetTimer, recordToFile;
@@ -40,6 +41,8 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardio);
         loadElements();
+        Chrono.setBase(SystemClock.elapsedRealtime() + 3000); // 3 second 'delay' until start
+        Chrono.start();
     }
 
     @Override
@@ -58,6 +61,7 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
      * @param view the owner of the function call
      */
     public void startChronometer(View view) {
+        Chrono.setBase(Chrono.getBase() + SystemClock.elapsedRealtime() - lastPause);
         Chrono.start();
     }
 
@@ -67,7 +71,10 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
      * @param view the owner of the function call
      */
     public void stopChronometer(View view) {
+        lastPause = SystemClock.elapsedRealtime();
         Chrono.stop();
+        // also update the input time
+        inputTime.setText(Chrono.getText());
     }
 
     /**
@@ -77,7 +84,8 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
      * @param view the owner of the function call
      */
     public void resetChronometer(View view) {
-        Chrono.setBase(SystemClock.elapsedRealtime());
+        lastPause = 0;
+        Chrono.setBase(SystemClock.elapsedRealtime() + 3000); // 3 second 'delay' until start
     }
 
     @Override

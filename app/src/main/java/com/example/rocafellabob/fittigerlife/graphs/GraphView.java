@@ -10,14 +10,18 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
-import android.view.View;
+
 import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
+
+import android.view.View;
+
 import java.util.Date;
 
 /**
  * Graph.java
  * graphing logic
  * 11/16/16     Thomas      create file
+ * 11/22/2016   Thomas      draw the center value
  */
 public class GraphView extends View {
 
@@ -42,6 +46,7 @@ public class GraphView extends View {
         paint.setStrokeWidth(3);
         paint.setStyle(Paint.Style.STROKE);
         paint.setTextAlign(Align.CENTER);
+        paint.setTextSize(30);
     }
 
     /**
@@ -87,7 +92,6 @@ public class GraphView extends View {
             // milliseconds in a day = 86400000
          */
         String sDate = String.format("%.0f", date);
-//        Log.d("inf", sDate);
         float dayDate = 0;
         try {
             Date dDate = sdf.parse(sDate); // get date object from the string
@@ -98,7 +102,7 @@ public class GraphView extends View {
         }
         return dayDate;
     }
-
+        
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -110,10 +114,6 @@ public class GraphView extends View {
             10, 10, // top left to
             w, 10 // top right
         };
-        int tmp = paint.getColor();
-        paint.setColor(Color.BLACK);
-        canvas.drawLines(axiss, paint); // black axis then reassign
-        paint.setColor(tmp);
 
         // scaling logic
         /*
@@ -145,6 +145,18 @@ public class GraphView extends View {
         for (int i = 1; i < datapoints.length; i = i + 2) {
             datapoints[i] = datapoints[i] - min_x;
         }
+        
+        int tmp = paint.getColor();
+        paint.setColor(Color.BLACK);
+        canvas.drawLines(axiss, paint); // black axis then reassign
+        canvas.drawLine(w/2, 0, w/2, h, paint); // draw middle line
+        paint.setColor(tmp);
+
+        canvas.save();
+        canvas.rotate(90);
+        canvas.drawText(String.format("%.0f", max_y / 2), 40, -w/2 + 10, paint); // draw the middle value
+        canvas.restore();
+        
         max_x = max_x - min_x; // also subtract from the max
 //        Log.d("max", max_x + " " + max_y);
         for (int i = 0; i < datapoints.length; i = i + 2) { // this fixes all the y values (index 0, 2, 4, 8 etc.) remember they are reversed
