@@ -1,9 +1,9 @@
-# Software Design Document
+# Software Testing Document
 ## for FitTigerLife
 ### Version 1.0 approved
 ### Prepared by *Robin Tallitsch, Triston Lamonte, Thomas Chang, Spencer Janin, Charlie Thistlethwaite, and Cort Fitzpatrick*
 ### *CSC 4330*
-### *11/2/2016*
+### *11/21/2016*
 
 ---
 
@@ -13,7 +13,7 @@
  * [Revision History](#Revision)
 
 1. [Introduction](#Introduction)
-  * 1.1 [](#)
+  * 1.1 [Purpose](#purpose)
 2.	[Test Cases](#TestCases)
   *   [1.1	Calorie Counter 1](#CalorieCounter1)
   *   [1.2	Calorie Counter 2](#CalorieCounter2)
@@ -45,6 +45,13 @@
 
 # 1. Introduction <a name="Introduction"></a>
 
+### 1.1 Purpose<a name="purpose"></a>
+The purpose of this document is to show the testing of the various features in the “FitTigerLife” application. This document mainly entails the test cases and the pass/fails of multiple scenarios the system is put through.
+
+---
+
+# 2. Test Cases <a name="TestCases"></a>
+
 ### 1.1 Calorie Counter 1<a name="CalorieCounter1"></a>
 
 Test Case #: 1.1  
@@ -54,6 +61,7 @@ Executed by:  Spencer Janin
 Short Description:  Validating submission to the Calorie Calculator  
 Test Case Name:  Calorie Counter Submission 1  
 Subsystem:  Calorie Counter  
+Priority:   6    
 Design Date:  11/6/16  
 Execution Date:  11/16/16  
 
@@ -84,6 +92,7 @@ Executed by: Spencer Janin
 Short Description: Validating empty submission to the Calorie Calculato   
 Test Case Name: Calorie Counter 2   
 Subsystem:  Calorie Counter    
+Priority:  6     
 Design Date: 11/6/16   
 Execution Date: 11/16/16
 
@@ -113,6 +122,7 @@ Executed by:  Charlie Thistlewaite
 Short Description:  Validating submission to Weights Tracker fields  
 Test Case Name:  Weights Tracker Submission 1  
 Subsystem:  Weights Tracker  
+Priority:   7    
 Design Date:  10/30/16  
 Execution Date: 11/16/16  
 
@@ -143,6 +153,7 @@ Executed by:  Charlie Thistlewaite
 Short Description:  Validating submission to Weights Tracker fields  
 Test Case Name:  Weights Tracker 2  
 Subsystem:  Weights Tracker   
+Priority:   7    
 Design Date:  10/30/16   
 Execution Date:  11/16/16   
 
@@ -172,6 +183,7 @@ Executed by:  Spencer Janin
 Short Description:  Validating submission to Edit Goal fields  
 Test Case Name:  Edit Goal 1   
 Subsystem:  Edit Goal   
+Priority: 1      
 Design Date:  11/13/16   
 Execution Date: 11/16/16   
 
@@ -204,6 +216,7 @@ Executed by:  Spencer Janin
 Short Description:  Validating submission to Edit Goal fields  
 Test Case Name:  Edit Goal 2   
 Subsystem:  Edit Goal   
+Priority:  1     
 Design Date:  11/13/16   
 Execution Date:  11/16/16   
 
@@ -236,6 +249,7 @@ Executed by:  Spencer Janin
 Short Description:  Validating submission to Profile fields  
 Test Case Name:  Profile 1   
 Subsystem:  Profile   
+Priority:  9     
 Design Date:  11/2/16   
 Execution Date:  11/16/16   
 
@@ -266,6 +280,7 @@ Executed by:  Spencer Janin
 Short Description:  Validating submission to Profile fields  
 Test Case Name:  Profile 2   
 Subsystem:  Profile   
+Priority:  9     
 Design Date:  11/2/16   
 Execution Date: 11/16/16   
 
@@ -296,6 +311,7 @@ Executed by:  Spencer Janin
 Short Description:  Validating submission to Profile fields  
 Test Case Name:  Profile 3   
 Subsystem:  Profile   
+Priority:  9     
 Design Date:  11/2/16   
 Execution Date: 11/16/16   
 
@@ -326,6 +342,7 @@ Executed by:  Charlie Thistlewaite
 Short Description:  Validating proper calculations  
 Test Case Name:  BMI Calculator 1   
 Subsystem:  BMI Calculator   
+Priority:      7   
 Design Date:  11/2/16   
 Execution Date: 11/16/16   
 
@@ -356,6 +373,7 @@ Executed by:  Charlie Thistlewaite
 Short Description:  Validating proper calculations  
 Test Case Name:  BMI Calculator 2  
 Subsystem:  BMI Calculator  
+Priority:       7  
 Design Date:  11/2/16  
 Execution Date: 11/16/16  
 
@@ -383,6 +401,7 @@ Executed by:  Charlie Thistlewaite
 Short Description:  Validating proper calculations  
 Test Case Name:   BMI Calculator 3  
 Subsystem:  BMI Calculator  
+Priority:       7  
 Design Date:  11/2/16  
 Execution Date: 11/16/16  
 
@@ -412,6 +431,7 @@ Executed by:   Charlie Thistlewaite
 Short Description:  Validating submission to Cardio Tracker fields  
 Test Case Name:  Cardio Tracker 1  
 Subsystem:  Cardio Tracker  
+Priority:      7   
 Design Date:  10/30/16  
 Execution Date: 11/16/16  
 
@@ -440,6 +460,7 @@ Executed by:   Thomas Chang
 Short Description:  Validating submission to Cardio Tracker fields  
 Test Case Name:  Cardio Tracker 2  
 Subsystem:  Cardio Tracker  
+Priority:    7   
 Design Date:   10/30/16  
 Execution Date: 11/16/16   
 
@@ -468,6 +489,7 @@ Executed by:  Charlie Thistlewaite
 Short Description:  Validating submission to Cardio Tracker fields   
 Test Case Name:  Cardio Tracker 3  
 Subsystem:  Cardio Tracker  
+Priority:    7   
 Design Date:  10/30/16  
 Execution Date: 11/16/16  
 
@@ -496,6 +518,7 @@ Executed by:  Charlie Thistlewaite
 Short Description:  Verifying the actions of Timer work  
 Test Case Name:  Timer 1  
 Subsystem:  Cardio Tracker/Weights Tracker  
+Priority:    2   
 Design Date:  11/6/16  
 Execution Date: 11/16/16  
 
@@ -532,6 +555,7 @@ Executed by:  Spencer Janin
 Short Description:  Verifying correct saving and showing of data  
 Test Case Name:  Entry Tracker  1
 Subsystem:  Entry Tracker  
+Priority:     8  
 Design Date:  11/13/16  
 Execution Date:11/16/16  
 
