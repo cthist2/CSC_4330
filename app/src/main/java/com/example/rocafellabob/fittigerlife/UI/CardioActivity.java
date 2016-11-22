@@ -26,7 +26,7 @@ import java.util.Date;
  *  11/5/16     Spencer     Did more Ui work and fixed chronometer to time correctly
  *  11/8/16     Spencer     Did back end changes to data storing
  *  11/16/16     Thomas      move data processing to separate file (huge refactoring)
- *  11/22/16     Thomas      added function to check format of input
+ *  11/22/16     Thomas      added function to check format of input, recording format to seconds
  */
 public class CardioActivity extends AppCompatActivity implements RecordActivity, UIInterface {
 
@@ -74,7 +74,7 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
         lastPause = SystemClock.elapsedRealtime();
         Chrono.stop();
         // also update the input time
-        inputTime.setText(Chrono.getText());
+        inputTime.setText(Long.toString((SystemClock.elapsedRealtime() - Chrono.getBase()) / 1000));
     }
 
     /**
