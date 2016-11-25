@@ -24,7 +24,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ExerciseActivity" />
         <activity android:name=".WeightsActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CardioActivity" />
         <activity android:name=".EditGoalsActivity" />
         <activity android:name=".EditProfileActivity" />

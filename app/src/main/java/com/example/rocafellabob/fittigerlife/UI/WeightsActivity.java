@@ -47,7 +47,7 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
         String date = sdf.format(new Date());
         // date, weight, sets, reps,activity
         if (checkFormat(WeightFinalString) && checkFormat(SetsFinalString) && checkFormat(RepsFinalString)) {
-            Data.recordData(this, weights_csv, new String[]{date, WeightFinalString, SetsFinalString, RepsFinalString,activityDone});
+            Data.recordData(this, weights_csv, new String[]{date, WeightFinalString, SetsFinalString, RepsFinalString, activityDone});
         } else {
             Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999(", Toast.LENGTH_LONG).show();
         }

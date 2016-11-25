@@ -107,6 +107,6 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
     public void createGraph(View view) {
         String graphtype = GraphTypes.getSelectedItem().toString();
         double[] mypoints = Data.getData(this, graphtype);
-        setContentView(new GraphView(this, mypoints));
+        setContentView(new GraphView(this, mypoints, graphtype));
     }
 }

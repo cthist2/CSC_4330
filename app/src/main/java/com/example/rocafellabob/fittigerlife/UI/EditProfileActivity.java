@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
@@ -43,8 +44,16 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
         String WeightFinalString = Weight.getText().toString();
         String HeightFinalString = Height.getText().toString();
         String AgeFinalString = Age.getText().toString();
-        double BMIval = Data.recordProfileData(this, WeightFinalString, AgeFinalString, HeightFinalString, Gender);
-        BMI.setText(Double.toString(BMIval));
+        if (checkFormat(WeightFinalString) && checkFormat(HeightFinalString) && checkFormat(AgeFinalString) && Gender != null) {
+            double BMIval = Data.recordProfileData(this, WeightFinalString, AgeFinalString, HeightFinalString, Gender);
+            BMI.setText(Double.toString(BMIval));
+        } else {
+            if(Gender == null) {
+                Toast.makeText(getApplicationContext(), "Your forgot to pick a gender", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999)", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     /**
@@ -63,6 +72,11 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
      */
     public void Female(View view) {
         Gender = "Female";
+    }
+
+    @Override
+    public boolean checkFormat(String st) {
+        return st.matches("^\\d{1,5}$");
     }
 
 }

@@ -17,4 +17,11 @@ public interface EditActivity {
      * @param view the owner of the function call
      */
     public void update(View view);
+    
+    /**
+     * function that will verify the input is the correct format i.e. numbers only
+     * 
+     * @param st the string to check
+     */
+    public boolean checkFormat(String st);
 }

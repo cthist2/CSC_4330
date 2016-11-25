@@ -60,7 +60,7 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
             }
             caloriesReturned.setText(Integer.toString(calorieTotal));
         } else {
-            Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999(", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999)", Toast.LENGTH_LONG).show();
         }
 
     }

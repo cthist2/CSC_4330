@@ -211,43 +211,56 @@ public class Data {
      */
     public static double[] getData(AppCompatActivity act, String graphtype) {
         String filename;
-        int index = 1;
+        int valueindex = 1;
+        int activityindex = 0;
+        String activity = "";
         // date calories
         if (graphtype.equals("Daily Calories")) {
             filename = calories_csv;
             // date activitytype time
         } else if (graphtype.equals("Running Time") || graphtype.equals("Biking Time") || graphtype.equals("Walking Time")) {
+            if (graphtype.equals("Running Time")) {
+                activity = "Run";
+            } else if (graphtype.equals("Biking Time")) {
+                activity = "Bike";
+            } else if (graphtype.equals("Walking Time")) {
+                activity = "Walk";
+            }
             filename = cardio_csv;
+            valueindex = 2;
+            activityindex = 1;
             // date sets reps weights
-        } else if (graphtype.equals("Daily Sets") || graphtype.equals("Daily Reps") || graphtype.equals("Daily Weights")) {
+        } else if (graphtype.equals("Daily Sets") || graphtype.equals("Daily Reps") || graphtype.equals("Weights")) {
+            // need to update for new activities
             filename = weights_csv;
+            activityindex = 4;
             if (graphtype.equals("Daily Sets")) {
-                index = 2; // position of sets in the array
-            } else if (graphtype.equals("Daily Weights")) {
-                index = 1; // position of weights in the array
+                valueindex = 2; // position of sets in the array
+            } else if (graphtype.equals("Weights")) {
+                valueindex = 1; // position of weights in the array
             } else {
-                index = 3; // position of reps in the array
+                valueindex = 3; // position of reps in the array
             }
         } else {
             return null;
         }
-//        List<String[]> data = readData(act, filename);
+        List<String[]> data = readData(act, filename);
         // dummy calorie data
-        List<String[]> data = new ArrayList<>();
-        data.add(new String[]{"20161120", "120"});
-        data.add(new String[]{"20161120", "320"});
-        data.add(new String[]{"20161121", "220"});
-        data.add(new String[]{"20161122", "420"});
-        data.add(new String[]{"20161123", "520"});
+//        List<String[]> data = new ArrayList<>();
+//        data.add(new String[]{"20161120", "120"});
+//        data.add(new String[]{"20161120", "320"});
+//        data.add(new String[]{"20161121", "220"});
+//        data.add(new String[]{"20161122", "420"});
+//        data.add(new String[]{"20161123", "520"});
         List<Double> dp = new ArrayList<>();
         if (data != null && data.size() > 0) { // make sure there's some stuff recorded
             // only put in the first set of data once
             int i = 0;
             String date = data.get(i)[0];
-            double total = Double.parseDouble(data.get(i)[index]);
+            double total = (activity.equals(data.get(i)[activityindex]) || activityindex == 0) ? Double.parseDouble(data.get(i)[valueindex]) : 0;
             i++;
-            while (i < data.size() && date.equals(data.get(i)[0])) { // if its on the same date add it up
-                total += Double.parseDouble(data.get(i)[index]);
+            while (i < data.size() && date.equals(data.get(i)[0]) && (activity.equals(data.get(i)[activityindex]) || activityindex == 0)) { // if its on the same date add it up
+                total += Double.parseDouble(data.get(i)[valueindex]);
                 i++;
             }
             dp.add(total);
@@ -258,10 +271,10 @@ public class Data {
             // same logic as before
             while(i < data.size()) {
                 date = data.get(i)[0];
-                total = Double.parseDouble(data.get(i)[index]);
+                total = (activity.equals(data.get(i)[activityindex]) || activityindex == 0) ? Double.parseDouble(data.get(i)[valueindex]) : 0;
                 i++;
-                while (i < data.size() && date.equals(data.get(i)[0])) {
-                    total += Double.parseDouble(data.get(i)[index]);
+                while (i < data.size() && date.equals(data.get(i)[0]) && (activity.equals(data.get(i)[activityindex]) || activityindex == 0)) {
+                    total += Double.parseDouble(data.get(i)[valueindex]);
                     i++;
                 }
                 dp.add(total);

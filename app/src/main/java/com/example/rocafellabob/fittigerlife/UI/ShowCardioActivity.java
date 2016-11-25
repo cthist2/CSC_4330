@@ -14,8 +14,6 @@ import java.text.ParseException;
 import java.util.Date;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * ShowCardioActivity.java
@@ -60,7 +58,7 @@ public class ShowCardioActivity extends AppCompatActivity implements DisplayActi
                 // when i is 8, index is 1
                 // so on and numentries is 10
                 int textview_index = numentries - 1 - i;
-                tviews[textview_index].setTextSize(20);
+                tviews[textview_index].setTextSize(12);
                 tviews[textview_index].setTypeface(Typeface.MONOSPACE);
                 String sYear = "", sMonth = "", sDay = "";
                 try {
@@ -74,12 +72,12 @@ public class ShowCardioActivity extends AppCompatActivity implements DisplayActi
                 }
                 tviews[textview_index].setText(
                         String.format("%-12s", "Date") + 
-                        String.format("%-10s", "Activity") + 
                         String.format("%-10s", "Time") + 
+                        String.format("%-10s", "Activity") + 
                         newline + 
                         String.format("%-12s", sMonth + "/" + sDay + "/" + sYear) +
-                        String.format("%-10s", s[1]) + 
-                        String.format("%-10s", s[2])
+                        String.format("%-10s", s[2]) + 
+                        String.format("%-10s", s[1])
                 );
                 //   tviews[i].setText("22");
             }

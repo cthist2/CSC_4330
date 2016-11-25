@@ -10,10 +10,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
+import android.util.Log;
 
 import static com.example.rocafellabob.fittigerlife.util.DataConsts.*;
 
 import android.view.View;
+import java.util.Arrays;
 
 import java.util.Date;
 
@@ -21,32 +23,35 @@ import java.util.Date;
  * Graph.java
  * graphing logic
  * 11/16/16     Thomas      create file
- * 11/22/2016   Thomas      draw the center value
+ * 11/22/2016   Thomas      draw the center value, update paint settings
  */
 public class GraphView extends View {
 
-    Paint paint;
+    Paint paint = new Paint(Paint.LINEAR_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);;
+    Paint textpaint = new Paint(Paint.LINEAR_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
     double[] datapoints;
     int w;
     int h;
-
+    String graphTitle;
+    
     /**
      * parameterized constructor that creates a graph
      * 
      * @param context the screen to take over
      * @param points the points to graph
+     * @param title the title of the graph
      */
-    public GraphView(Context context, double[] points) {
+    public GraphView(Context context, double[] points, String title) {
         super(context);
         //
         datapoints = points;
         // default paint settings
-        paint = new Paint();
         paint.setColor(Color.MAGENTA);
         paint.setStrokeWidth(3);
         paint.setStyle(Paint.Style.STROKE);
         paint.setTextAlign(Align.CENTER);
-        paint.setTextSize(30);
+        textpaint.setTextSize(30);
+        graphTitle = title;
     }
 
     /**
@@ -54,15 +59,18 @@ public class GraphView extends View {
      * 
      * @param context the screen to take over
      * @param points the points to graph
+     * @param title the title of the graph
      * @param pnt the paint to use
      */
-    public GraphView(Context context, double[] points, Paint pnt) {
+    public GraphView(Context context, double[] points, String title, Paint pnt) {
         super(context);
         //
         datapoints = points;
         // default paint settings
         paint = new Paint();
         paint.set(pnt);
+        textpaint.setTextSize(30);
+        graphTitle = title;
     }
 
     @Override
@@ -109,10 +117,10 @@ public class GraphView extends View {
 //        canvas.drawColor(Color.BLACK);
         // axis assuming horizontal phone
         float[] axiss = {
-            10, h, // bottom left to
-            10, 10, // top left
-            10, 10, // top left to
-            w, 10 // top right
+            75, h, // bottom left to
+            75, 75, // top left
+            75, 75, // top left to
+            w, 75 // top right
         };
 
         // scaling logic
@@ -147,23 +155,29 @@ public class GraphView extends View {
         }
         
         int tmp = paint.getColor();
+        paint.setColor(Color.LTGRAY);
+        canvas.drawLine(w*3/4 + 75, 75, w*3/4 + 75, h, paint); // draw 3/4 line
+        canvas.drawLine(w/2 + 75, 75, w/2 + 75, h, paint); // draw middle line
+        canvas.drawLine(w/4 + 75, 75, w/4 + 75, h, paint); // draw 1/4 line
         paint.setColor(Color.BLACK);
-        canvas.drawLines(axiss, paint); // black axis then reassign
-        canvas.drawLine(w/2, 0, w/2, h, paint); // draw middle line
+        canvas.drawLines(axiss, paint); // black axis then reset paint axis last so it covers the measurment lines
         paint.setColor(tmp);
-
+        
         canvas.save();
         canvas.rotate(90);
-        canvas.drawText(String.format("%.0f", max_y / 2), 40, -w/2 + 10, paint); // draw the middle value
+        canvas.drawText(graphTitle, 100, -w + 70, textpaint); // draw title of graph
+        canvas.drawText(String.format("%.0f", max_y * 3 / 4), 25, -w*3/4 - 70, textpaint); // draw the 3/4 value
+        canvas.drawText(String.format("%.0f", max_y / 2), 25, -w/2 - 70, textpaint); // draw the middle value
+        canvas.drawText(String.format("%.0f", max_y / 4), 25, -w/4 - 70, textpaint); // draw the 1/4 value value
         canvas.restore();
         
         max_x = max_x - min_x; // also subtract from the max
 //        Log.d("max", max_x + " " + max_y);
         for (int i = 0; i < datapoints.length; i = i + 2) { // this fixes all the y values (index 0, 2, 4, 8 etc.) remember they are reversed
-            datapoints[i] = datapoints[i] / max_y * (w - 10) + 10; // + 10 and - 10 for axis
+            datapoints[i] = datapoints[i] / max_y * (w - 75) + 75; // + 10 and - 10 for axis
         }
         for (int i = 1; i < datapoints.length; i = i + 2) { // same for x values
-            datapoints[i] = datapoints[i] / max_x * (h - 10) + 10; // + 10 and - 10 for axis
+            datapoints[i] = datapoints[i] / max_x * (h - 75) + 75; // + 10 and - 10 for axis
         }
         float[] temp = new float[datapoints.length];
         for (int i = 0; i < datapoints.length; i++) {

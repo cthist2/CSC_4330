@@ -96,7 +96,7 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
         if (checkFormat(inputTimeFinal)) {
             Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
         } else {
-            Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999(", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999)", Toast.LENGTH_LONG).show();
         }
     }
 

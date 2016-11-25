@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.rocafellabob.fittigerlife.UI.interfaces.*;
 import com.example.rocafellabob.fittigerlife.data.Data;
@@ -42,6 +43,16 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
         String neckFinalString = neck.getText().toString();
         String waistFinalString = waiste.getText().toString();
         String weightFinalString = weight.getText().toString();
+        if(checkFormat(wristFinalString) && checkFormat(neckFinalString) && checkFormat(waistFinalString) && checkFormat(weightFinalString)) {
         Data.recordGoal(this, wristFinalString, neckFinalString, waistFinalString, weightFinalString);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999)", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public boolean checkFormat(String st) {
+        return st.matches("^\\d{1,5}$");
     }
 }
