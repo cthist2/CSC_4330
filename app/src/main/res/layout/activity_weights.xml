@@ -108,6 +108,14 @@
             android:layout_weight="1" />
     </LinearLayout>
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerActivity"
+        android:entries="@array/WeightArray"
+        android:prompt="@string/exercisePrompt"
+        />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

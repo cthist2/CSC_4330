@@ -61,7 +61,7 @@ public class ShowWeightLifting extends AppCompatActivity implements DisplayActiv
                 // when i is 8, index is 1
                 // so on and numentries is 10
                 int textview_index = numentries - 1 - i;
-                tviews[textview_index].setTextSize(20);
+                tviews[textview_index].setTextSize(12);
                 tviews[textview_index].setTypeface(Typeface.MONOSPACE);
                 String sYear = "", sMonth = "", sDay = "";
                 try {
@@ -74,15 +74,17 @@ public class ShowWeightLifting extends AppCompatActivity implements DisplayActiv
                     Toast.makeText(getApplicationContext(), "Data load failed", Toast.LENGTH_LONG).show();
                 }
                 tviews[textview_index].setText(
-                        String.format("%-12s", "Date") + 
-                        String.format("%-8s", "Weight") + 
-                        String.format("%-8s", "Sets") + 
-                        String.format("%-8s", "Reps") +
+                        String.format("%-12s", "Date") +
+                        String.format("%-6s", "Weight") +
+                        String.format("%-6s", "Sets") +
+                        String.format("%-6s", "Reps") +
+                        String.format("%-6s", "Activity") +
                         newline + 
-                        String.format("%-12s", sMonth + "/" + sDay + "/" + sYear) + 
-                        String.format("%-8s", s[1]) + 
-                        String.format("%-8s", s[2]) + 
-                        String.format("%-8s", s[3]) 
+                        String.format("%-12s", sMonth + "/" + sDay + "/" + sYear) +
+                        String.format("%-6s", s[1]) +
+                        String.format("%-6s", s[2]) +
+                        String.format("%-6s", s[3]) +
+                        String.format("%-6s", s[4])
                 );
                 //   tviews[i].setText("22");
             }

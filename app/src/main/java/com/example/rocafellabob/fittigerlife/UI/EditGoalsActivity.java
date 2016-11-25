@@ -33,6 +33,7 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
         weight = (EditText) findViewById(R.id.editWeight);
         neck = (EditText) findViewById(R.id.EditNeck);
         waiste = (EditText) findViewById(R.id.editWaist);
+
     }
 
     @Override

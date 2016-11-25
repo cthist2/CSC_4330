@@ -6,7 +6,7 @@
     You can easily add items if you need to add the the default list
     -->
     <string name="exercisePrompt">Choose an exercise</string>
-    <string-array name="WorkoutArray">
+    <string-array name="WeightArray">
         <item>Bench</item>
         <item>Squats</item>
         <item>Curls</item>
