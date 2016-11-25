@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textViewInsertData1"
-            android:lines="8"
+            android:lines="4"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -28,43 +28,43 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:id="@+id/textViewInsertData2"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/textViewInsertData1"
             android:layout_toEndOf="@+id/textViewInsertData1"
-            android:lines="8"
+            android:lines="4"
             />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:id="@+id/textViewInsertData3"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/textViewInsertData2"
             android:layout_toEndOf="@+id/textViewInsertData2"
-            android:lines="8"
+            android:lines="4"
             />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:id="@+id/textViewInsertData4"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/textViewInsertData3"
             android:layout_toEndOf="@+id/textViewInsertData3"
             android:layout_alignBottom="@+id/textViewInsertData3"
-            android:lines="8"
+            android:lines="4"
             />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:id="@+id/textViewInsertData5"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/textViewInsertData4"
             android:layout_toEndOf="@+id/textViewInsertData4"
-            android:lines="8"
+            android:lines="4"
             />
 
     </LinearLayout>

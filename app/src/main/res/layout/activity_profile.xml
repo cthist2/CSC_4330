@@ -154,16 +154,26 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:weightSum="1">
 
         <Button
             android:text="Edit Profile Stats"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button13"
-            android:onClick="editProfile" />
+            android:onClick="editProfile"
+            android:layout_weight="0.50" />
 
     </LinearLayout>
+
+    <Button
+        android:text="Edit Measurements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+         android:onClick="editMeasurement"
+         />
 
     <Button
         android:text="See Progress"
@@ -176,14 +186,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner2"
-        android:entries="@array/possibleGraphs" />
-
-    <Button
-        android:text="Edit Measurements"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button5"
-         android:onClick="editMeasurement"
-         />
+        android:entries="@array/possibleGraphs"
+        android:layout_weight="0.09" />
 
 </LinearLayout>

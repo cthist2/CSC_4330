@@ -42,7 +42,7 @@
         android:layout_gravity="center_horizontal" />
 
     <TextView
-        android:text="Calories for the day"
+        android:text="Calories for the day:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"

@@ -20,7 +20,6 @@
         android:layout_below="@+id/editWaist"
         android:layout_toLeftOf="@+id/EditNeck"
         android:layout_toStartOf="@+id/EditNeck"
-        android:layout_marginTop="14dp"
         android:gravity="center_horizontal" />
 
     <EditText
@@ -86,7 +85,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="49dp"
         android:id="@+id/buttonStoreData"
         android:onClick="update"
         android:gravity="center_horizontal"
