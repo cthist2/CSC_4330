@@ -25,7 +25,10 @@ import java.util.List;
 public class ShowCardioActivity extends AppCompatActivity implements DisplayActivity, UIInterface {
 
     TextView DataStore1, DataStore2, DataStore3, DataStore4, DataStore5;
-
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +36,22 @@ public class ShowCardioActivity extends AppCompatActivity implements DisplayActi
         loadElements();
         load();
     }
-
+    /**
+     * @param View view
+     * @description: calls the load activity with new params
+     */
     @Override
     public void load(View view) {
         load();
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: read data and sets this data to the textviews
+     */
     public void load() {
         List<String[]> fc = Data.readData(this, cardio_csv);
         TextView[] tviews = new TextView[]{DataStore1, DataStore2, DataStore3, DataStore4, DataStore5};
@@ -83,7 +95,12 @@ public class ShowCardioActivity extends AppCompatActivity implements DisplayActi
             }
         }
     }
-
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     @Override
     public void loadElements() {
         DataStore1 = (TextView) findViewById(R.id.textViewInsertData1);

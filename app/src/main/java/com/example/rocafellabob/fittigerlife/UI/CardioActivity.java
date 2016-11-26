@@ -35,7 +35,10 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     Chronometer Chrono;
     Button StartTimer, pauseTimer, resetTimer, recordToFile;
     EditText inputTime;
-
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,12 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         StartTimer = (Button) findViewById(R.id.StartTimer);
         pauseTimer = (Button) findViewById(R.id.stopButton);
@@ -89,6 +98,12 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     }
 
     @Override
+    /**
+     * opens when button is clicked
+     *
+     * @param View view pulls the activity view
+     *             Saves data to text file and checks to make sure it fits the constraints
+     */
     public void record(View view) {
         String activityFinal = spinner.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();
@@ -111,6 +126,10 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     }
 
     @Override
+    /**
+     * @param String st (String being checked)
+     * @description: Checks to make sure string meets requirements
+     */
     public boolean checkFormat(String st) {
         return st.matches("^\\d{1,5}$"); // allow only numbers, up to 5 digits
     }

@@ -31,6 +31,10 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
     TextView caloriesReturned;
 
     @Override
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calories);
@@ -38,12 +42,24 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         caloriesEntered = (EditText) findViewById(R.id.caloriesEntered);
         caloriesReturned = (TextView) findViewById(R.id.CaloriesOutput);
     }
 
     @Override
+    /**
+     * opens when button is clicked
+     *
+     * @param View view pulls the activity view
+     * @description: Saves data to text file and checks to make sure it fits the constraints
+     */
     public void record(View view) {
         String caloriesFinalString = caloriesEntered.getText().toString();
 
@@ -66,6 +82,10 @@ public class CaloriesActivity extends AppCompatActivity implements RecordActivit
     }
 
     @Override
+    /**
+     * @param String st (String being checked)
+     * @description: Checks to make sure string meets requirements
+     */
     public boolean checkFormat(String st) {
         return st.matches("^\\d{1,5}$"); // allow only numbers, up to 5 digits
     }

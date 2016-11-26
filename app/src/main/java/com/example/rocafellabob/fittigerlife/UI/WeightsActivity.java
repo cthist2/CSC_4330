@@ -31,6 +31,11 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
     private Spinner spinner2;
 
     @Override
+    /**
+     * opens with the activity
+     *
+     * @param savedInstanceState the saved state
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weights);
@@ -38,6 +43,12 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
     }
 
     @Override
+    /**
+     * opens when button is clicked
+     *
+     * @param View view pulls the activity view
+     *             Saves data to text file and checks to make sure it fits the constraints
+     */
     public void record(View view) {
         // deleteFile(weights_csv);
         String WeightFinalString = Weights.getText().toString();
@@ -69,6 +80,12 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         Weights = (EditText) findViewById(R.id.editTextWeight);
         Sets = (EditText) findViewById(R.id.editTextSets);
@@ -77,6 +94,10 @@ public class WeightsActivity extends AppCompatActivity implements RecordActivity
     }
 
     @Override
+    /**
+     * @param String st (String being checked)
+     * @description: Checks to make sure string meets requirements
+     */
     public boolean checkFormat(String st) {
         return st.matches("^\\d{1,5}$"); // allow only numbers, up to 5 digits
     }

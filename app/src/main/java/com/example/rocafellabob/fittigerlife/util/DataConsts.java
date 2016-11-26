@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
  * DataConsts.java
  * constants for constant constants and easy access
  * 11/16/16     Thomas      create file
+ * 11/20/16     Spencer     Added the new current_measurement.csv
  */
 public final class DataConsts {
 

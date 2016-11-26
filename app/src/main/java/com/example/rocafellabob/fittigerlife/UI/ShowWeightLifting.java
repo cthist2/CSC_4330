@@ -28,7 +28,10 @@ import java.util.List;
 public class ShowWeightLifting extends AppCompatActivity implements DisplayActivity, UIInterface {
 
     TextView DataStore1, DataStore2, DataStore3, DataStore4, DataStore5;
-
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +41,19 @@ public class ShowWeightLifting extends AppCompatActivity implements DisplayActiv
     }
 
     @Override
+    /**
+     * @param View view
+     * @description: calls the load activity with new params
+     */
     public void load(View view) {
         load();
     }
-
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: read data and sets this data to the textviews
+     */
     @Override
     public void load() {
         List<String[]> fc = Data.readData(this, weights_csv);
@@ -92,6 +104,12 @@ public class ShowWeightLifting extends AppCompatActivity implements DisplayActiv
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         DataStore1 = (TextView) findViewById(R.id.textViewInsertData1);
         DataStore2 = (TextView) findViewById(R.id.textViewInsertData2);

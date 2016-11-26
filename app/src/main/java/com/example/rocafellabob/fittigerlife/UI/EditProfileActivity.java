@@ -23,7 +23,10 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
     EditText Weight, Height, Age;
     TextView BMI;
     String Gender;
-
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,12 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         BMI = (TextView) findViewById(R.id.BMI);
         Weight = (EditText) findViewById(R.id.editWeight);
@@ -40,6 +49,10 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
     }
 
     @Override
+    /**
+     * @param View view
+     * @description: Updates the data recording and records data user inputs
+     */
     public void update(View view) {
         String WeightFinalString = Weight.getText().toString();
         String HeightFinalString = Height.getText().toString();
@@ -73,7 +86,10 @@ public class EditProfileActivity extends AppCompatActivity implements EditActivi
     public void Female(View view) {
         Gender = "Female";
     }
-
+    /**
+     * @param String st (String being checked)
+     * @description: Checks to make sure string meets requirements
+     */
     @Override
     public boolean checkFormat(String st) {
         return st.matches("^\\d{1,5}$");

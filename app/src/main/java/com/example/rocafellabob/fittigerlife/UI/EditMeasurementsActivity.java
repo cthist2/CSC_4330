@@ -20,6 +20,10 @@ public class EditMeasurementsActivity extends AppCompatActivity implements EditA
     EditText weight, wrist, neck, waiste;
 
     @Override
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_measurements);
@@ -27,6 +31,12 @@ public class EditMeasurementsActivity extends AppCompatActivity implements EditA
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         wrist = (EditText) findViewById(R.id.editWrist);
         weight = (EditText) findViewById(R.id.editWeight);
@@ -35,6 +45,10 @@ public class EditMeasurementsActivity extends AppCompatActivity implements EditA
     }
 
     @Override
+    /**
+     * @param View view
+     * @description: Updates the data recording and records data user inputs
+     */
     public void update(View view) {
         String wristFinalString = wrist.getText().toString();
         String neckFinalString = neck.getText().toString();
@@ -47,7 +61,10 @@ public class EditMeasurementsActivity extends AppCompatActivity implements EditA
             Toast.makeText(getApplicationContext(), "Incorrect Input Format (numbers only 0-99999)", Toast.LENGTH_LONG).show();
         }
     }
-
+    /**
+     * @param String st (String being checked)
+     * @description: Checks to make sure string meets requirements
+     */
     @Override
     public boolean checkFormat(String st) {
         return st.matches("^\\d{1,5}$");

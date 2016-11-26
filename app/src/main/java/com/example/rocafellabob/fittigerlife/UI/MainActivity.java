@@ -18,7 +18,10 @@ import java.io.File;
  * 11/25/16     Thomas      first time launch check
  */
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

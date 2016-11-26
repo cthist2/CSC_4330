@@ -112,6 +112,12 @@ public class GraphView extends View {
     }
         
     @Override
+    /**
+     * called when needed to draw graph
+     *
+     * @param canvas, draw a blank rectangle area for the group to go in
+     * @description: Used for getting the baseline rectangle for the graph
+     */
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 //        canvas.drawColor(Color.BLACK);

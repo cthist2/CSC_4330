@@ -26,6 +26,10 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
     TextView Wrist, Waist, Weight, Neck;
 
     @Override
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
@@ -34,6 +38,12 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         Wrist = (TextView) findViewById(R.id.textWrist);
         Waist = (TextView) findViewById(R.id.textWaiste);
@@ -41,7 +51,11 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
         Neck = (TextView) findViewById(R.id.textNeck);
     }
 
-    // reload the data when the screen comes back up
+
+    /**
+     * @param none
+     * @description:   reload the data when the screen comes back up
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -49,6 +63,12 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
     }
 
     @Override
+    /**
+     * loads when called by onStart
+     *
+     * @param none
+     * @description: sets the 4 different params in the text views
+     */
     public void load() {
         List<String[]> data = Data.readData(this, measurements_csv);
         if (data != null) {
@@ -63,6 +83,12 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
     }
 
     @Override
+    /**
+     * Called when button click
+     *
+     * @param View view
+     * @description:
+     */
     public void load(View view) {
         load();
     }

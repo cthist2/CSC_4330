@@ -22,6 +22,10 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
     EditText weight, wrist, neck, waiste;
 
     @Override
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_goals);
@@ -29,6 +33,12 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         wrist = (EditText) findViewById(R.id.editWrist);
         weight = (EditText) findViewById(R.id.editWeight);
@@ -38,6 +48,10 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
     }
 
     @Override
+    /**
+     * @param View view
+     * @description: Updates the data recording and records data user inputs
+     */
     public void update(View view) {
         String wristFinalString = wrist.getText().toString();
         String neckFinalString = neck.getText().toString();
@@ -52,6 +66,10 @@ public class EditGoalsActivity extends AppCompatActivity implements EditActivity
     }
 
     @Override
+    /**
+     * @param String st (String being checked)
+     * @description: Checks to make sure string meets requirements
+     */
     public boolean checkFormat(String st) {
         return st.matches("^\\d{1,5}$");
     }

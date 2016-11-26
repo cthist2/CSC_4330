@@ -30,6 +30,10 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
     Spinner GraphTypes;
 
     @Override
+    /**
+     * @param Bundle savedInstanceState (The save instancestate from the xml file
+     * @description: once the activity is called, the activity is created and all functions in oncreate called
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
@@ -38,6 +42,12 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: loads all the xml parts into the java variables
+     */
     public void loadElements() {
         GraphTypes = (Spinner) findViewById(R.id.spinner2);
         //BMI = (TextView) findViewById(R.id.BMIDisplay);
@@ -57,6 +67,12 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
     }
 
     @Override
+    /**
+     * called by oncreate
+     *
+     * @param none
+     * @description: read data and sets this data to the textviews
+     */
     public void load() {
         // weight age height gender
         List<String[]> fc = Data.readData(this, profile_csv);
@@ -78,7 +94,10 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
             }
         }
     }
-
+    /**
+     * @param View view
+     * @description: calls the load activity with new params
+     */
     @Override
     public void load(View view) {
         load();
@@ -93,7 +112,12 @@ public class ProfileActivity extends AppCompatActivity implements DisplayActivit
         Intent intent = new Intent(this, EditProfileActivity.class);
         startActivity(intent);
     }
-
+    /**
+     * called by button click
+     *
+     * @param View view
+     * @description: starts the activity editMeasurement
+     */
     public void editMeasurement(View view) {
         Intent intent = new Intent(this, EditMeasurementsActivity.class);
         startActivity(intent);
