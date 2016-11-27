@@ -75,9 +75,9 @@ public class GoalsActivity extends AppCompatActivity implements DisplayActivity,
             String[] measurements = data.get(0); // should only have 1 line
             if (measurements.length == 4) { // fml workaround
                 Wrist.setText(measurements[0]);
-                Waist.setText(measurements[1]);
-                Weight.setText(measurements[2]);
-                Neck.setText(measurements[3]);
+                Waist.setText(measurements[2]);
+                Weight.setText(measurements[3]);
+                Neck.setText(measurements[1]);
             }
         }
     }
