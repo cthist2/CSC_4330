@@ -34,7 +34,7 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     private Spinner spinner;
     Chronometer Chrono;
     Button StartTimer, pauseTimer, resetTimer, recordToFile;
-    EditText inputTime;
+    EditText inputTime, datefield;
     /**
      * @param Bundle savedInstanceState (The save instancestate from the xml file
      * @description: once the activity is called, the activity is created and all functions in oncreate called
@@ -62,6 +62,8 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
         Chrono = (Chronometer) findViewById(R.id.chronometerFinal);
         inputTime = (EditText) findViewById(R.id.timeEntry);
         spinner = (Spinner) findViewById(R.id.spinner);
+        datefield = (EditText) findViewById(R.id.editText2);
+
     }
 
     /**
@@ -107,7 +109,8 @@ public class CardioActivity extends AppCompatActivity implements RecordActivity,
     public void record(View view) {
         String activityFinal = spinner.getSelectedItem().toString();
         String inputTimeFinal = inputTime.getText().toString();
-        String date = sdf.format(new Date());
+//        String date = sdf.format(new Date());
+        String date = datefield.getText().toString();
         if (checkFormat(inputTimeFinal)) {
             Data.recordData(this, cardio_csv, new String[]{date, activityFinal, inputTimeFinal});
         } else {

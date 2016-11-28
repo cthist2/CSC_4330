@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void checkFirstLaunch() {
         File file = new File(profile_csv);
-        if(!file.exists()) {
+        if(file.exists()) {
             Toast.makeText(getApplicationContext(), "Looks like this is your first time here. Create your profile.", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, EditProfileActivity.class);
             startActivity(intent);

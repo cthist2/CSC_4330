@@ -252,6 +252,13 @@ public class Data {
 //        data.add(new String[]{"20161121", "220"});
 //        data.add(new String[]{"20161122", "420"});
 //        data.add(new String[]{"20161123", "520"});
+//        data.add(new String[]{"20161124", "820"});
+//        data.add(new String[]{"20161125", "320"});
+//        data.add(new String[]{"20161126", "430"});
+//        data.add(new String[]{"20161127", "670"});
+//        data.add(new String[]{"20161128", "820"});
+//        data.add(new String[]{"20161129", "910"});
+//        data.add(new String[]{"20161130", "520"});
         List<Double> dp = new ArrayList<>();
         if (data != null && data.size() > 0) { // make sure there's some stuff recorded
             // only put in the first set of data once
