@@ -19,7 +19,7 @@
         -->
 
     <TextView
-        android:text="Please Record Your Exercise"
+        android:text="Please Record Your Weights"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
