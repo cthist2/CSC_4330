@@ -59,7 +59,11 @@ My contributions to the project is the development of each android activity in t
 
 
 ###### ~Thomas Chang: Co-Head Developer, Technical Architect, Secondary Tester, System  Administrator
-
+Contribution:
+I worked with Spencer on writing the code for the project. My main focus was refactoring the code to minimize the number of lines. I also put together a very simple graphing library that we used in the project and wrote the logic for transforming the data stored in our files into data that could be graphed. I cleaned up a lot of the UI after the first draft was finalized but did not do any design for it. In total, I wrote 4478 lines for the project but I also removed 3604 lines according to GitHub. 
+<br><br>
+Meetings Missed:
+I missed one meeting on 11/16 for discussing the SRS document because I had a test the next day. Because I missed the meeting, I put together a basic markdown document that would later be used by the technical writers as a template for the actual document.
 
 ###### ~Cort Fitzpatrick: Lead Graphics Design Specialist, Co-Head User Interface Designer, Secondary Tester
 
@@ -108,7 +112,7 @@ Outcome: It was decided that Robin and Triston were to be the documentation team
 Objective: To discuss the progress made so far on the application by Spencer and Thomas.
 
 
-Outcome:This was a quick meeting to show off the progress made on the application. The basic framework of a home screen was laid out but most of the buttons shown do nothing. Out of the seven buttons shown only 2 out of the 7 actually went to other screens. Exercise Tracker had fields to input information that yet to work. Features were still getting ironed out as a count-up and a countdown timer were decided on being necessary where one was for cardio and the other for exercise. The name “FitTigerLife” was decided upon.
+Outcome: This was a quick meeting to show off the progress made on the application. The basic framework of a home screen was laid out but most of the buttons shown do nothing. Out of the seven buttons shown only 2 out of the 7 actually went to other screens. Exercise Tracker had fields to input information that yet to work. Features were still getting ironed out as a count-up and a countdown timer were decided on being necessary where one was for cardio and the other for exercise. The name “FitTigerLife” was decided upon.
 
 ## 10/19/16 18:00 PM
 
@@ -141,7 +145,7 @@ Outcome:Spencer used TeamViewer to show the application running from his compute
 Objective: Collaborative effort on the SDD
 
 
-Outcome:The main architecture and Sus-System Architecture were discussed thoroughly, as well on thorough discussion on how the data was going to be stored locally. It was decided that the data would be stored in CSV data type files. The User Interface was also discussed with the current way the application looked being deemed unsatisfactory. The UI was mostly decided when the SDD came around, mainly dealing with how the home page would look, as well as how the graphs would end up looking. The graphs as of now would only be line graphs.
+Outcome: The main architecture and Sus-System Architecture were discussed thoroughly, as well on thorough discussion on how the data was going to be stored locally. It was decided that the data would be stored in CSV data type files. The User Interface was also discussed with the current way the application looked being deemed unsatisfactory. The UI was mostly decided when the SDD came around, mainly dealing with how the home page would look, as well as how the graphs would end up looking. The graphs as of now would only be line graphs.
 
 
 ## 11/14/16 18:30 PM
