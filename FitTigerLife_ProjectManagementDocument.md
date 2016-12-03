@@ -74,6 +74,7 @@ My contributions to the project is the development of each android activity in t
 Contribution: I worked on every document written for this project. The SRS and this document were evenly worked on by me and Triston. I did the bulk of the work for the SDD and Triston did the bulk of the work for the STD. I also created all the images that were in the previous documents. In addition I reformatted all the Google Docs into Mark Down and committed all the documents to Github.
 
 ### Egoless Team Structure
+<img src="./doc/pics/Egoless.png" width="1348" height="367" />
 
 ---
 ## Project Schedule
