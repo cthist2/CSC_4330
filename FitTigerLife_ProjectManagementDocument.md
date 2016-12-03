@@ -78,7 +78,7 @@ Contribution: I worked on every document written for this project. The SRS and t
 
 ---
 ## Project Schedule
-<img src="./doc/pics/gantt.jpg" width="1348" height="367" />
+<img src="./doc/pics/gantt.JPG" width="1348" height="367" />
 
 Pert estimation method:  
 Optimistic- 9 weeks  
