@@ -46,13 +46,17 @@ The main resource issue this application encounters is that to remain offline, a
 
 
 
-----------------------------------------------------------------------------------------------------------------
-Lead Development and Programming Team: Spencer Janin, Thomas Chang
-----------------------------------------------------------------------------------------------------------------
-Graphic Design and User Interface Design Team: Cort Fitzpatrick, Charles Thistlethwaite
-----------------------------------------------------------------------------------------------------------------
-Lead Documentation Team: Triston Lamonte, Robin Tallitsch
-----------------------------------------------------------------------------------------------------------------
+---
+
+##### Lead Development and Programming Team:
+Spencer Janin, Thomas Chang
+
+##### Graphic Design and User Interface Design Team:
+Cort Fitzpatrick, Charles Thistlethwaite
+
+##### Lead Documentation Team:
+Triston Lamonte, Robin Tallitsch
+
 ###### ~Spencer Janin: Project Manager, Co-Head Developer, Secondary Tester, Database Administrator
 Contribution:
 My contributions to the project is work developing each android activity in the project. The only android files I did not touch was the GraphView activity that was solely develop by Thomas. I work as the team leader, and issued assignments to group members as well as schedule each meeting. With scheduling meetings, I also reserved a room in middleton for the group to meet in and made sure each member could make the meeting. I was the main project visionary member, and I work with the documentation team to make sure the vision was correct and they had all the information they needed to complete the documents. This meant a lot of design choices were made by me, giving us clear decision making ability. I submitted 5918 lines of code  to the project and removed 559. I put most of the data saving framework to the csv files and first draft UI. I spent a fair amount of time researching the constraints of android as they relate to our project and relaying this information to the team. I gave guidance on the SRS, STD, SDD in the meetings we had. I worked as well with a lot of testing the code and putting in bug fixes for issue we experienced.
@@ -60,7 +64,7 @@ My contributions to the project is work developing each android activity in the 
 
 ###### ~Thomas Chang: Co-Head Developer, Technical Architect, Secondary Tester, System  Administrator
 Contribution:
-I worked with Spencer on writing the code for the project. My main focus was refactoring the code to minimize the number of lines. I also put together a very simple graphing library that we used in the project and wrote the logic for transforming the data stored in our files into data that could be graphed. I cleaned up a lot of the UI after the first draft was finalized but did not do any design for it. In total, I wrote 4478 lines for the project but I also removed 3604 lines according to GitHub. 
+I worked with Spencer on writing the code for the project. My main focus was refactoring the code to minimize the number of lines. I also put together a very simple graphing library that we used in the project and wrote the logic for transforming the data stored in our files into data that could be graphed. I cleaned up a lot of the UI after the first draft was finalized but did not do any design for it. In total, I wrote 4478 lines for the project but I also removed 3604 lines according to GitHub.
 <br><br>
 Meetings Missed:
 I missed one meeting on 11/16 for discussing the SRS document because I had a test the next day. Because I missed the meeting, I put together a basic markdown document that would later be used by the technical writers as a template for the actual document.
