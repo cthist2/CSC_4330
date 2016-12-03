@@ -12,7 +12,7 @@
 
 | Name | Date | Reason for Change | Version |
 | :--- | :--- | :--- | :--- |
-| Robin Tallitsch, Triston Lamonte | 11/21/2016 | Initial | 1.0 |
+| Robin Tallitsch, Triston Lamonte | 11/27/2016 | Initial | 1.0 |
 
 ---
 ## Vision
@@ -69,10 +69,10 @@ I missed one meeting on 11/16 for discussing the SRS document because I had a te
 
 
 ###### ~Charles Thistlethwaite: Co-Head User Interface Designer, Primary Tester, Crowdsourcing Lead
-
+Towards the beginning of the project I helped conceptualize how the main activities of the app would function, the weight lifting activity was my primary focus.  Throughout the semester, I assisted Robin and Triston in the document meetings.  Lastly, I created the bulk of the presentation’s PowerPoint slides.  I attended all of our groups meetings throughout the semester.
 
 ###### ~Triston Lamonte: Co-Head Technical Writer, Tertiary Tester, Secondary Graphics Designer
-
+I worked on every document written for this project. The SRS and this document were evenly worked on by me and Robin. I did the bulk of the work for the STD and Robin did the bulk of the work for the SDD. I was the note taker and record keeper for all the group meetings. I also was the main proprietor of what to test  and suggestions for testing for the STD. For all the document submissions I did final spell and capitalization  checks.
 
 ###### ~Robin Tallitsch: Co-Head Technical Writer, Tertiary Tester, Secondary User Interface Designer
 Contribution: I worked on every document written for this project. The SRS and this document were evenly worked on by me and Triston. I did the bulk of the work for the SDD and Triston did the bulk of the work for the STD. I also created all the images that were in the previous documents. In addition I reformatted all the Google Docs into Mark Down and committed all the documents to Github.
