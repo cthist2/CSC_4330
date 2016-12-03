@@ -1,9 +1,9 @@
-# Software Testing Document
+# Project Management Document
 ## for FitTigerLife
 ### Version 1.0 approved
 ### Prepared by *Robin Tallitsch, Triston Lamonte, Thomas Chang, Spencer Janin, Charlie Thistlethwaite, and Cort Fitzpatrick*
 ### *CSC 4330*
-### *11/21/2016*
+### *12/2/2016*
 
 ---
 
@@ -71,7 +71,7 @@ My contributions to the project is the development of each android activity in t
 
 
 ###### ~Robin Tallitsch: Co-Head Technical Writer, Tertiary Tester, Secondary User Interface Designer
-
+Contribution: I worked on every document written for this project. The SRS and this document were evenly worked on by me and Triston. I did the bulk of the work for the SDD and Triston did the bulk of the work for the STD. I also created all the images that were in the previous documents. In addition I reformatted all the Google Docs into Mark Down and committed all the documents to Github.
 
 ### Egoless Team Structure
 
