@@ -70,7 +70,7 @@ Meetings Missed:
 I missed one meeting on 11/16 for discussing the SRS document because I had a test the next day. Because I missed the meeting, I put together a basic markdown document that would later be used by the technical writers as a template for the actual document.
 
 ###### ~Cort Fitzpatrick: Lead Graphics Design Specialist, Co-Head User Interface Designer, Secondary Tester
-
+I attended all of the meetings except for one of them I missed due to food poisoning. I helped create some of the user interface and also came up with the idea to graph the data that the app records which gives the user a visual representation of their activity. I tested the application out with the emulator on Android Studio making sure that everything was functional and worked properly. I would say my most significant contribution was to the aesthetic and design of the application. I designed a creative theme with fonts and logos for the application that would have surely appealed to a potential user. Although I was not able to introduce this contribution into the application by the time of the presentation I did enjoy and learn from doing it anyway.
 
 ###### ~Charles Thistlethwaite: Co-Head User Interface Designer, Primary Tester, Crowdsourcing Lead
 Towards the beginning of the project I helped conceptualize how the main activities of the app would function, the weight lifting activity was my primary focus.  Throughout the semester, I assisted Robin and Triston in the document meetings.  Lastly, I created the bulk of the presentation’s PowerPoint slides.  I attended all of our groups meetings throughout the semester.
@@ -173,7 +173,7 @@ Outcome: The development team have reworked almost every facet of the applicatio
 Objective: Testing the different operations in preparation of the STD
 
 
-Outcome: Going through each Function of the app in descending order on the Home screen. Some errors found were that there were null exceptions missing, and that the graphs didn’t work quite right. There were some instances where it was storing null data, it was found out later that it was because the system was storing them as strings and not integers. Cort also brought 30+ graphics he had made for the application forward to show to the team. Functionality was deemed a higher priority at the moment that aesthetics so they were unfortunately put on the backburner.
+Outcome: Going through each Function of the app in descending order on the Home screen. Some errors found were that there were null exceptions missing, and that the graphs didn’t work quite right. There were some instances where it was storing null data, it was found out later that it was because the system was storing them as strings and not integers. Cort also brought 30+ graphics he had made for the application forward to show to the team. Functionality was deemed a higher priority at the moment than aesthetics so they were unfortunately put on the backburner.
 
 
 ## 11/27/16 17:00 PM
